@@ -2,7 +2,6 @@ from pathlib import Path
 
 import pandas as pd
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ONET_DIR = PROJECT_ROOT / "data" / "external" / "onet" / "db_31_0_csv"
 OUTPUT_DIR = PROJECT_ROOT / "data" / "processed" / "onet"

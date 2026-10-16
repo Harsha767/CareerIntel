@@ -10,7 +10,7 @@ Scores are ranking signals, not probabilities of employment.
 
 import ast
 import re
-from typing import Sequence
+from collections.abc import Sequence
 
 import numpy as np
 from sentence_transformers import SentenceTransformer

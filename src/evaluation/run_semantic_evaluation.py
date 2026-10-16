@@ -12,9 +12,9 @@ import pandas as pd
 
 from careerintel.models.semantic_ranker import SemanticRanker
 from evaluation.evaluate_recommendations import (
+    ndcg_at_k,
     precision_at_k,
     recall_at_k,
-    ndcg_at_k,
     reciprocal_rank,
 )
 

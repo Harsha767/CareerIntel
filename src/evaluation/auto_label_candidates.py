@@ -4,12 +4,11 @@ These are heuristic predictions, not verified ground-truth labels.
 Original candidate data and manual reviews are never overwritten.
 """
 
+import re
 from ast import literal_eval
 from pathlib import Path
-import re
 
 import pandas as pd
-
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -217,7 +216,6 @@ def get_profile_skills(row):
         "database management",
         "data cleaning",
         "predictive modeling",
-        "statistics",
     }
 
     detected = [

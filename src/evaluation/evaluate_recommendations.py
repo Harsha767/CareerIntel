@@ -18,7 +18,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-
 ROOT = Path(__file__).resolve().parents[2]
 
 RESULTS_DIR = ROOT / "results"
@@ -158,7 +157,7 @@ def validate_relevance_labels(labels):
 
     values = set(labels.unique())
 
-    if not values.issubset({0, 1, False, True}):
+    if not values.issubset({0, 1}):
         raise ValueError(
             "Relevance labels must be binary: 0 or 1."
         )

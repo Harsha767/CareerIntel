@@ -7,7 +7,6 @@ import pandas as pd
 
 from careerintel.models.hybrid_ranker import HybridRanker
 
-
 ROOT = Path(__file__).resolve().parents[2]
 
 JOB_FILE = (

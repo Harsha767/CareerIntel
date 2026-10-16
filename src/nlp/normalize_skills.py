@@ -1,9 +1,8 @@
-from pathlib import Path
 import ast
 import re
+from pathlib import Path
 
 import pandas as pd
-
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -69,14 +68,14 @@ def main():
 
     # Normalize skill names
     df["normalized_skills"] = df["parsed_skills"].apply(
-        lambda skills: sorted(
-            set(
-                normalize_skill(skill)
-                for skill in skills
-                if normalize_skill(skill)
-            )
-        )
+    lambda skills: sorted(
+        {
+            normalized
+            for skill in skills
+            if (normalized := normalize_skill(skill))
+        }
     )
+)
 
     # Number of skills per job
     df["skill_count"] = df["normalized_skills"].str.len()

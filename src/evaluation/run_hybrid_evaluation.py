@@ -13,12 +13,11 @@ import pandas as pd
 
 from careerintel.models.hybrid_ranker import HybridRanker
 from evaluation.evaluate_recommendations import (
+    ndcg_at_k,
     precision_at_k,
     recall_at_k,
-    ndcg_at_k,
     reciprocal_rank,
 )
-
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -36,6 +35,8 @@ K = 10
 
 
 def main():
+    """Evaluate the hybrid ranker against provisional relevance labels."""
+
     # --------------------------------------------------
     # 1. Validate the input dataset
     # --------------------------------------------------
@@ -158,7 +159,6 @@ def main():
             )
 
         profile_text = str(group["profile_text"].iloc[0])
-
         profile_skills = group["profile_skills"].iloc[0]
 
         # Combine job title, description, and available skills.
@@ -176,13 +176,15 @@ def main():
             group.iterrows(),
             job_text.tolist(),
         ):
-            jobs.append({
-                "job_id": str(row["job_id"]),
-                "title": str(row["job_title"]),
-                "job_text": text,
-                "job_description": text,
-                "normalized_skills": row["job_skills"],
-            })
+            jobs.append(
+                {
+                    "job_id": str(row["job_id"]),
+                    "title": str(row["job_title"]),
+                    "job_text": text,
+                    "job_description": text,
+                    "normalized_skills": row["job_skills"],
+                }
+            )
 
         # Create and fit the hybrid ranker.
         ranker = HybridRanker()
@@ -196,31 +198,40 @@ def main():
         )
 
         score_lookup = {
-            result["job_id"]: result
+            str(result["job_id"]): result
             for result in recommendations
         }
 
         group["job_id"] = group["job_id"].astype(str)
 
+        # Bind score_lookup in each lambda to fix Ruff B023.
         group["hybrid_score"] = group["job_id"].map(
-            lambda job_id: score_lookup[job_id]["hybrid_score"]
+            lambda job_id, lookup=score_lookup: (
+                lookup[job_id]["hybrid_score"]
+            )
         )
 
         group["semantic_score"] = group["job_id"].map(
-            lambda job_id: score_lookup[job_id]["semantic_score"]
+            lambda job_id, lookup=score_lookup: (
+                lookup[job_id]["semantic_score"]
+            )
         )
 
         group["skill_score"] = group["job_id"].map(
-            lambda job_id: score_lookup[job_id]["skill_score"]
+            lambda job_id, lookup=score_lookup: (
+                lookup[job_id]["skill_score"]
+            )
         )
 
         group["title_score"] = group["job_id"].map(
-            lambda job_id: score_lookup[job_id]["title_score"]
+            lambda job_id, lookup=score_lookup: (
+                lookup[job_id]["title_score"]
+            )
         )
 
         group["matched_skills"] = group["job_id"].map(
-            lambda job_id: ", ".join(
-                score_lookup[job_id]["matched_skills"]
+            lambda job_id, lookup=score_lookup: ", ".join(
+                lookup[job_id]["matched_skills"]
             )
         )
 
@@ -258,22 +269,24 @@ def main():
         )
 
         # Calculate ranking metrics.
-        metric_records.append({
-            "user_id": user_id,
-            "candidate_count": len(group),
-            "relevant_candidates": total_relevant,
-            f"precision_at_{K}": precision_at_k(
-                relevance, K
-            ),
-            f"recall_at_{K}": recall_at_k(
-                relevance, total_relevant, K
-            ),
-            f"ndcg_at_{K}": ndcg_at_k(
-                relevance, K
-            ),
-            "mrr": reciprocal_rank(relevance),
-            "label_type": "provisional_assistant",
-        })
+        metric_records.append(
+            {
+                "user_id": user_id,
+                "candidate_count": len(group),
+                "relevant_candidates": total_relevant,
+                f"precision_at_{K}": precision_at_k(
+                    relevance, K
+                ),
+                f"recall_at_{K}": recall_at_k(
+                    relevance, total_relevant, K
+                ),
+                f"ndcg_at_{K}": ndcg_at_k(
+                    relevance, K
+                ),
+                "mrr": reciprocal_rank(relevance),
+                "label_type": "provisional_assistant",
+            }
+        )
 
         print(
             f"Evaluated {user_id}: "
@@ -287,23 +300,27 @@ def main():
 
     per_profile = pd.DataFrame(metric_records)
 
-    summary = pd.DataFrame([{
-        "profiles_evaluated": len(per_profile),
-        "candidate_count": int(
-            per_profile["candidate_count"].sum()
-        ),
-        f"mean_precision_at_{K}": per_profile[
-            f"precision_at_{K}"
-        ].mean(),
-        f"mean_recall_at_{K}": per_profile[
-            f"recall_at_{K}"
-        ].mean(),
-        f"mean_ndcg_at_{K}": per_profile[
-            f"ndcg_at_{K}"
-        ].mean(),
-        "mean_mrr": per_profile["mrr"].mean(),
-        "label_type": "provisional_assistant",
-    }])
+    summary = pd.DataFrame(
+        [
+            {
+                "profiles_evaluated": len(per_profile),
+                "candidate_count": int(
+                    per_profile["candidate_count"].sum()
+                ),
+                f"mean_precision_at_{K}": per_profile[
+                    f"precision_at_{K}"
+                ].mean(),
+                f"mean_recall_at_{K}": per_profile[
+                    f"recall_at_{K}"
+                ].mean(),
+                f"mean_ndcg_at_{K}": per_profile[
+                    f"ndcg_at_{K}"
+                ].mean(),
+                "mean_mrr": per_profile["mrr"].mean(),
+                "label_type": "provisional_assistant",
+            }
+        ]
+    )
 
     # --------------------------------------------------
     # 6. Save results without overwriting existing files
@@ -317,7 +334,11 @@ def main():
         (output_files[1], summary),
         (output_files[2], per_profile),
     ]:
-        with output_file.open("x", encoding="utf-8", newline="") as file:
+        with output_file.open(
+            "x",
+            encoding="utf-8",
+            newline="",
+        ) as file:
             records.to_csv(file, index=False)
 
     # --------------------------------------------------

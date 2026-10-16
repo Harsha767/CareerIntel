@@ -1,11 +1,10 @@
 """CareerIntel: browser-based human relevance review."""
 
-from pathlib import Path
 import ast
+from pathlib import Path
 
 import pandas as pd
 import streamlit as st
-
 
 # =========================================================
 # PATHS
@@ -271,10 +270,9 @@ st.write(
 try:
     df = load_existing_reviews()
 
-except Exception as exc:
+except (OSError, ValueError, KeyError, pd.errors.ParserError) as exc:
     st.error(f"Unable to load evaluation data: {exc}")
     st.stop()
-
 
 # Normalize relevance labels for display.
 df["relevant"] = (
@@ -590,10 +588,10 @@ if st.button(
 
         st.rerun()
 
-    except Exception as exc:
+    except (OSError, ValueError, KeyError, TypeError) as exc:
         st.error(
-            f"Unable to save review: {exc}"
-        )
+           f"Unable to save review: {exc}"
+    )
 
 
 # =========================================================

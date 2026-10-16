@@ -5,12 +5,11 @@ It does NOT generate relevance labels or claim ground truth.
 Existing evaluation files are never overwritten.
 """
 
-from pathlib import Path
 import ast
 import re
+from pathlib import Path
 
 import pandas as pd
-
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -37,12 +36,21 @@ PROFILES = {
             "statistics, data analysis, pandas, and data visualization."
         ),
         "skills": {
-            "python", "sql", "machine learning", "statistics",
-            "data analysis", "pandas", "data visualization",
+            "python",
+            "sql",
+            "machine learning",
+            "statistics",
+            "data analysis",
+            "pandas",
+            "data visualization",
         },
         "title_terms": [
-            "data scientist", "data science", "statistician",
-            "research scientist", "data analyst", "analytics",
+            "data scientist",
+            "data science",
+            "statistician",
+            "research scientist",
+            "data analyst",
+            "analytics",
         ],
     },
     "DA001": {
@@ -51,12 +59,21 @@ PROFILES = {
             "reporting, dashboards, Excel, and data visualization."
         ),
         "skills": {
-            "sql", "python", "data analysis", "reporting",
-            "dashboards", "excel", "data visualization",
+            "sql",
+            "python",
+            "data analysis",
+            "reporting",
+            "dashboards",
+            "excel",
+            "data visualization",
         },
         "title_terms": [
-            "data analyst", "business intelligence", "business analyst",
-            "reporting analyst", "analytics", "bi analyst",
+            "data analyst",
+            "business intelligence",
+            "business analyst",
+            "reporting analyst",
+            "analytics",
+            "bi analyst",
         ],
     },
     "ML001": {
@@ -65,19 +82,27 @@ PROFILES = {
             "learning, deep learning, model evaluation, and deployment."
         ),
         "skills": {
-            "python", "machine learning", "deep learning",
-            "model evaluation", "model deployment",
+            "python",
+            "machine learning",
+            "deep learning",
+            "model evaluation",
+            "model deployment",
         },
         "title_terms": [
-            "machine learning", "ml engineer", "ai engineer",
-            "artificial intelligence", "deep learning",
-            "computer vision", "nlp engineer",
+            "machine learning",
+            "ml engineer",
+            "ai engineer",
+            "artificial intelligence",
+            "deep learning",
+            "computer vision",
+            "nlp engineer",
         ],
     },
 }
 
 
 def clean(value):
+    """Normalize a value to a stripped string."""
     if value is None or pd.isna(value):
         return ""
     return re.sub(r"\s+", " ", str(value)).strip()
@@ -86,17 +111,20 @@ def clean(value):
 def parse_skills(value):
     """Parse list-like or comma/semicolon/pipe-separated skill values."""
     text = clean(value)
+
     if not text:
         return set()
 
     try:
         parsed = ast.literal_eval(text)
+
         if isinstance(parsed, (list, tuple, set)):
             items = parsed
         elif isinstance(parsed, str):
             items = [parsed]
         else:
             items = re.split(r"[,;|]", text)
+
     except (ValueError, SyntaxError):
         items = re.split(r"[,;|]", text)
 
@@ -108,9 +136,11 @@ def parse_skills(value):
     }
 
     result = set()
+
     for item in items:
         skill = clean(item).casefold()
         skill = aliases.get(skill, skill)
+
         if skill:
             result.add(skill)
 
@@ -118,6 +148,7 @@ def parse_skills(value):
 
 
 def main():
+    """Build candidate pools without assigning relevance labels."""
     if not JOB_FILE.exists():
         raise FileNotFoundError(f"Job dataset not found: {JOB_FILE}")
 
@@ -134,8 +165,11 @@ def main():
         raise ValueError("Source data must contain job_id and title.")
 
     for column in [
-        "company_name", "job_text", "normalized_skills",
-        "parsed_skills", "skills_required",
+        "company_name",
+        "job_text",
+        "normalized_skills",
+        "parsed_skills",
+        "skills_required",
     ]:
         if column not in jobs.columns:
             jobs[column] = ""
@@ -166,12 +200,17 @@ def main():
 
         scored = jobs.copy()
 
+        # Bind the current profile's values to each lambda.
         scored["title_match_count"] = scored["title_lower"].map(
-            lambda title: sum(term in title for term in title_terms)
+            lambda title, terms=title_terms: sum(
+                term in title for term in terms
+            )
         )
 
         scored["skill_overlap_count"] = scored["all_skills"].map(
-            lambda skills: len(skill_set.intersection(skills))
+            lambda skills, current_skills=skill_set: len(
+                current_skills.intersection(skills)
+            )
         )
 
         # Selection score only; this is NOT a relevance label.
@@ -180,19 +219,26 @@ def main():
             + scored["skill_overlap_count"]
         )
 
-        # Target-role candidates are chosen from the strongest title/skill
-        # matches, with a deterministic tie-break.
-        target_pool = scored[scored["selection_score"] > 0].sort_values(
-            ["selection_score", "title_match_count", "skill_overlap_count"],
+        # Select the strongest title/skill matches as target candidates.
+        target_pool = scored[
+            scored["selection_score"] > 0
+        ].sort_values(
+            [
+                "selection_score",
+                "title_match_count",
+                "skill_overlap_count",
+            ],
             ascending=False,
         )
 
         targets = target_pool.head(TARGET_COUNT).copy()
 
-        # Distractors come from jobs with no title-term match and minimal
-        # skill overlap where possible. Selection does not imply irrelevance.
+        # Distractors are selected by weak title matches and skill overlap.
+        # Their selection does not imply that they are irrelevant.
         used_ids = set(targets["job_id"])
-        remaining = scored[~scored["job_id"].isin(used_ids)].copy()
+        remaining = scored[
+            ~scored["job_id"].isin(used_ids)
+        ].copy()
 
         low_match = remaining[
             (remaining["title_match_count"] == 0)
@@ -219,20 +265,22 @@ def main():
         ]
 
         for row, stratum in selected:
-            records.append({
-                "user_id": profile_id,
-                "profile_text": profile["profile"],
-                "profile_skills": ", ".join(sorted(skill_set)),
-                "job_id": row["job_id"],
-                "job_title": row["title"],
-                "company_name": clean(row["company_name"]),
-                "job_text": clean(row["job_text"]),
-                "job_skills": clean(row["normalized_skills"]),
-                "candidate_stratum": stratum,
-                "selection_score": int(row["selection_score"]),
-                "relevant": "",
-                "review_notes": "",
-            })
+            records.append(
+                {
+                    "user_id": profile_id,
+                    "profile_text": profile["profile"],
+                    "profile_skills": ", ".join(sorted(skill_set)),
+                    "job_id": row["job_id"],
+                    "job_title": row["title"],
+                    "company_name": clean(row["company_name"]),
+                    "job_text": clean(row["job_text"]),
+                    "job_skills": clean(row["normalized_skills"]),
+                    "candidate_stratum": stratum,
+                    "selection_score": int(row["selection_score"]),
+                    "relevant": "",
+                    "review_notes": "",
+                }
+            )
 
         print(
             f"{profile_id}: {len(targets)} target-role candidates; "
@@ -253,7 +301,10 @@ def main():
     print(f"Source jobs available: {len(jobs)}")
     print(f"Candidate rows: {len(evaluation)}")
     print(f"Profiles: {evaluation['user_id'].nunique()}")
-    print(f"Relevance labels populated: {evaluation['relevant'].ne('').sum()}")
+    print(
+        "Relevance labels populated: "
+        f"{evaluation['relevant'].ne('').sum()}"
+    )
     print(f"Saved to: {OUTPUT_FILE.relative_to(ROOT)}")
     print("\nCandidate stratum counts:")
     print(

@@ -6,12 +6,12 @@ Compares candidate skills against the skills required for a target job.
 from __future__ import annotations
 
 import ast
+import json
 import re
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
-
 
 # =========================================================
 # CONFIGURATION
@@ -35,9 +35,9 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 # 1. SKILL NORMALIZATION
 # =========================================================
 
+
 def normalize_skill(value: Any) -> str:
     """Normalize skill names for consistent comparison."""
-
     if value is None:
         return ""
 
@@ -68,9 +68,9 @@ def normalize_skill(value: Any) -> str:
 # 2. PARSE SKILLS
 # =========================================================
 
+
 def parse_skills(value: Any) -> set[str]:
     """Parse lists or delimited skill strings."""
-
     if value is None:
         return set()
 
@@ -92,10 +92,8 @@ def parse_skills(value: Any) -> set[str]:
 
     if isinstance(parsed, (list, tuple, set)):
         items = parsed
-
     elif isinstance(parsed, str):
         items = [parsed]
-
     else:
         items = re.split(r"[,;|]", text)
 
@@ -110,9 +108,9 @@ def parse_skills(value: Any) -> set[str]:
 # 3. LOAD JOB DATA
 # =========================================================
 
+
 def load_jobs() -> pd.DataFrame:
     """Load the processed job dataset."""
-
     if not DATA_FILE.exists():
         raise FileNotFoundError(
             f"Job dataset not found: {DATA_FILE}"
@@ -124,10 +122,8 @@ def load_jobs() -> pd.DataFrame:
     )
 
     if "title" not in jobs.columns:
-
         if "normalized_title" in jobs.columns:
             jobs["title"] = jobs["normalized_title"]
-
         else:
             raise ValueError(
                 "The dataset needs a title or normalized_title column."
@@ -140,7 +136,6 @@ def load_jobs() -> pd.DataFrame:
         "parsed_skills",
         "skills_required",
     ]:
-
         if column not in jobs.columns:
             jobs[column] = ""
 
@@ -151,9 +146,9 @@ def load_jobs() -> pd.DataFrame:
 # 4. EXTRACT JOB REQUIREMENTS
 # =========================================================
 
+
 def get_required_skills(job: pd.Series) -> set[str]:
     """Collect skills from all available job skill columns."""
-
     required = set()
 
     for column in [
@@ -161,7 +156,6 @@ def get_required_skills(job: pd.Series) -> set[str]:
         "parsed_skills",
         "normalized_skills",
     ]:
-
         required.update(
             parse_skills(job.get(column, ""))
         )
@@ -173,18 +167,17 @@ def get_required_skills(job: pd.Series) -> set[str]:
 # 5. ANALYZE A CANDIDATE'S SKILL GAPS
 # =========================================================
 
+
 def analyze_skill_gap(
     candidate_skills: list[str],
     job_title: str,
     company_name: str | None = None,
 ) -> dict[str, Any]:
-    """
-    Compare candidate skills against a target job.
+    """Compare candidate skills against a target job.
 
     If company_name is provided, both job title and company
     must match the selected job.
     """
-
     jobs = load_jobs()
 
     # Normalize candidate skills.
@@ -206,20 +199,17 @@ def analyze_skill_gap(
     matches = jobs[title_mask].copy()
 
     # Optionally identify a specific company.
-    if company_name:
+    if company_name and "company_name" in matches.columns:
+        company_mask = (
+            matches["company_name"]
+            .fillna("")
+            .astype(str)
+            .str.strip()
+            .str.casefold()
+            == company_name.strip().casefold()
+        )
 
-        if "company_name" in matches.columns:
-
-            company_mask = (
-                matches["company_name"]
-                .fillna("")
-                .astype(str)
-                .str.strip()
-                .str.casefold()
-                == company_name.strip().casefold()
-            )
-
-            matches = matches[company_mask]
+        matches = matches[company_mask]
 
     if matches.empty:
         raise ValueError(
@@ -266,20 +256,17 @@ def analyze_skill_gap(
 # 6. SAVE SKILL-GAP RESULTS
 # =========================================================
 
+
 def save_skill_gap_report(
     report: dict[str, Any],
 ) -> Path:
     """Save a skill-gap report as JSON."""
-
-    import json
-
     output_file = OUTPUT_DIR / "skill_gap_report.json"
 
     with output_file.open(
         "w",
         encoding="utf-8",
     ) as file:
-
         json.dump(
             report,
             file,
@@ -294,8 +281,8 @@ def save_skill_gap_report(
 # 7. RUN THE MODULE
 # =========================================================
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     print("=" * 60)
     print("CAREERINTEL | SKILL GAP ANALYSIS")
     print("=" * 60)

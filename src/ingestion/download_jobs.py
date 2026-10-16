@@ -1,8 +1,7 @@
 from pathlib import Path
 
-from datasets import load_dataset
 import pandas as pd
-
+from datasets import load_dataset
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RAW_DATA_DIR = PROJECT_ROOT / "data" / "raw" / "jobs"

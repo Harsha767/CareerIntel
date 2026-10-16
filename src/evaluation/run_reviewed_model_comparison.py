@@ -16,16 +16,14 @@ from pathlib import Path
 import pandas as pd
 
 from careerintel.models.baselines import TfidfRanker
-from careerintel.models.semantic_ranker import SemanticRanker
 from careerintel.models.hybrid_ranker import HybridRanker
-
+from careerintel.models.semantic_ranker import SemanticRanker
 from evaluation.evaluate_recommendations import (
+    ndcg_at_k,
     precision_at_k,
     recall_at_k,
-    ndcg_at_k,
     reciprocal_rank,
 )
-
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -42,12 +40,14 @@ K = 10
 
 
 def clean_text(value):
+    """Convert a value to stripped text, handling missing values."""
     if pd.isna(value):
         return ""
     return str(value).strip()
 
 
 def main():
+    """Run the model comparison and save evaluation results."""
     if not INPUT_FILE.exists():
         raise FileNotFoundError(f"Dataset not found: {INPUT_FILE}")
 
@@ -76,7 +76,8 @@ def main():
         raise ValueError("Duplicate user/job pairs found.")
 
     df["reviewer_relevant"] = pd.to_numeric(
-        df["reviewer_relevant"], errors="coerce"
+        df["reviewer_relevant"],
+        errors="coerce",
     )
 
     # Exclude unreviewed or invalid labels.
@@ -120,10 +121,6 @@ def main():
         if not profile_text:
             raise ValueError(f"Empty profile text for user {user_id}")
 
-        profile_skills = clean_text(
-            group["profile_skills"].iloc[0]
-        )
-
         job_texts = (
             group["job_title"].map(clean_text)
             + ". "
@@ -147,20 +144,21 @@ def main():
                 jobs = []
 
                 for _, row in group.iterrows():
-                    jobs.append({
-                        "job_id": str(row["job_id"]),
-                        "title": clean_text(row["job_title"]),
-                        "job_text": clean_text(row["job_text"]),
-                        "normalized_skills": clean_text(
-                            row["job_skills"]
-                        ),
-                    })
+                    jobs.append(
+                        {
+                            "job_id": str(row["job_id"]),
+                            "title": clean_text(row["job_title"]),
+                            "job_text": clean_text(row["job_text"]),
+                            "normalized_skills": clean_text(
+                                row["job_skills"]
+                            ),
+                        }
+                    )
 
                 ranker.fit(jobs)
 
                 ranking = ranker.rank(
-                    profile_text=profile_text,
-                    profile_skills=profile_skills.split(","),
+                    profile_text,
                     top_k=len(group),
                 )
 
@@ -173,8 +171,7 @@ def main():
                 ranker.fit(job_ids, job_texts)
 
                 ranking = ranker.rank(
-                    profile_text if model_name == "Semantic"
-                    else profile_text,
+                    profile_text,
                     top_k=len(group),
                 )
 
@@ -204,41 +201,50 @@ def main():
                 group["reviewer_relevant"].sum()
             )
 
-            profile_metrics.append({
-                "user_id": user_id,
-                "model": model_name,
-                "candidate_count": len(group),
-                "relevant_candidates": total_relevant,
-                f"precision_at_{K}": precision_at_k(
-                    ranked_relevance, K
-                ),
-                f"recall_at_{K}": recall_at_k(
-                    ranked_relevance, total_relevant, K
-                ),
-                f"ndcg_at_{K}": ndcg_at_k(
-                    ranked_relevance, K
-                ),
-                "mrr": reciprocal_rank(ranked_relevance),
-                "label_type": "preliminary_ai_assisted_review",
-            })
+            profile_metrics.append(
+                {
+                    "user_id": user_id,
+                    "model": model_name,
+                    "candidate_count": len(group),
+                    "relevant_candidates": total_relevant,
+                    f"precision_at_{K}": precision_at_k(
+                        ranked_relevance,
+                        K,
+                    ),
+                    f"recall_at_{K}": recall_at_k(
+                        ranked_relevance,
+                        total_relevant,
+                        K,
+                    ),
+                    f"ndcg_at_{K}": ndcg_at_k(
+                        ranked_relevance,
+                        K,
+                    ),
+                    "mrr": reciprocal_rank(ranked_relevance),
+                    "label_type": "preliminary_ai_assisted_review",
+                }
+            )
 
             for rank, (job_id, score) in enumerate(
-                ranked_jobs, start=1
+                ranked_jobs,
+                start=1,
             ):
                 row = group[group["job_id"] == job_id].iloc[0]
 
-                ranked_records.append({
-                    "user_id": user_id,
-                    "model": model_name,
-                    "rank": rank,
-                    "job_id": job_id,
-                    "job_title": row["job_title"],
-                    "score": score,
-                    "reviewer_relevant": int(
-                        relevance_by_job[job_id]
-                    ),
-                    "label_type": "preliminary_ai_assisted_review",
-                })
+                ranked_records.append(
+                    {
+                        "user_id": user_id,
+                        "model": model_name,
+                        "rank": rank,
+                        "job_id": job_id,
+                        "job_title": row["job_title"],
+                        "score": score,
+                        "reviewer_relevant": int(
+                            relevance_by_job[job_id]
+                        ),
+                        "label_type": "preliminary_ai_assisted_review",
+                    }
+                )
 
         print(
             f"Evaluated profile {user_id}: "
@@ -260,9 +266,17 @@ def main():
         .reset_index()
     )
 
+    profiles_evaluated = (
+        per_profile.groupby("model")["user_id"]
+        .nunique()
+        .reindex(summary["model"])
+        .to_numpy()
+    )
+
     summary.insert(
-        1, "profiles_evaluated",
-        per_profile.groupby("model")["user_id"].nunique().values
+        1,
+        "profiles_evaluated",
+        profiles_evaluated,
     )
 
     summary["candidate_count"] = len(df)

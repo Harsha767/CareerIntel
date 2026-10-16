@@ -9,12 +9,11 @@ matching job records. This is descriptive analysis, not a
 claim that learning a skill guarantees employment.
 """
 
-from pathlib import Path
 import ast
 import re
+from pathlib import Path
 
 import pandas as pd
-
 
 # =========================================================
 # CONFIGURATION

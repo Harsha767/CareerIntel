@@ -11,16 +11,14 @@ Features:
 7. Recommendation validation and CSV export.
 """
 
-from pathlib import Path
 import ast
 import re
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
-
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-
 
 # ============================================================
 # 1. PROJECT CONFIGURATION

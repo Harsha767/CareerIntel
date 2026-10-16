@@ -2,7 +2,6 @@ from pathlib import Path
 
 import pandas as pd
 
-
 # ============================================================
 # CAREERINTEL - KNOWLEDGE GRAPH DATASET BUILDER
 # ============================================================
@@ -129,8 +128,8 @@ def clean_code(value) -> str:
 
             if right.isdigit():
                 text = f"{left}.{right.zfill(2)}"
-    except Exception:
-        pass
+    except (ValueError, TypeError, AttributeError):
+      return text
 
     return text
 

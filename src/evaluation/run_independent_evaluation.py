@@ -10,12 +10,11 @@ Important:
 - Preliminary review labels are not verified ground truth.
 """
 
-from datetime import datetime
-from pathlib import Path
 import math
+from datetime import datetime, timezone
+from pathlib import Path
 
 import pandas as pd
-
 
 # ---------------------------------------------------------
 # CONFIGURATION
@@ -423,7 +422,7 @@ def evaluate_model(model_name, ranked, review):
 def create_output_directory():
     """Create a new output directory without overwriting previous results."""
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
 
     output_dir = OUTPUT_ROOT / f"run_{timestamp}"
 

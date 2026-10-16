@@ -3,7 +3,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-
 # ============================================================
 # CAREERINTEL — RANKING DIAGNOSTICS
 # ============================================================
@@ -209,8 +208,8 @@ def calculate_metrics(
         f"recall_at_{k}": float(recall),
         f"ndcg_at_{k}": float(ndcg),
         f"mrr_at_{k}": float(mrr),
-        "candidate_count": int(len(relevance)),
-        "evaluated_at_k": int(len(top_k)),
+        "candidate_count": len(relevance),
+        "evaluated_at_k": len(top_k),
         "relevant_in_top_k": relevant_top_k,
         "total_relevant_reviewed": int(total_relevant),
     }

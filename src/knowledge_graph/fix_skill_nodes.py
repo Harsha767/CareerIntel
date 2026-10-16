@@ -2,7 +2,6 @@ from pathlib import Path
 
 import pandas as pd
 
-
 # ============================================================
 # CAREERINTEL — FIX O*NET SKILL NODES
 # ============================================================
@@ -123,7 +122,7 @@ def main():
         ],
     )
 
-    scale_name_col = find_column(
+    find_column(
         essential,
         [
             "Scale Name",

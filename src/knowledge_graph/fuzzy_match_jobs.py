@@ -1,8 +1,7 @@
 from pathlib import Path
 
 import pandas as pd
-from rapidfuzz import process, fuzz
-
+from rapidfuzz import fuzz, process
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 

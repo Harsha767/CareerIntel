@@ -1,6 +1,6 @@
 """CareerIntel: Semantic job ranking using transformer embeddings."""
 
-from typing import List, Sequence, Tuple
+from collections.abc import Sequence
 
 import numpy as np
 from sentence_transformers import SentenceTransformer
@@ -15,7 +15,7 @@ class SemanticRanker:
     ):
         self.model_name = model_name
         self.model = SentenceTransformer(model_name)
-        self.ids: List = []
+        self.ids: list = []
         self.embeddings = None
 
     def fit(
@@ -59,7 +59,7 @@ class SemanticRanker:
         self,
         query: str,
         top_k: int = 10,
-    ) -> List[Tuple]:
+    ) -> list[tuple]:
         """Return job IDs and cosine similarity scores, highest first."""
 
         if self.embeddings is None:
