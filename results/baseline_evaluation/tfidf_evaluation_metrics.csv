@@ -1,0 +1,2 @@
+profiles_evaluated,candidate_count,mean_precision_at_10,mean_recall_at_10,mean_ndcg_at_10,mean_mrr,label_type
+3,178,0.6333333333333333,0.336783988957902,0.8615791323797054,0.8333333333333334,provisional_assistant

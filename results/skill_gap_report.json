@@ -1,0 +1,39 @@
+{
+    "job_title": "Implementation Manager",
+    "company_name": "North American Bancard",
+    "candidate_skills": [
+        "data analysis",
+        "data visualization",
+        "machine learning",
+        "pandas",
+        "python",
+        "sql",
+        "statistics"
+    ],
+    "required_skills": [
+        "compliance review",
+        "customer communication",
+        "erp integration",
+        "isv integration",
+        "merchant onboarding",
+        "payment processing",
+        "project management",
+        "remote collaboration"
+    ],
+    "possessed_skills": [],
+    "missing_skills": [
+        "compliance review",
+        "customer communication",
+        "erp integration",
+        "isv integration",
+        "merchant onboarding",
+        "payment processing",
+        "project management",
+        "remote collaboration"
+    ],
+    "matched_skill_count": 0,
+    "required_skill_count": 8,
+    "missing_skill_count": 8,
+    "skill_coverage": 0.0,
+    "skill_gap_percentage": 100.0
+}

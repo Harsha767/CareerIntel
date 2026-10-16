@@ -1,0 +1,15 @@
+pandas
+numpy
+scipy
+scikit-learn
+matplotlib
+plotly
+jupyter
+sentence-transformers
+rank-bm25
+spacy
+mlflow
+networkx
+pyyaml
+pytest
+ruff

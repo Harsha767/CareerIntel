@@ -1,0 +1,50 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+data/raw/*
+data/interim/*
+data/processed/*
+!data/*/.gitkeep
+mlruns/
+*.pyc
+.env
+
+# macOS
+.DS_Store
+
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Virtual environments and Python cache
+.venv/
+__pycache__/
+*.py[cod]
+
+# Large external datasets
+data/external/onet/
+
+# Generated data and model artifacts
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+*.npy
+*.pt
+*.pth
+*.joblib
+*.pkl
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Local backup files
+backups/
+src/recommendation/*.bak
+src/recommendation/*_backup.py

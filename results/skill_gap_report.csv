@@ -1,0 +1,12 @@
+title,company_name,required_skill_count,matched_skills,missing_skills,matched_skill_count,job_skill_coverage,profile_skill_coverage
+Data Scientist,PHMG Careers,8,"data visualization, pandas, python, sql","predictive modeling, scikit‑learn, stakeholder communication, statistical analysis",4,0.5,0.5714285714285714
+Lead Marketing Data Scientist,One Park Financial,8,"data visualization, python, sql","aws, geo‑lift experiments, incrementality testing, mmm, snowflake",3,0.375,0.42857142857142855
+Lead Marketing Data Scientist,One Park Financial,8,"data visualization, python, sql","cloud data platforms, experiment design, incrementality testing, marketing mix modeling, statistical modeling",3,0.375,0.42857142857142855
+Lead Marketing Data Scientist,One Park Financial,8,"python, sql","causal inference, cloud data platform, digital media analytics, incrementality testing, marketing mix modeling, visualization",2,0.25,0.2857142857142857
+"Data Scientist, Modeler",The Wonderful Company,8,"python, sql","ai/llm, bigquery, experimentation, forecasting, gcp, ltv modeling",2,0.25,0.2857142857142857
+"Data Scientist, Modeler",The Wonderful Company,8,"python, sql","a/b testing, executive communication, forecasting, gcp, llm apis, ltv modeling",2,0.25,0.2857142857142857
+Data Scientist,MV Transportation,8,"machine learning, python","agentic ai, azure, fabric, operations research, optimization, simulation",2,0.25,0.2857142857142857
+Sr Associate Data Scientist,"JMP Statistical Discovery,",6,python,"3d vision, computer vision, deep learning, model evaluation, transformers",1,0.16666666666666666,0.14285714285714285
+"Data Scientist, Modeler",The Wonderful Company,8,python,"a/b testing, executive storytelling, forecasting, hybrid collaboration, llm integration, ltv modeling, sql/bigquery",1,0.125,0.14285714285714285
+Data Scientist (Computer Vision),"JMP Statistical Discovery,",8,python,"3d vision, collaboration, computer vision, data pipeline, deep learning, model evaluation, transformer models",1,0.125,0.14285714285714285
+Lead Data Scientist,Lennar,8,,"ai agents, data pipelines, experiment design, machine vision, model deployment, observability, production engineering, stakeholder communication",0,0.0,0.0

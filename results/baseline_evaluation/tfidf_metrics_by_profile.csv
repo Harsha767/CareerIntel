@@ -1,0 +1,4 @@
+user_id,candidate_count,relevant_candidates,precision_at_10,recall_at_10,ndcg_at_10,mrr,label_type
+DA001,60,23,0.9,0.391304347826087,1.0,1.0,provisional_assistant
+DS001,60,21,0.6,0.2857142857142857,0.8449907638005174,1.0,provisional_assistant
+ML001,58,12,0.4,0.3333333333333333,0.7397466333385988,0.5,provisional_assistant

@@ -1,0 +1,13 @@
+seed: 42
+data:
+  raw_dir: data/raw
+  processed_dir: data/processed
+eval:
+  k_values: [5, 10, 20]
+  bootstrap_samples: 1000
+models:
+  tfidf:
+    ngram_range: [1, 2]
+    min_df: 2
+  embedding:
+    model_name: sentence-transformers/all-MiniLM-L6-v2

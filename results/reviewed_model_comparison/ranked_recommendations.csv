@@ -1,0 +1,541 @@
+user_id,model,rank,job_id,job_title,score,reviewer_relevant,label_type
+DA001,TF-IDF,1,JOB_002077,Junior Data Analyst,0.2850656929594525,1,preliminary_ai_assisted_review
+DA001,TF-IDF,2,JOB_002357,Sr. MassHealth Encounter Data Analyst,0.23297378762342677,1,preliminary_ai_assisted_review
+DA001,TF-IDF,3,JOB_008576,Data Analyst Intern,0.21881547785425207,1,preliminary_ai_assisted_review
+DA001,TF-IDF,4,JOB_002720,Data Analyst,0.21537034916280667,1,preliminary_ai_assisted_review
+DA001,TF-IDF,5,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",0.21308870309347663,1,preliminary_ai_assisted_review
+DA001,TF-IDF,6,JOB_003941,Business Analyst - Data,0.20017119958772164,1,preliminary_ai_assisted_review
+DA001,TF-IDF,7,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",0.1941053781068301,1,preliminary_ai_assisted_review
+DA001,TF-IDF,8,JOB_003127,BI Analyst,0.18765783766988434,1,preliminary_ai_assisted_review
+DA001,TF-IDF,9,JOB_008527,"Senior Analyst, Business Intelligence",0.1860551810377632,1,preliminary_ai_assisted_review
+DA001,TF-IDF,10,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,0.18327865539611513,1,preliminary_ai_assisted_review
+DA001,TF-IDF,11,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,0.18255578097743264,1,preliminary_ai_assisted_review
+DA001,TF-IDF,12,JOB_007612,Integrated Analytics and Insights Expert,0.1710148326771686,1,preliminary_ai_assisted_review
+DA001,TF-IDF,13,JOB_009853,Financial Risk Analytics (FRA) Analyst,0.15047077745998166,1,preliminary_ai_assisted_review
+DA001,TF-IDF,14,JOB_009648,"Associate, UK Power Analytics",0.1489665608690276,1,preliminary_ai_assisted_review
+DA001,TF-IDF,15,JOB_005106,Analytics Engineer,0.1360603063064399,1,preliminary_ai_assisted_review
+DA001,TF-IDF,16,JOB_006127,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.13218089455789542,1,preliminary_ai_assisted_review
+DA001,TF-IDF,17,JOB_001022,Business Intelligence Analyst I,0.13122210955510868,1,preliminary_ai_assisted_review
+DA001,TF-IDF,18,JOB_002296,Account Manager - Business Intelligence,0.12469627712955604,1,preliminary_ai_assisted_review
+DA001,TF-IDF,19,JOB_006297,Sr. Business Intelligence Analyst,0.12128715066002567,1,preliminary_ai_assisted_review
+DA001,TF-IDF,20,JOB_008929,Data Science and Business Intelligence Professional III,0.11552333002577307,1,preliminary_ai_assisted_review
+DA001,TF-IDF,21,JOB_001769,Business Analyst - Middle Office Performance Measurement,0.10377045612856593,1,preliminary_ai_assisted_review
+DA001,TF-IDF,22,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",0.09684932661727882,1,preliminary_ai_assisted_review
+DA001,TF-IDF,23,JOB_001520,Senior Technical Business Analyst,0.09365150016839018,1,preliminary_ai_assisted_review
+DA001,TF-IDF,24,JOB_004494,Analytics Engineer,0.0921405118587491,1,preliminary_ai_assisted_review
+DA001,TF-IDF,25,JOB_006123,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.08859736151338857,1,preliminary_ai_assisted_review
+DA001,TF-IDF,26,JOB_000851,Business Analyst III,0.06900858957180242,1,preliminary_ai_assisted_review
+DA001,TF-IDF,27,JOB_006125,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.059836746792301415,1,preliminary_ai_assisted_review
+DA001,TF-IDF,28,JOB_002208,Senior Advanced Analytics Application Developer,0.05393552361698641,1,preliminary_ai_assisted_review
+DA001,TF-IDF,29,JOB_001765,"Business Analyst – Offers Platform, Assistant Vice President",0.04616619722599824,1,preliminary_ai_assisted_review
+DA001,TF-IDF,30,JOB_000513,Data Services Specialist (Production Associate),0.04514095064126765,0,preliminary_ai_assisted_review
+DA001,TF-IDF,31,JOB_006530,Business Analyst Capital Market,0.04449791611069566,1,preliminary_ai_assisted_review
+DA001,TF-IDF,32,JOB_000521,Senior Customer Advocate (Project based),0.024893349831847492,0,preliminary_ai_assisted_review
+DA001,TF-IDF,33,JOB_003377,Cashier Part Time AM/PM- Four Seasons Orlando,0.011300306308459494,1,preliminary_ai_assisted_review
+DA001,TF-IDF,34,JOB_006597,Полевой эксперт специализированных культур по работе с ключевыми клиентами,0.011018741825017248,0,preliminary_ai_assisted_review
+DA001,TF-IDF,35,JOB_004154,Tecnico Ambientale - Campania,0.008565141245693042,1,preliminary_ai_assisted_review
+DA001,TF-IDF,36,JOB_006918,Utvecklare inom Dynamics 365 Business Central,0.006930807205614962,0,preliminary_ai_assisted_review
+DA001,TF-IDF,37,JOB_006915,Assistant Nurse Manager / WOC Registered Nurse / RN,0.006721180285835466,0,preliminary_ai_assisted_review
+DA001,TF-IDF,38,JOB_007852,Multimedia Journalist (MMJ),0.0051800797731422175,1,preliminary_ai_assisted_review
+DA001,TF-IDF,39,JOB_000034,Produce Clerk Part Time Day,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,40,JOB_001156,Mental Health Professionals,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,41,JOB_001869,Senior Parts Associate,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,42,JOB_003445,Team Member - Chichester (N118926),0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,43,JOB_003830,Maintenance Technician - The Winchester,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,44,JOB_003948,EAP Counsellor,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,45,JOB_003961,VIP Specialist,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,46,JOB_004098,Customer Service Representative,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,47,JOB_004158,Wireless Retail Sales Associate - W2084,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,48,JOB_004801,Security Shift Supervisor - University Campus,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,49,JOB_005349,Catering Assistant - Caterlink,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,50,JOB_006064,Model-Based Systems Engineering Lead,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,51,JOB_006414,Security Officer - Mall Vehicle Patrol,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,52,JOB_006492,Automotive Product Specialist,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,53,JOB_006559,Юрисконсульт,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,54,JOB_006723,Employé commercial (F/H),0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,55,JOB_006897,Environmental Service Worker,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,56,JOB_007287,HR Manager,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,57,JOB_007719,Rental Sales Agent (Firenze),0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,58,JOB_009056,Practice Manager 2,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,59,JOB_009536,Coiffeur / Coiffeuse,0.0,0,preliminary_ai_assisted_review
+DA001,TF-IDF,60,JOB_009873,Clinical Service Manager (m/w/d),0.0,0,preliminary_ai_assisted_review
+DA001,Semantic,1,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",0.7137236595153809,1,preliminary_ai_assisted_review
+DA001,Semantic,2,JOB_007612,Integrated Analytics and Insights Expert,0.6632934808731079,1,preliminary_ai_assisted_review
+DA001,Semantic,3,JOB_003941,Business Analyst - Data,0.6451629400253296,1,preliminary_ai_assisted_review
+DA001,Semantic,4,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,0.6363060474395752,1,preliminary_ai_assisted_review
+DA001,Semantic,5,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",0.635827362537384,1,preliminary_ai_assisted_review
+DA001,Semantic,6,JOB_009853,Financial Risk Analytics (FRA) Analyst,0.6217666864395142,1,preliminary_ai_assisted_review
+DA001,Semantic,7,JOB_001520,Senior Technical Business Analyst,0.6213501691818237,1,preliminary_ai_assisted_review
+DA001,Semantic,8,JOB_008576,Data Analyst Intern,0.594340443611145,1,preliminary_ai_assisted_review
+DA001,Semantic,9,JOB_009648,"Associate, UK Power Analytics",0.588259220123291,1,preliminary_ai_assisted_review
+DA001,Semantic,10,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,0.5790797472000122,1,preliminary_ai_assisted_review
+DA001,Semantic,11,JOB_005106,Analytics Engineer,0.5733928680419922,1,preliminary_ai_assisted_review
+DA001,Semantic,12,JOB_002077,Junior Data Analyst,0.5710588097572327,1,preliminary_ai_assisted_review
+DA001,Semantic,13,JOB_001022,Business Intelligence Analyst I,0.5666952729225159,1,preliminary_ai_assisted_review
+DA001,Semantic,14,JOB_006123,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.5617711544036865,1,preliminary_ai_assisted_review
+DA001,Semantic,15,JOB_002720,Data Analyst,0.5605947375297546,1,preliminary_ai_assisted_review
+DA001,Semantic,16,JOB_008929,Data Science and Business Intelligence Professional III,0.5585347414016724,1,preliminary_ai_assisted_review
+DA001,Semantic,17,JOB_006127,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.5582221746444702,1,preliminary_ai_assisted_review
+DA001,Semantic,18,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",0.5540496110916138,1,preliminary_ai_assisted_review
+DA001,Semantic,19,JOB_006297,Sr. Business Intelligence Analyst,0.547791600227356,1,preliminary_ai_assisted_review
+DA001,Semantic,20,JOB_003127,BI Analyst,0.5381273031234741,1,preliminary_ai_assisted_review
+DA001,Semantic,21,JOB_002208,Senior Advanced Analytics Application Developer,0.5320126414299011,1,preliminary_ai_assisted_review
+DA001,Semantic,22,JOB_000851,Business Analyst III,0.5316351652145386,1,preliminary_ai_assisted_review
+DA001,Semantic,23,JOB_002296,Account Manager - Business Intelligence,0.527532160282135,1,preliminary_ai_assisted_review
+DA001,Semantic,24,JOB_008527,"Senior Analyst, Business Intelligence",0.5266661643981934,1,preliminary_ai_assisted_review
+DA001,Semantic,25,JOB_006530,Business Analyst Capital Market,0.5125732421875,1,preliminary_ai_assisted_review
+DA001,Semantic,26,JOB_004494,Analytics Engineer,0.5004966855049133,1,preliminary_ai_assisted_review
+DA001,Semantic,27,JOB_002357,Sr. MassHealth Encounter Data Analyst,0.4843007028102875,1,preliminary_ai_assisted_review
+DA001,Semantic,28,JOB_006125,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.4840071499347687,1,preliminary_ai_assisted_review
+DA001,Semantic,29,JOB_001765,"Business Analyst – Offers Platform, Assistant Vice President",0.4789349436759949,1,preliminary_ai_assisted_review
+DA001,Semantic,30,JOB_001769,Business Analyst - Middle Office Performance Measurement,0.4337252974510193,1,preliminary_ai_assisted_review
+DA001,Semantic,31,JOB_000513,Data Services Specialist (Production Associate),0.4129105508327484,0,preliminary_ai_assisted_review
+DA001,Semantic,32,JOB_000521,Senior Customer Advocate (Project based),0.28581878542900085,0,preliminary_ai_assisted_review
+DA001,Semantic,33,JOB_006597,Полевой эксперт специализированных культур по работе с ключевыми клиентами,0.2673322856426239,0,preliminary_ai_assisted_review
+DA001,Semantic,34,JOB_006559,Юрисконсульт,0.25947853922843933,0,preliminary_ai_assisted_review
+DA001,Semantic,35,JOB_004801,Security Shift Supervisor - University Campus,0.2520328164100647,0,preliminary_ai_assisted_review
+DA001,Semantic,36,JOB_007287,HR Manager,0.24892477691173553,0,preliminary_ai_assisted_review
+DA001,Semantic,37,JOB_006915,Assistant Nurse Manager / WOC Registered Nurse / RN,0.23585587739944458,0,preliminary_ai_assisted_review
+DA001,Semantic,38,JOB_007719,Rental Sales Agent (Firenze),0.2269180715084076,0,preliminary_ai_assisted_review
+DA001,Semantic,39,JOB_006918,Utvecklare inom Dynamics 365 Business Central,0.2155321091413498,0,preliminary_ai_assisted_review
+DA001,Semantic,40,JOB_003948,EAP Counsellor,0.20130936801433563,0,preliminary_ai_assisted_review
+DA001,Semantic,41,JOB_006492,Automotive Product Specialist,0.2001238614320755,0,preliminary_ai_assisted_review
+DA001,Semantic,42,JOB_006064,Model-Based Systems Engineering Lead,0.19396290183067322,0,preliminary_ai_assisted_review
+DA001,Semantic,43,JOB_003830,Maintenance Technician - The Winchester,0.19306038320064545,0,preliminary_ai_assisted_review
+DA001,Semantic,44,JOB_001869,Senior Parts Associate,0.18136830627918243,0,preliminary_ai_assisted_review
+DA001,Semantic,45,JOB_006414,Security Officer - Mall Vehicle Patrol,0.18129165470600128,0,preliminary_ai_assisted_review
+DA001,Semantic,46,JOB_006723,Employé commercial (F/H),0.16793161630630493,0,preliminary_ai_assisted_review
+DA001,Semantic,47,JOB_000034,Produce Clerk Part Time Day,0.15423016250133514,0,preliminary_ai_assisted_review
+DA001,Semantic,48,JOB_003961,VIP Specialist,0.1520526111125946,0,preliminary_ai_assisted_review
+DA001,Semantic,49,JOB_009056,Practice Manager 2,0.15185998380184174,0,preliminary_ai_assisted_review
+DA001,Semantic,50,JOB_007852,Multimedia Journalist (MMJ),0.14907489717006683,1,preliminary_ai_assisted_review
+DA001,Semantic,51,JOB_003377,Cashier Part Time AM/PM- Four Seasons Orlando,0.13053254783153534,1,preliminary_ai_assisted_review
+DA001,Semantic,52,JOB_004098,Customer Service Representative,0.1287137269973755,0,preliminary_ai_assisted_review
+DA001,Semantic,53,JOB_003445,Team Member - Chichester (N118926),0.12499648332595825,0,preliminary_ai_assisted_review
+DA001,Semantic,54,JOB_009873,Clinical Service Manager (m/w/d),0.1235332116484642,0,preliminary_ai_assisted_review
+DA001,Semantic,55,JOB_005349,Catering Assistant - Caterlink,0.11932896822690964,0,preliminary_ai_assisted_review
+DA001,Semantic,56,JOB_009536,Coiffeur / Coiffeuse,0.1190415695309639,0,preliminary_ai_assisted_review
+DA001,Semantic,57,JOB_006897,Environmental Service Worker,0.10205569863319397,0,preliminary_ai_assisted_review
+DA001,Semantic,58,JOB_004158,Wireless Retail Sales Associate - W2084,0.09788814187049866,0,preliminary_ai_assisted_review
+DA001,Semantic,59,JOB_001156,Mental Health Professionals,0.07188549637794495,0,preliminary_ai_assisted_review
+DA001,Semantic,60,JOB_004154,Tecnico Ambientale - Campania,0.011890490539371967,1,preliminary_ai_assisted_review
+DA001,Hybrid,1,JOB_002077,Junior Data Analyst,0.684650061527888,1,preliminary_ai_assisted_review
+DA001,Hybrid,2,JOB_002720,Data Analyst,0.6794371247291565,1,preliminary_ai_assisted_review
+DA001,Hybrid,3,JOB_008576,Data Analyst Intern,0.6461179355780283,1,preliminary_ai_assisted_review
+DA001,Hybrid,4,JOB_003941,Business Analyst - Data,0.6357688764731089,1,preliminary_ai_assisted_review
+DA001,Hybrid,5,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",0.6343034108479818,1,preliminary_ai_assisted_review
+DA001,Hybrid,6,JOB_007612,Integrated Analytics and Insights Expert,0.6304000389575959,1,preliminary_ai_assisted_review
+DA001,Hybrid,7,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",0.6186693747838338,1,preliminary_ai_assisted_review
+DA001,Hybrid,8,JOB_003127,BI Analyst,0.618478274345398,1,preliminary_ai_assisted_review
+DA001,Hybrid,9,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,0.6175282495362419,1,preliminary_ai_assisted_review
+DA001,Hybrid,10,JOB_008929,Data Science and Business Intelligence Professional III,0.6014569001538413,1,preliminary_ai_assisted_review
+DA001,Hybrid,11,JOB_002357,Sr. MassHealth Encounter Data Analyst,0.5971220695972443,1,preliminary_ai_assisted_review
+DA001,Hybrid,12,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,0.5966849466164906,1,preliminary_ai_assisted_review
+DA001,Hybrid,13,JOB_009648,"Associate, UK Power Analytics",0.5865996956825257,1,preliminary_ai_assisted_review
+DA001,Hybrid,14,JOB_009853,Financial Risk Analytics (FRA) Analyst,0.5785506379604339,1,preliminary_ai_assisted_review
+DA001,Hybrid,15,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",0.5565621236960093,1,preliminary_ai_assisted_review
+DA001,Hybrid,16,JOB_001769,Business Analyst - Middle Office Performance Measurement,0.5552610496679943,1,preliminary_ai_assisted_review
+DA001,Hybrid,17,JOB_008527,"Senior Analyst, Business Intelligence",0.5551786482334137,1,preliminary_ai_assisted_review
+DA001,Hybrid,18,JOB_001022,Business Intelligence Analyst I,0.5491996467113495,1,preliminary_ai_assisted_review
+DA001,Hybrid,19,JOB_001520,Senior Technical Business Analyst,0.5446529686450958,1,preliminary_ai_assisted_review
+DA001,Hybrid,20,JOB_006123,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.5424016833305358,1,preliminary_ai_assisted_review
+DA001,Hybrid,21,JOB_006127,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.5386729061603546,1,preliminary_ai_assisted_review
+DA001,Hybrid,22,JOB_005106,Analytics Engineer,0.5365712761878967,1,preliminary_ai_assisted_review
+DA001,Hybrid,23,JOB_000851,Business Analyst III,0.5255311806996663,1,preliminary_ai_assisted_review
+DA001,Hybrid,24,JOB_002296,Account Manager - Business Intelligence,0.5248234987258911,1,preliminary_ai_assisted_review
+DA001,Hybrid,25,JOB_006297,Sr. Business Intelligence Analyst,0.5159256160259247,1,preliminary_ai_assisted_review
+DA001,Hybrid,26,JOB_006530,Business Analyst Capital Market,0.5094181299209595,1,preliminary_ai_assisted_review
+DA001,Hybrid,27,JOB_002208,Senior Advanced Analytics Application Developer,0.4960088491439819,1,preliminary_ai_assisted_review
+DA001,Hybrid,28,JOB_001765,"Business Analyst – Offers Platform, Assistant Vice President",0.49499986256871903,1,preliminary_ai_assisted_review
+DA001,Hybrid,29,JOB_004494,Analytics Engineer,0.4895849883556366,1,preliminary_ai_assisted_review
+DA001,Hybrid,30,JOB_000513,Data Services Specialist (Production Associate),0.4866249632835388,0,preliminary_ai_assisted_review
+DA001,Hybrid,31,JOB_006125,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.4717534244060516,1,preliminary_ai_assisted_review
+DA001,Hybrid,32,JOB_003377,Cashier Part Time AM/PM- Four Seasons Orlando,0.39317282795906067,1,preliminary_ai_assisted_review
+DA001,Hybrid,33,JOB_000521,Senior Customer Advocate (Project based),0.3851664364337921,0,preliminary_ai_assisted_review
+DA001,Hybrid,34,JOB_006597,Полевой эксперт специализированных культур по работе с ключевыми клиентами,0.3830973505973816,0,preliminary_ai_assisted_review
+DA001,Hybrid,35,JOB_006559,Юрисконсульт,0.37892815470695496,0,preliminary_ai_assisted_review
+DA001,Hybrid,36,JOB_004801,Security Shift Supervisor - University Campus,0.37840506434440613,0,preliminary_ai_assisted_review
+DA001,Hybrid,37,JOB_006915,Assistant Nurse Manager / WOC Registered Nurse / RN,0.3711005747318268,0,preliminary_ai_assisted_review
+DA001,Hybrid,38,JOB_006918,Utvecklare inom Dynamics 365 Business Central,0.3677518367767334,0,preliminary_ai_assisted_review
+DA001,Hybrid,39,JOB_007287,HR Manager,0.36518141627311707,0,preliminary_ai_assisted_review
+DA001,Hybrid,40,JOB_006492,Automotive Product Specialist,0.36036667227745056,0,preliminary_ai_assisted_review
+DA001,Hybrid,41,JOB_003830,Maintenance Technician - The Winchester,0.3581896722316742,0,preliminary_ai_assisted_review
+DA001,Hybrid,42,JOB_003948,EAP Counsellor,0.3576921820640564,0,preliminary_ai_assisted_review
+DA001,Hybrid,43,JOB_006064,Model-Based Systems Engineering Lead,0.35707882046699524,0,preliminary_ai_assisted_review
+DA001,Hybrid,44,JOB_007719,Rental Sales Agent (Firenze),0.351684033870697,0,preliminary_ai_assisted_review
+DA001,Hybrid,45,JOB_001869,Senior Parts Associate,0.35054534673690796,0,preliminary_ai_assisted_review
+DA001,Hybrid,46,JOB_006414,Security Officer - Mall Vehicle Patrol,0.34721603989601135,0,preliminary_ai_assisted_review
+DA001,Hybrid,47,JOB_000034,Produce Clerk Part Time Day,0.34394481778144836,0,preliminary_ai_assisted_review
+DA001,Hybrid,48,JOB_003961,VIP Specialist,0.34178853034973145,0,preliminary_ai_assisted_review
+DA001,Hybrid,49,JOB_006723,Employé commercial (F/H),0.34099578857421875,0,preliminary_ai_assisted_review
+DA001,Hybrid,50,JOB_007852,Multimedia Journalist (MMJ),0.3397037088871002,1,preliminary_ai_assisted_review
+DA001,Hybrid,51,JOB_009056,Practice Manager 2,0.3394193947315216,0,preliminary_ai_assisted_review
+DA001,Hybrid,52,JOB_004098,Customer Service Representative,0.33724385499954224,0,preliminary_ai_assisted_review
+DA001,Hybrid,53,JOB_003445,Team Member - Chichester (N118926),0.33463254570961,0,preliminary_ai_assisted_review
+DA001,Hybrid,54,JOB_004158,Wireless Retail Sales Associate - W2084,0.329887330532074,0,preliminary_ai_assisted_review
+DA001,Hybrid,55,JOB_005349,Catering Assistant - Caterlink,0.3276519477367401,0,preliminary_ai_assisted_review
+DA001,Hybrid,56,JOB_009536,Coiffeur / Coiffeuse,0.32468995451927185,0,preliminary_ai_assisted_review
+DA001,Hybrid,57,JOB_009873,Clinical Service Manager (m/w/d),0.32393762469291687,0,preliminary_ai_assisted_review
+DA001,Hybrid,58,JOB_001156,Mental Health Professionals,0.3232772648334503,0,preliminary_ai_assisted_review
+DA001,Hybrid,59,JOB_006897,Environmental Service Worker,0.31722837686538696,0,preliminary_ai_assisted_review
+DA001,Hybrid,60,JOB_004154,Tecnico Ambientale - Campania,0.2979748845100403,1,preliminary_ai_assisted_review
+DS001,TF-IDF,1,JOB_005108,Data Scientist,0.32790870556396257,1,preliminary_ai_assisted_review
+DS001,TF-IDF,2,JOB_001820,Lead Marketing Data Scientist,0.24625696039535394,1,preliminary_ai_assisted_review
+DS001,TF-IDF,3,JOB_008435,Sr Associate Data Scientist,0.19886874974990978,1,preliminary_ai_assisted_review
+DS001,TF-IDF,4,JOB_001819,Lead Marketing Data Scientist,0.1985488649729033,1,preliminary_ai_assisted_review
+DS001,TF-IDF,5,JOB_008611,Data Scientist,0.19786039340596778,1,preliminary_ai_assisted_review
+DS001,TF-IDF,6,JOB_001818,Lead Marketing Data Scientist,0.18159346151481562,1,preliminary_ai_assisted_review
+DS001,TF-IDF,7,JOB_002918,Technical Project Manager - Data Science,0.16562707301247712,1,preliminary_ai_assisted_review
+DS001,TF-IDF,8,JOB_002357,Sr. MassHealth Encounter Data Analyst,0.16010619227096848,1,preliminary_ai_assisted_review
+DS001,TF-IDF,9,JOB_006393,"Data Scientist, Modeler",0.15131940721395315,1,preliminary_ai_assisted_review
+DS001,TF-IDF,10,JOB_006387,"Data Scientist, Modeler",0.1493721994235266,1,preliminary_ai_assisted_review
+DS001,TF-IDF,11,JOB_002077,Junior Data Analyst,0.149040581560092,1,preliminary_ai_assisted_review
+DS001,TF-IDF,12,JOB_006389,"Data Scientist, Modeler",0.13956994637808756,1,preliminary_ai_assisted_review
+DS001,TF-IDF,13,JOB_009648,"Associate, UK Power Analytics",0.13722422147415603,1,preliminary_ai_assisted_review
+DS001,TF-IDF,14,JOB_005106,Analytics Engineer,0.13606218565763425,1,preliminary_ai_assisted_review
+DS001,TF-IDF,15,JOB_008929,Data Science and Business Intelligence Professional III,0.13546077652812333,1,preliminary_ai_assisted_review
+DS001,TF-IDF,16,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,0.13403074252338382,1,preliminary_ai_assisted_review
+DS001,TF-IDF,17,JOB_009853,Financial Risk Analytics (FRA) Analyst,0.12833062619865232,1,preliminary_ai_assisted_review
+DS001,TF-IDF,18,JOB_002720,Data Analyst,0.12776699621028995,1,preliminary_ai_assisted_review
+DS001,TF-IDF,19,JOB_004324,"Sr Manager, Data Science",0.1275250738520714,1,preliminary_ai_assisted_review
+DS001,TF-IDF,20,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",0.12682490119303544,1,preliminary_ai_assisted_review
+DS001,TF-IDF,21,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",0.12635126188914209,1,preliminary_ai_assisted_review
+DS001,TF-IDF,22,JOB_007612,Integrated Analytics and Insights Expert,0.11132256708900173,1,preliminary_ai_assisted_review
+DS001,TF-IDF,23,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,0.1088155790926379,1,preliminary_ai_assisted_review
+DS001,TF-IDF,24,JOB_006127,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.08048279533142286,1,preliminary_ai_assisted_review
+DS001,TF-IDF,25,JOB_004494,Analytics Engineer,0.07538597121283519,1,preliminary_ai_assisted_review
+DS001,TF-IDF,26,JOB_004990,Research Scientist,0.07243124724241211,1,preliminary_ai_assisted_review
+DS001,TF-IDF,27,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",0.0699832583916383,1,preliminary_ai_assisted_review
+DS001,TF-IDF,28,JOB_006123,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.06584335666535034,1,preliminary_ai_assisted_review
+DS001,TF-IDF,29,JOB_002208,Senior Advanced Analytics Application Developer,0.05075263015071655,1,preliminary_ai_assisted_review
+DS001,TF-IDF,30,JOB_006125,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.047709448680836986,1,preliminary_ai_assisted_review
+DS001,TF-IDF,31,JOB_000312,Business Development Consultant: Weatherby,0.013556218575217596,0,preliminary_ai_assisted_review
+DS001,TF-IDF,32,JOB_009871,Commercial Strategic Initiatives Manager (Hybrid),0.011257929715559783,0,preliminary_ai_assisted_review
+DS001,TF-IDF,33,JOB_006760,Senior Executive Assistant,0.011050764138056524,0,preliminary_ai_assisted_review
+DS001,TF-IDF,34,JOB_008518,Marketing Administrator (12-month contract),0.010198935394842474,0,preliminary_ai_assisted_review
+DS001,TF-IDF,35,JOB_007997,Gestionnaire Paie Confirmé F/H,0.007635600565886215,0,preliminary_ai_assisted_review
+DS001,TF-IDF,36,JOB_002362,"Medical Assistant, Primary Care",0.006699112069591038,0,preliminary_ai_assisted_review
+DS001,TF-IDF,37,JOB_000097,Overnight Assistant Manager,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,38,JOB_000107,Teammate - Golf,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,39,JOB_000260,Part Time - Sales Associate - Flexible,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,40,JOB_000440,Office Professional,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,41,JOB_000936,"Customer Service Representative, Full or Part Time",0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,42,JOB_001025,Lab Phlebotomist (Float),0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,43,JOB_001499,SAP Operations Clerk Part Time Day,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,44,JOB_001507,Student Part Time Day,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,45,JOB_001541,Terapeuta,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,46,JOB_002246,Equipment Sales Support,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,47,JOB_003271,ESTOQUISTA - MIX SANTA MÔNICA,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,48,JOB_003296,AÇOUGUEIRO - MIX MARITUBA,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,49,JOB_003431,Short-term Temporary Team Member - Croydon Centrale (N118936),0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,50,JOB_003864,Customer Advisor – Argos (in Sainsbury’s),0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,51,JOB_004218,Wireless Retail Sales Associate - W3035,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,52,JOB_004411,2nd shift PCBA soldering Team Lead,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,53,JOB_004711,Certified Medical Assistant - Cardiology Clinic,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,54,JOB_005269,Security Officer / EMT - Plant,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,55,JOB_006547,Auto Painter Helper,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,56,JOB_007582,Senior Counsel,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,57,JOB_007770,Chargé de logistique portuaire/ fumigation H/F,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,58,JOB_008266,Janitorial Cleaner,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,59,JOB_008281,Mold Repair Technician II,0.0,0,preliminary_ai_assisted_review
+DS001,TF-IDF,60,JOB_009115,Cashier,0.0,0,preliminary_ai_assisted_review
+DS001,Semantic,1,JOB_001819,Lead Marketing Data Scientist,0.6160522699356079,1,preliminary_ai_assisted_review
+DS001,Semantic,2,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",0.6083519458770752,1,preliminary_ai_assisted_review
+DS001,Semantic,3,JOB_005108,Data Scientist,0.607760488986969,1,preliminary_ai_assisted_review
+DS001,Semantic,4,JOB_006387,"Data Scientist, Modeler",0.5911043882369995,1,preliminary_ai_assisted_review
+DS001,Semantic,5,JOB_001820,Lead Marketing Data Scientist,0.5841779112815857,1,preliminary_ai_assisted_review
+DS001,Semantic,6,JOB_006393,"Data Scientist, Modeler",0.5696250200271606,1,preliminary_ai_assisted_review
+DS001,Semantic,7,JOB_009853,Financial Risk Analytics (FRA) Analyst,0.5669000148773193,1,preliminary_ai_assisted_review
+DS001,Semantic,8,JOB_007612,Integrated Analytics and Insights Expert,0.563654899597168,1,preliminary_ai_assisted_review
+DS001,Semantic,9,JOB_004324,"Sr Manager, Data Science",0.557174563407898,1,preliminary_ai_assisted_review
+DS001,Semantic,10,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",0.5561099648475647,1,preliminary_ai_assisted_review
+DS001,Semantic,11,JOB_002918,Technical Project Manager - Data Science,0.5519368648529053,1,preliminary_ai_assisted_review
+DS001,Semantic,12,JOB_008929,Data Science and Business Intelligence Professional III,0.5386718511581421,1,preliminary_ai_assisted_review
+DS001,Semantic,13,JOB_006389,"Data Scientist, Modeler",0.5317803621292114,1,preliminary_ai_assisted_review
+DS001,Semantic,14,JOB_009648,"Associate, UK Power Analytics",0.5226767063140869,1,preliminary_ai_assisted_review
+DS001,Semantic,15,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,0.5141083002090454,1,preliminary_ai_assisted_review
+DS001,Semantic,16,JOB_001818,Lead Marketing Data Scientist,0.505373477935791,1,preliminary_ai_assisted_review
+DS001,Semantic,17,JOB_008611,Data Scientist,0.4997520446777344,1,preliminary_ai_assisted_review
+DS001,Semantic,18,JOB_005106,Analytics Engineer,0.477782666683197,1,preliminary_ai_assisted_review
+DS001,Semantic,19,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,0.4756543040275574,1,preliminary_ai_assisted_review
+DS001,Semantic,20,JOB_008435,Sr Associate Data Scientist,0.4551328420639038,1,preliminary_ai_assisted_review
+DS001,Semantic,21,JOB_006127,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.45016926527023315,1,preliminary_ai_assisted_review
+DS001,Semantic,22,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",0.44349992275238037,1,preliminary_ai_assisted_review
+DS001,Semantic,23,JOB_006123,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.4404250383377075,1,preliminary_ai_assisted_review
+DS001,Semantic,24,JOB_002077,Junior Data Analyst,0.42495936155319214,1,preliminary_ai_assisted_review
+DS001,Semantic,25,JOB_004494,Analytics Engineer,0.4245375096797943,1,preliminary_ai_assisted_review
+DS001,Semantic,26,JOB_002208,Senior Advanced Analytics Application Developer,0.4237636923789978,1,preliminary_ai_assisted_review
+DS001,Semantic,27,JOB_002720,Data Analyst,0.3863871991634369,1,preliminary_ai_assisted_review
+DS001,Semantic,28,JOB_006125,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.3592529892921448,1,preliminary_ai_assisted_review
+DS001,Semantic,29,JOB_002357,Sr. MassHealth Encounter Data Analyst,0.34545695781707764,1,preliminary_ai_assisted_review
+DS001,Semantic,30,JOB_004411,2nd shift PCBA soldering Team Lead,0.303193598985672,0,preliminary_ai_assisted_review
+DS001,Semantic,31,JOB_004990,Research Scientist,0.25542277097702026,1,preliminary_ai_assisted_review
+DS001,Semantic,32,JOB_000312,Business Development Consultant: Weatherby,0.2530304193496704,0,preliminary_ai_assisted_review
+DS001,Semantic,33,JOB_006547,Auto Painter Helper,0.24909347295761108,0,preliminary_ai_assisted_review
+DS001,Semantic,34,JOB_002246,Equipment Sales Support,0.24860596656799316,0,preliminary_ai_assisted_review
+DS001,Semantic,35,JOB_008518,Marketing Administrator (12-month contract),0.24721887707710266,0,preliminary_ai_assisted_review
+DS001,Semantic,36,JOB_000440,Office Professional,0.24633505940437317,0,preliminary_ai_assisted_review
+DS001,Semantic,37,JOB_005269,Security Officer / EMT - Plant,0.23478102684020996,0,preliminary_ai_assisted_review
+DS001,Semantic,38,JOB_007582,Senior Counsel,0.21908627450466156,0,preliminary_ai_assisted_review
+DS001,Semantic,39,JOB_001499,SAP Operations Clerk Part Time Day,0.21672244369983673,0,preliminary_ai_assisted_review
+DS001,Semantic,40,JOB_001025,Lab Phlebotomist (Float),0.20664840936660767,0,preliminary_ai_assisted_review
+DS001,Semantic,41,JOB_007770,Chargé de logistique portuaire/ fumigation H/F,0.20401282608509064,0,preliminary_ai_assisted_review
+DS001,Semantic,42,JOB_007997,Gestionnaire Paie Confirmé F/H,0.20071813464164734,0,preliminary_ai_assisted_review
+DS001,Semantic,43,JOB_003864,Customer Advisor – Argos (in Sainsbury’s),0.1886724978685379,0,preliminary_ai_assisted_review
+DS001,Semantic,44,JOB_000936,"Customer Service Representative, Full or Part Time",0.18081390857696533,0,preliminary_ai_assisted_review
+DS001,Semantic,45,JOB_000097,Overnight Assistant Manager,0.16586236655712128,0,preliminary_ai_assisted_review
+DS001,Semantic,46,JOB_001507,Student Part Time Day,0.16528230905532837,0,preliminary_ai_assisted_review
+DS001,Semantic,47,JOB_008281,Mold Repair Technician II,0.1619039922952652,0,preliminary_ai_assisted_review
+DS001,Semantic,48,JOB_006760,Senior Executive Assistant,0.15725022554397583,0,preliminary_ai_assisted_review
+DS001,Semantic,49,JOB_000260,Part Time - Sales Associate - Flexible,0.15336337685585022,0,preliminary_ai_assisted_review
+DS001,Semantic,50,JOB_008266,Janitorial Cleaner,0.15057605504989624,0,preliminary_ai_assisted_review
+DS001,Semantic,51,JOB_009871,Commercial Strategic Initiatives Manager (Hybrid),0.1465221345424652,0,preliminary_ai_assisted_review
+DS001,Semantic,52,JOB_004711,Certified Medical Assistant - Cardiology Clinic,0.13910198211669922,0,preliminary_ai_assisted_review
+DS001,Semantic,53,JOB_002362,"Medical Assistant, Primary Care",0.1256553828716278,0,preliminary_ai_assisted_review
+DS001,Semantic,54,JOB_004218,Wireless Retail Sales Associate - W3035,0.08579529076814651,0,preliminary_ai_assisted_review
+DS001,Semantic,55,JOB_000107,Teammate - Golf,0.08039268851280212,0,preliminary_ai_assisted_review
+DS001,Semantic,56,JOB_003271,ESTOQUISTA - MIX SANTA MÔNICA,0.07933556288480759,0,preliminary_ai_assisted_review
+DS001,Semantic,57,JOB_009115,Cashier,0.0420042984187603,0,preliminary_ai_assisted_review
+DS001,Semantic,58,JOB_001541,Terapeuta,0.038868747651576996,0,preliminary_ai_assisted_review
+DS001,Semantic,59,JOB_003431,Short-term Temporary Team Member - Croydon Centrale (N118936),0.008999437093734741,0,preliminary_ai_assisted_review
+DS001,Semantic,60,JOB_003296,AÇOUGUEIRO - MIX MARITUBA,-0.05971631780266762,0,preliminary_ai_assisted_review
+DS001,Hybrid,1,JOB_005108,Data Scientist,0.7291083931922913,1,preliminary_ai_assisted_review
+DS001,Hybrid,2,JOB_001819,Lead Marketing Data Scientist,0.6462624430656434,1,preliminary_ai_assisted_review
+DS001,Hybrid,3,JOB_008611,Data Scientist,0.6293429911136627,1,preliminary_ai_assisted_review
+DS001,Hybrid,4,JOB_001820,Lead Marketing Data Scientist,0.623482382297516,1,preliminary_ai_assisted_review
+DS001,Hybrid,5,JOB_006387,"Data Scientist, Modeler",0.6154758791128794,1,preliminary_ai_assisted_review
+DS001,Hybrid,6,JOB_006389,"Data Scientist, Modeler",0.6009918014208475,1,preliminary_ai_assisted_review
+DS001,Hybrid,7,JOB_008929,Data Science and Business Intelligence Professional III,0.5982387261731285,1,preliminary_ai_assisted_review
+DS001,Hybrid,8,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,0.5882394211632865,1,preliminary_ai_assisted_review
+DS001,Hybrid,9,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",0.5762676729096307,1,preliminary_ai_assisted_review
+DS001,Hybrid,10,JOB_006393,"Data Scientist, Modeler",0.5736338595549265,1,preliminary_ai_assisted_review
+DS001,Hybrid,11,JOB_001818,Lead Marketing Data Scientist,0.5718845129013062,1,preliminary_ai_assisted_review
+DS001,Hybrid,12,JOB_009648,"Associate, UK Power Analytics",0.5655331790447236,1,preliminary_ai_assisted_review
+DS001,Hybrid,13,JOB_004324,"Sr Manager, Data Science",0.564199423789978,1,preliminary_ai_assisted_review
+DS001,Hybrid,14,JOB_007612,Integrated Analytics and Insights Expert,0.5630145978927612,1,preliminary_ai_assisted_review
+DS001,Hybrid,15,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",0.5584772209326426,1,preliminary_ai_assisted_review
+DS001,Hybrid,16,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,0.5444610098997752,1,preliminary_ai_assisted_review
+DS001,Hybrid,17,JOB_009853,Financial Risk Analytics (FRA) Analyst,0.5419394791126251,1,preliminary_ai_assisted_review
+DS001,Hybrid,18,JOB_008435,Sr Associate Data Scientist,0.5349034130573272,1,preliminary_ai_assisted_review
+DS001,Hybrid,19,JOB_002077,Junior Data Analyst,0.525079890092214,1,preliminary_ai_assisted_review
+DS001,Hybrid,20,JOB_002918,Technical Project Manager - Data Science,0.5195035886764526,1,preliminary_ai_assisted_review
+DS001,Hybrid,21,JOB_006123,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.5078336715698242,1,preliminary_ai_assisted_review
+DS001,Hybrid,22,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",0.507238757610321,1,preliminary_ai_assisted_review
+DS001,Hybrid,23,JOB_006127,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.5066466152667999,1,preliminary_ai_assisted_review
+DS001,Hybrid,24,JOB_005106,Analytics Engineer,0.5056136667728424,1,preliminary_ai_assisted_review
+DS001,Hybrid,25,JOB_002357,Sr. MassHealth Encounter Data Analyst,0.4965251100063324,1,preliminary_ai_assisted_review
+DS001,Hybrid,26,JOB_002720,Data Analyst,0.49312683343887326,1,preliminary_ai_assisted_review
+DS001,Hybrid,27,JOB_004990,Research Scientist,0.47057588458061217,1,preliminary_ai_assisted_review
+DS001,Hybrid,28,JOB_004494,Analytics Engineer,0.46446541547775266,1,preliminary_ai_assisted_review
+DS001,Hybrid,29,JOB_002208,Senior Advanced Analytics Application Developer,0.46076146364212034,1,preliminary_ai_assisted_review
+DS001,Hybrid,30,JOB_006125,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.43586010336875913,1,preliminary_ai_assisted_review
+DS001,Hybrid,31,JOB_004411,2nd shift PCBA soldering Team Lead,0.39266008138656616,0,preliminary_ai_assisted_review
+DS001,Hybrid,32,JOB_000312,Business Development Consultant: Weatherby,0.37582871317863464,0,preliminary_ai_assisted_review
+DS001,Hybrid,33,JOB_002246,Equipment Sales Support,0.3751223385334015,0,preliminary_ai_assisted_review
+DS001,Hybrid,34,JOB_000440,Office Professional,0.36492741107940674,0,preliminary_ai_assisted_review
+DS001,Hybrid,35,JOB_007770,Chargé de logistique portuaire/ fumigation H/F,0.36366012692451477,0,preliminary_ai_assisted_review
+DS001,Hybrid,36,JOB_001025,Lab Phlebotomist (Float),0.36210381984710693,0,preliminary_ai_assisted_review
+DS001,Hybrid,37,JOB_007997,Gestionnaire Paie Confirmé F/H,0.36136549711227417,0,preliminary_ai_assisted_review
+DS001,Hybrid,38,JOB_008518,Marketing Administrator (12-month contract),0.3611871600151062,0,preliminary_ai_assisted_review
+DS001,Hybrid,39,JOB_001499,SAP Operations Clerk Part Time Day,0.35847026109695435,0,preliminary_ai_assisted_review
+DS001,Hybrid,40,JOB_006547,Auto Painter Helper,0.3548925518989563,0,preliminary_ai_assisted_review
+DS001,Hybrid,41,JOB_007582,Senior Counsel,0.34986481070518494,0,preliminary_ai_assisted_review
+DS001,Hybrid,42,JOB_005269,Security Officer / EMT - Plant,0.345892995595932,0,preliminary_ai_assisted_review
+DS001,Hybrid,43,JOB_000260,Part Time - Sales Associate - Flexible,0.34419751167297363,0,preliminary_ai_assisted_review
+DS001,Hybrid,44,JOB_009871,Commercial Strategic Initiatives Manager (Hybrid),0.3432171940803528,0,preliminary_ai_assisted_review
+DS001,Hybrid,45,JOB_003864,Customer Advisor – Argos (in Sainsbury’s),0.34321480989456177,0,preliminary_ai_assisted_review
+DS001,Hybrid,46,JOB_004711,Certified Medical Assistant - Cardiology Clinic,0.34168991446495056,0,preliminary_ai_assisted_review
+DS001,Hybrid,47,JOB_008281,Mold Repair Technician II,0.3367798328399658,0,preliminary_ai_assisted_review
+DS001,Hybrid,48,JOB_006760,Senior Executive Assistant,0.3361203670501709,0,preliminary_ai_assisted_review
+DS001,Hybrid,49,JOB_000936,"Customer Service Representative, Full or Part Time",0.3336031138896942,0,preliminary_ai_assisted_review
+DS001,Hybrid,50,JOB_002362,"Medical Assistant, Primary Care",0.33271950483322144,0,preliminary_ai_assisted_review
+DS001,Hybrid,51,JOB_000097,Overnight Assistant Manager,0.3301204741001129,0,preliminary_ai_assisted_review
+DS001,Hybrid,52,JOB_008266,Janitorial Cleaner,0.32979437708854675,0,preliminary_ai_assisted_review
+DS001,Hybrid,53,JOB_001507,Student Part Time Day,0.3264060616493225,0,preliminary_ai_assisted_review
+DS001,Hybrid,54,JOB_000107,Teammate - Golf,0.3222517967224121,0,preliminary_ai_assisted_review
+DS001,Hybrid,55,JOB_003271,ESTOQUISTA - MIX SANTA MÔNICA,0.3174366354942322,0,preliminary_ai_assisted_review
+DS001,Hybrid,56,JOB_004218,Wireless Retail Sales Associate - W3035,0.3116322159767151,0,preliminary_ai_assisted_review
+DS001,Hybrid,57,JOB_009115,Cashier,0.30352500081062317,0,preliminary_ai_assisted_review
+DS001,Hybrid,58,JOB_003431,Short-term Temporary Team Member - Croydon Centrale (N118936),0.3016645908355713,0,preliminary_ai_assisted_review
+DS001,Hybrid,59,JOB_001541,Terapeuta,0.2969729006290436,0,preliminary_ai_assisted_review
+DS001,Hybrid,60,JOB_003296,AÇOUGUEIRO - MIX MARITUBA,0.28478291630744934,0,preliminary_ai_assisted_review
+ML001,TF-IDF,1,JOB_006142,Senior Machine Learning Scientist,0.33229473798605963,1,preliminary_ai_assisted_review
+ML001,TF-IDF,2,JOB_008435,Sr Associate Data Scientist,0.30413826715203013,1,preliminary_ai_assisted_review
+ML001,TF-IDF,3,JOB_005960,Artificial Intelligence Engineer,0.2827031083116908,1,preliminary_ai_assisted_review
+ML001,TF-IDF,4,JOB_003939,"Machine Learning Engineer / MLOps (Python, Cloud, Data) – Híbrido - CDMX",0.2551491264622101,1,preliminary_ai_assisted_review
+ML001,TF-IDF,5,JOB_007376,"Staff Machine Learning Engineer, Agentic Product",0.2478777488562107,1,preliminary_ai_assisted_review
+ML001,TF-IDF,6,JOB_007380,"Senior Staff Machine Learning Engineer, Agentic Product - Moveworks",0.22111826305437615,1,preliminary_ai_assisted_review
+ML001,TF-IDF,7,JOB_008439,Data Scientist (Computer Vision),0.21131728542556422,1,preliminary_ai_assisted_review
+ML001,TF-IDF,8,JOB_007361,"Senior Machine Learning Engineer, Agentic Product - Moveworks",0.19941759224068745,1,preliminary_ai_assisted_review
+ML001,TF-IDF,9,JOB_004856,"Staff Machine Learning Engineer - Game Tech Group, ML Platform",0.15505521413555773,1,preliminary_ai_assisted_review
+ML001,TF-IDF,10,JOB_007373,"Senior Machine Learning Engineer, Agentic App Platform - Moveworks",0.12698884193496154,1,preliminary_ai_assisted_review
+ML001,TF-IDF,11,JOB_007365,"Machine Learning Engineer, Agentic Product - Moveworks",0.11214943211452354,1,preliminary_ai_assisted_review
+ML001,TF-IDF,12,JOB_007378,"Staff Machine Learning Engineer, Agentic App Platform",0.08578830433206935,1,preliminary_ai_assisted_review
+ML001,TF-IDF,13,JOB_004888,Senior AI Engineer,0.08157893343586908,1,preliminary_ai_assisted_review
+ML001,TF-IDF,14,JOB_007908,Head of Artificial Intelligence – LATAM,0.06629683892396923,1,preliminary_ai_assisted_review
+ML001,TF-IDF,15,JOB_000744,Junior AI Engineer,0.04753494187511772,1,preliminary_ai_assisted_review
+ML001,TF-IDF,16,JOB_009942,Software Engineer - Build Systems and Tooling (C++/Python) (F/M/D),0.04055256136806907,1,preliminary_ai_assisted_review
+ML001,TF-IDF,17,JOB_002741,AI Engineering Sr,0.0363493166903078,1,preliminary_ai_assisted_review
+ML001,TF-IDF,18,JOB_006787,Senior Fullstack/AI Engineer,0.033939789469768555,1,preliminary_ai_assisted_review
+ML001,TF-IDF,19,JOB_000743,AI Engineer,0.029817617702725594,1,preliminary_ai_assisted_review
+ML001,TF-IDF,20,JOB_006781,Senior Fullstack/AI Engineer,0.026178023516065588,1,preliminary_ai_assisted_review
+ML001,TF-IDF,21,JOB_006254,Senior AI Engineer,0.02513511948761911,1,preliminary_ai_assisted_review
+ML001,TF-IDF,22,JOB_005553,AI Engineer,0.024743034138805124,1,preliminary_ai_assisted_review
+ML001,TF-IDF,23,JOB_006778,Senior Fullstack/AI Engineer,0.022046251627677257,1,preliminary_ai_assisted_review
+ML001,TF-IDF,24,JOB_007060,Mid Level AI Engineer,0.021892188075451416,1,preliminary_ai_assisted_review
+ML001,TF-IDF,25,JOB_006785,Senior Fullstack/AI Engineer,0.020593467892432316,1,preliminary_ai_assisted_review
+ML001,TF-IDF,26,JOB_006783,Senior Fullstack/AI Engineer,0.02039565324962562,1,preliminary_ai_assisted_review
+ML001,TF-IDF,27,JOB_005946,AI Engineer,0.01964296292757666,1,preliminary_ai_assisted_review
+ML001,TF-IDF,28,JOB_000370,AI Engineer (Contract role),0.018978979142702242,1,preliminary_ai_assisted_review
+ML001,TF-IDF,29,JOB_006251,Senior AI Engineer,0.018952017512041196,1,preliminary_ai_assisted_review
+ML001,TF-IDF,30,JOB_007789,Site Reliability Engineer (Hosted Infra) - Platform,0.016240127945229766,0,preliminary_ai_assisted_review
+ML001,TF-IDF,31,JOB_005949,AI Engineer,0.014201893994516974,1,preliminary_ai_assisted_review
+ML001,TF-IDF,32,JOB_009068,"Senior Epidemiologist, HIV Treatment, Retrospective Claims Study Expertise (FSP Sponsor Dedicated)",0.010768598242052809,0,preliminary_ai_assisted_review
+ML001,TF-IDF,33,JOB_006711,Employé de rayon (F/H) Idéal étudiant,0.005392632171498906,0,preliminary_ai_assisted_review
+ML001,TF-IDF,34,JOB_000036,Salad Bar Clerk Part Time Evening,0.004724446772010496,0,preliminary_ai_assisted_review
+ML001,TF-IDF,35,JOB_006638,Employé commercial (F/H),0.0038822805857426025,0,preliminary_ai_assisted_review
+ML001,TF-IDF,36,JOB_008943,Front Desk Agent,0.0031393661498436086,0,preliminary_ai_assisted_review
+ML001,TF-IDF,37,JOB_006336,Teller,0.0027681075250090277,0,preliminary_ai_assisted_review
+ML001,TF-IDF,38,JOB_003704,ANALISTA DE RUTA DE TRANSPORTE,0.002746826690086603,0,preliminary_ai_assisted_review
+ML001,TF-IDF,39,JOB_004908,Mental Health Group Facilitator - KY,0.0023288355913011908,0,preliminary_ai_assisted_review
+ML001,TF-IDF,40,JOB_001116,"Senior Team Lead, Technical Services",0.0022164443321498234,0,preliminary_ai_assisted_review
+ML001,TF-IDF,41,JOB_008279,AE - Sales Leader (Full-Time),0.0020759531545502577,0,preliminary_ai_assisted_review
+ML001,TF-IDF,42,JOB_000040,HMR Clerk Part Time Afternoon,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,43,JOB_000956,Personal Banker Associate I,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,44,JOB_001677,Diet Clerk,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,45,JOB_002503,DIRECT SUPPT PROFESSIONAL,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,46,JOB_003040,Full Time - Sales Associate - Outside Lawn & Garden - Closing,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,47,JOB_004192,LPN/RN PDN (peds to young adults),0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,48,JOB_004374,Contract & Sales Support Analyst (Contract),0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,49,JOB_004868,Permit Technician,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,50,JOB_004903,Mental Health Group Facilitator - NV,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,51,JOB_005400,Security Officer Site Supervisor,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,52,JOB_005414,Support Group Intern - Artificial Intelligence,0.0,1,preliminary_ai_assisted_review
+ML001,TF-IDF,53,JOB_006106,"Senior Director, HRBP",0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,54,JOB_006256,"Contract & Claim Manager, Manufacturing Construction Projects, Guanajuato",0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,55,JOB_006561,Специалист по планированию поставок сырья,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,56,JOB_007340,Authorization Specialist,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,57,JOB_007608,Part Time ( 20 Hours) Intensive Home Based Therapeutic Care - Young Adult Peer Mentor,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,58,JOB_008008,"Patient Services Representative II, Specialty Services Patient Contact Center",0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,59,JOB_008137,Carrier Payable/Invoicing Representative II,0.0,0,preliminary_ai_assisted_review
+ML001,TF-IDF,60,JOB_008218,HR Generalist,0.0,0,preliminary_ai_assisted_review
+ML001,Semantic,1,JOB_008439,Data Scientist (Computer Vision),0.6837536096572876,1,preliminary_ai_assisted_review
+ML001,Semantic,2,JOB_005960,Artificial Intelligence Engineer,0.6708433628082275,1,preliminary_ai_assisted_review
+ML001,Semantic,3,JOB_000743,AI Engineer,0.6167245507240295,1,preliminary_ai_assisted_review
+ML001,Semantic,4,JOB_003939,"Machine Learning Engineer / MLOps (Python, Cloud, Data) – Híbrido - CDMX",0.613854169845581,1,preliminary_ai_assisted_review
+ML001,Semantic,5,JOB_004856,"Staff Machine Learning Engineer - Game Tech Group, ML Platform",0.6107719540596008,1,preliminary_ai_assisted_review
+ML001,Semantic,6,JOB_005946,AI Engineer,0.6075129508972168,1,preliminary_ai_assisted_review
+ML001,Semantic,7,JOB_006142,Senior Machine Learning Scientist,0.591529130935669,1,preliminary_ai_assisted_review
+ML001,Semantic,8,JOB_008435,Sr Associate Data Scientist,0.5773289203643799,1,preliminary_ai_assisted_review
+ML001,Semantic,9,JOB_006251,Senior AI Engineer,0.5761685371398926,1,preliminary_ai_assisted_review
+ML001,Semantic,10,JOB_007378,"Staff Machine Learning Engineer, Agentic App Platform",0.5734426975250244,1,preliminary_ai_assisted_review
+ML001,Semantic,11,JOB_007060,Mid Level AI Engineer,0.5703052878379822,1,preliminary_ai_assisted_review
+ML001,Semantic,12,JOB_000744,Junior AI Engineer,0.5562662482261658,1,preliminary_ai_assisted_review
+ML001,Semantic,13,JOB_007376,"Staff Machine Learning Engineer, Agentic Product",0.5508133172988892,1,preliminary_ai_assisted_review
+ML001,Semantic,14,JOB_004888,Senior AI Engineer,0.546190619468689,1,preliminary_ai_assisted_review
+ML001,Semantic,15,JOB_007361,"Senior Machine Learning Engineer, Agentic Product - Moveworks",0.5454021096229553,1,preliminary_ai_assisted_review
+ML001,Semantic,16,JOB_007365,"Machine Learning Engineer, Agentic Product - Moveworks",0.5389440059661865,1,preliminary_ai_assisted_review
+ML001,Semantic,17,JOB_005553,AI Engineer,0.5302963256835938,1,preliminary_ai_assisted_review
+ML001,Semantic,18,JOB_007373,"Senior Machine Learning Engineer, Agentic App Platform - Moveworks",0.528613269329071,1,preliminary_ai_assisted_review
+ML001,Semantic,19,JOB_002741,AI Engineering Sr,0.5255062580108643,1,preliminary_ai_assisted_review
+ML001,Semantic,20,JOB_005949,AI Engineer,0.4920809864997864,1,preliminary_ai_assisted_review
+ML001,Semantic,21,JOB_006254,Senior AI Engineer,0.4872701168060303,1,preliminary_ai_assisted_review
+ML001,Semantic,22,JOB_007908,Head of Artificial Intelligence – LATAM,0.48665109276771545,1,preliminary_ai_assisted_review
+ML001,Semantic,23,JOB_007380,"Senior Staff Machine Learning Engineer, Agentic Product - Moveworks",0.483489453792572,1,preliminary_ai_assisted_review
+ML001,Semantic,24,JOB_006778,Senior Fullstack/AI Engineer,0.4834481477737427,1,preliminary_ai_assisted_review
+ML001,Semantic,25,JOB_009942,Software Engineer - Build Systems and Tooling (C++/Python) (F/M/D),0.4774409532546997,1,preliminary_ai_assisted_review
+ML001,Semantic,26,JOB_006787,Senior Fullstack/AI Engineer,0.47606438398361206,1,preliminary_ai_assisted_review
+ML001,Semantic,27,JOB_000370,AI Engineer (Contract role),0.46143272519111633,1,preliminary_ai_assisted_review
+ML001,Semantic,28,JOB_006783,Senior Fullstack/AI Engineer,0.44558393955230713,1,preliminary_ai_assisted_review
+ML001,Semantic,29,JOB_006781,Senior Fullstack/AI Engineer,0.4412549138069153,1,preliminary_ai_assisted_review
+ML001,Semantic,30,JOB_006785,Senior Fullstack/AI Engineer,0.4405272603034973,1,preliminary_ai_assisted_review
+ML001,Semantic,31,JOB_007789,Site Reliability Engineer (Hosted Infra) - Platform,0.3750717341899872,0,preliminary_ai_assisted_review
+ML001,Semantic,32,JOB_001116,"Senior Team Lead, Technical Services",0.3500477075576782,0,preliminary_ai_assisted_review
+ML001,Semantic,33,JOB_005414,Support Group Intern - Artificial Intelligence,0.32025375962257385,1,preliminary_ai_assisted_review
+ML001,Semantic,34,JOB_006256,"Contract & Claim Manager, Manufacturing Construction Projects, Guanajuato",0.28953316807746887,0,preliminary_ai_assisted_review
+ML001,Semantic,35,JOB_008137,Carrier Payable/Invoicing Representative II,0.27536606788635254,0,preliminary_ai_assisted_review
+ML001,Semantic,36,JOB_008218,HR Generalist,0.27195268869400024,0,preliminary_ai_assisted_review
+ML001,Semantic,37,JOB_003704,ANALISTA DE RUTA DE TRANSPORTE,0.25802290439605713,0,preliminary_ai_assisted_review
+ML001,Semantic,38,JOB_005400,Security Officer Site Supervisor,0.2573814392089844,0,preliminary_ai_assisted_review
+ML001,Semantic,39,JOB_006561,Специалист по планированию поставок сырья,0.25651347637176514,0,preliminary_ai_assisted_review
+ML001,Semantic,40,JOB_004374,Contract & Sales Support Analyst (Contract),0.2509066164493561,0,preliminary_ai_assisted_review
+ML001,Semantic,41,JOB_007340,Authorization Specialist,0.2390439361333847,0,preliminary_ai_assisted_review
+ML001,Semantic,42,JOB_004868,Permit Technician,0.21352219581604004,0,preliminary_ai_assisted_review
+ML001,Semantic,43,JOB_003040,Full Time - Sales Associate - Outside Lawn & Garden - Closing,0.19728368520736694,0,preliminary_ai_assisted_review
+ML001,Semantic,44,JOB_009068,"Senior Epidemiologist, HIV Treatment, Retrospective Claims Study Expertise (FSP Sponsor Dedicated)",0.1815648078918457,0,preliminary_ai_assisted_review
+ML001,Semantic,45,JOB_004908,Mental Health Group Facilitator - KY,0.15837140381336212,0,preliminary_ai_assisted_review
+ML001,Semantic,46,JOB_006336,Teller,0.15823301672935486,0,preliminary_ai_assisted_review
+ML001,Semantic,47,JOB_006638,Employé commercial (F/H),0.15530523657798767,0,preliminary_ai_assisted_review
+ML001,Semantic,48,JOB_006106,"Senior Director, HRBP",0.1528739333152771,0,preliminary_ai_assisted_review
+ML001,Semantic,49,JOB_000956,Personal Banker Associate I,0.15280619263648987,0,preliminary_ai_assisted_review
+ML001,Semantic,50,JOB_008279,AE - Sales Leader (Full-Time),0.15085965394973755,0,preliminary_ai_assisted_review
+ML001,Semantic,51,JOB_008008,"Patient Services Representative II, Specialty Services Patient Contact Center",0.1505553126335144,0,preliminary_ai_assisted_review
+ML001,Semantic,52,JOB_004903,Mental Health Group Facilitator - NV,0.14314262568950653,0,preliminary_ai_assisted_review
+ML001,Semantic,53,JOB_007608,Part Time ( 20 Hours) Intensive Home Based Therapeutic Care - Young Adult Peer Mentor,0.14283883571624756,0,preliminary_ai_assisted_review
+ML001,Semantic,54,JOB_004192,LPN/RN PDN (peds to young adults),0.12991425395011902,0,preliminary_ai_assisted_review
+ML001,Semantic,55,JOB_002503,DIRECT SUPPT PROFESSIONAL,0.1299140751361847,0,preliminary_ai_assisted_review
+ML001,Semantic,56,JOB_008943,Front Desk Agent,0.12630733847618103,0,preliminary_ai_assisted_review
+ML001,Semantic,57,JOB_006711,Employé de rayon (F/H) Idéal étudiant,0.09904301166534424,0,preliminary_ai_assisted_review
+ML001,Semantic,58,JOB_000036,Salad Bar Clerk Part Time Evening,0.08947217464447021,0,preliminary_ai_assisted_review
+ML001,Semantic,59,JOB_001677,Diet Clerk,0.08540678769350052,0,preliminary_ai_assisted_review
+ML001,Semantic,60,JOB_000040,HMR Clerk Part Time Afternoon,0.04737583175301552,0,preliminary_ai_assisted_review
+ML001,Hybrid,1,JOB_008435,Sr Associate Data Scientist,0.6218668460845947,1,preliminary_ai_assisted_review
+ML001,Hybrid,2,JOB_008439,Data Scientist (Computer Vision),0.6155041933059693,1,preliminary_ai_assisted_review
+ML001,Hybrid,3,JOB_000744,Junior AI Engineer,0.6090674897034963,1,preliminary_ai_assisted_review
+ML001,Hybrid,4,JOB_005960,Artificial Intelligence Engineer,0.6089761694272359,1,preliminary_ai_assisted_review
+ML001,Hybrid,5,JOB_000743,AI Engineer,0.5647823750972748,1,preliminary_ai_assisted_review
+ML001,Hybrid,6,JOB_006142,Senior Machine Learning Scientist,0.563794219493866,1,preliminary_ai_assisted_review
+ML001,Hybrid,7,JOB_007376,"Staff Machine Learning Engineer, Agentic Product",0.549155855178833,1,preliminary_ai_assisted_review
+ML001,Hybrid,8,JOB_005553,AI Engineer,0.5437609493732453,1,preliminary_ai_assisted_review
+ML001,Hybrid,9,JOB_007361,"Senior Machine Learning Engineer, Agentic Product - Moveworks",0.5426290120397295,1,preliminary_ai_assisted_review
+ML001,Hybrid,10,JOB_006251,Senior AI Engineer,0.541615225871404,1,preliminary_ai_assisted_review
+ML001,Hybrid,11,JOB_007060,Mid Level AI Engineer,0.528413861989975,1,preliminary_ai_assisted_review
+ML001,Hybrid,12,JOB_004888,Senior AI Engineer,0.5281592388947804,1,preliminary_ai_assisted_review
+ML001,Hybrid,13,JOB_005946,AI Engineer,0.5256655991077424,1,preliminary_ai_assisted_review
+ML001,Hybrid,14,JOB_003939,"Machine Learning Engineer / MLOps (Python, Cloud, Data) – Híbrido - CDMX",0.5248675429821015,1,preliminary_ai_assisted_review
+ML001,Hybrid,15,JOB_004856,"Staff Machine Learning Engineer - Game Tech Group, ML Platform",0.5162763913472493,1,preliminary_ai_assisted_review
+ML001,Hybrid,16,JOB_007378,"Staff Machine Learning Engineer, Agentic App Platform",0.5153484072004045,1,preliminary_ai_assisted_review
+ML001,Hybrid,17,JOB_007365,"Machine Learning Engineer, Agentic Product - Moveworks",0.5113936245441437,1,preliminary_ai_assisted_review
+ML001,Hybrid,18,JOB_006254,Senior AI Engineer,0.5101081510384877,1,preliminary_ai_assisted_review
+ML001,Hybrid,19,JOB_006778,Senior Fullstack/AI Engineer,0.5076409578323364,1,preliminary_ai_assisted_review
+ML001,Hybrid,20,JOB_006787,Senior Fullstack/AI Engineer,0.5076072514057159,1,preliminary_ai_assisted_review
+ML001,Hybrid,21,JOB_009942,Software Engineer - Build Systems and Tooling (C++/Python) (F/M/D),0.5064103327014229,1,preliminary_ai_assisted_review
+ML001,Hybrid,22,JOB_006781,Senior Fullstack/AI Engineer,0.49885252118110657,1,preliminary_ai_assisted_review
+ML001,Hybrid,23,JOB_006783,Senior Fullstack/AI Engineer,0.4970168471336365,1,preliminary_ai_assisted_review
+ML001,Hybrid,24,JOB_006785,Senior Fullstack/AI Engineer,0.4960746467113495,1,preliminary_ai_assisted_review
+ML001,Hybrid,25,JOB_005949,AI Engineer,0.4951223909854889,1,preliminary_ai_assisted_review
+ML001,Hybrid,26,JOB_007380,"Senior Staff Machine Learning Engineer, Agentic Product - Moveworks",0.4837938606739044,1,preliminary_ai_assisted_review
+ML001,Hybrid,27,JOB_007908,Head of Artificial Intelligence – LATAM,0.48202753663063047,1,preliminary_ai_assisted_review
+ML001,Hybrid,28,JOB_007373,"Senior Machine Learning Engineer, Agentic App Platform - Moveworks",0.47702265381813047,1,preliminary_ai_assisted_review
+ML001,Hybrid,29,JOB_000370,AI Engineer (Contract role),0.46293663382530215,1,preliminary_ai_assisted_review
+ML001,Hybrid,30,JOB_002741,AI Engineering Sr,0.45620420575141907,1,preliminary_ai_assisted_review
+ML001,Hybrid,31,JOB_007789,Site Reliability Engineer (Hosted Infra) - Platform,0.4271890679995219,0,preliminary_ai_assisted_review
+ML001,Hybrid,32,JOB_001116,"Senior Team Lead, Technical Services",0.4042752981185913,0,preliminary_ai_assisted_review
+ML001,Hybrid,33,JOB_005414,Support Group Intern - Artificial Intelligence,0.3864244818687439,1,preliminary_ai_assisted_review
+ML001,Hybrid,34,JOB_006256,"Contract & Claim Manager, Manufacturing Construction Projects, Guanajuato",0.38608142733573914,0,preliminary_ai_assisted_review
+ML001,Hybrid,35,JOB_008218,HR Generalist,0.3780597150325775,0,preliminary_ai_assisted_review
+ML001,Hybrid,36,JOB_006561,Специалист по планированию поставок сырья,0.37705445289611816,0,preliminary_ai_assisted_review
+ML001,Hybrid,37,JOB_004374,Contract & Sales Support Analyst (Contract),0.37509098649024963,0,preliminary_ai_assisted_review
+ML001,Hybrid,38,JOB_007340,Authorization Specialist,0.3741210401058197,0,preliminary_ai_assisted_review
+ML001,Hybrid,39,JOB_005400,Security Officer Site Supervisor,0.37323135137557983,0,preliminary_ai_assisted_review
+ML001,Hybrid,40,JOB_003704,ANALISTA DE RUTA DE TRANSPORTE,0.37263810634613037,0,preliminary_ai_assisted_review
+ML001,Hybrid,41,JOB_008137,Carrier Payable/Invoicing Representative II,0.37199661135673523,0,preliminary_ai_assisted_review
+ML001,Hybrid,42,JOB_003040,Full Time - Sales Associate - Outside Lawn & Garden - Closing,0.35871198773384094,0,preliminary_ai_assisted_review
+ML001,Hybrid,43,JOB_009068,"Senior Epidemiologist, HIV Treatment, Retrospective Claims Study Expertise (FSP Sponsor Dedicated)",0.35492435097694397,0,preliminary_ai_assisted_review
+ML001,Hybrid,44,JOB_004908,Mental Health Group Facilitator - KY,0.34996604919433594,0,preliminary_ai_assisted_review
+ML001,Hybrid,45,JOB_008279,AE - Sales Leader (Full-Time),0.3496699333190918,0,preliminary_ai_assisted_review
+ML001,Hybrid,46,JOB_004868,Permit Technician,0.345426470041275,0,preliminary_ai_assisted_review
+ML001,Hybrid,47,JOB_006106,"Senior Director, HRBP",0.343387633562088,0,preliminary_ai_assisted_review
+ML001,Hybrid,48,JOB_006638,Employé commercial (F/H),0.3419342339038849,0,preliminary_ai_assisted_review
+ML001,Hybrid,49,JOB_004903,Mental Health Group Facilitator - NV,0.34146764874458313,0,preliminary_ai_assisted_review
+ML001,Hybrid,50,JOB_007608,Part Time ( 20 Hours) Intensive Home Based Therapeutic Care - Young Adult Peer Mentor,0.3413768708705902,0,preliminary_ai_assisted_review
+ML001,Hybrid,51,JOB_000956,Personal Banker Associate I,0.3408307433128357,0,preliminary_ai_assisted_review
+ML001,Hybrid,52,JOB_002503,DIRECT SUPPT PROFESSIONAL,0.3383359909057617,0,preliminary_ai_assisted_review
+ML001,Hybrid,53,JOB_006336,Teller,0.3376739025115967,0,preliminary_ai_assisted_review
+ML001,Hybrid,54,JOB_008943,Front Desk Agent,0.3370455801486969,0,preliminary_ai_assisted_review
+ML001,Hybrid,55,JOB_004192,LPN/RN PDN (peds to young adults),0.3349567651748657,0,preliminary_ai_assisted_review
+ML001,Hybrid,56,JOB_000036,Salad Bar Clerk Part Time Evening,0.32749176025390625,0,preliminary_ai_assisted_review
+ML001,Hybrid,57,JOB_006711,Employé de rayon (F/H) Idéal étudiant,0.32282590866088867,0,preliminary_ai_assisted_review
+ML001,Hybrid,58,JOB_008008,"Patient Services Representative II, Specialty Services Patient Contact Center",0.3204854726791382,0,preliminary_ai_assisted_review
+ML001,Hybrid,59,JOB_001677,Diet Clerk,0.3203434944152832,0,preliminary_ai_assisted_review
+ML001,Hybrid,60,JOB_000040,HMR Clerk Part Time Afternoon,0.3131553530693054,0,preliminary_ai_assisted_review

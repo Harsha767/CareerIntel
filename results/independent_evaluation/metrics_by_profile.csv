@@ -1,0 +1,10 @@
+user_id,model,candidate_count,relevant_candidates,precision_at_10,recall_at_10,ndcg_at_10,mrr,label_source
+DA001,TF-IDF,60,33,1.0,0.30303030303030304,1.0,1.0,reviewer_relevant
+DS001,TF-IDF,60,30,1.0,0.3333333333333333,1.0,1.0,reviewer_relevant
+ML001,TF-IDF,58,31,1.0,0.3225806451612903,1.0,1.0,reviewer_relevant
+DA001,Semantic,60,33,1.0,0.30303030303030304,1.0,1.0,reviewer_relevant
+DS001,Semantic,60,30,1.0,0.3333333333333333,1.0,1.0,reviewer_relevant
+ML001,Semantic,58,31,1.0,0.3225806451612903,1.0,1.0,reviewer_relevant
+DA001,Hybrid,60,33,1.0,0.30303030303030304,1.0,1.0,reviewer_relevant
+DS001,Hybrid,60,30,1.0,0.3333333333333333,1.0,1.0,reviewer_relevant
+ML001,Hybrid,58,31,1.0,0.3225806451612903,1.0,1.0,reviewer_relevant

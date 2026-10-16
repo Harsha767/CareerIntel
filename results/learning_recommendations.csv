@@ -1,0 +1,16 @@
+priority,skill,jobs_requiring_skill,job_frequency_percentage
+1,forecasting,3,20.0
+2,incrementality testing,3,20.0
+3,ltv modeling,3,20.0
+4,mlops,3,20.0
+5,3d vision,2,13.33
+6,a/b testing,2,13.33
+7,ai/ml,2,13.33
+8,computer vision,2,13.33
+9,deep learning,2,13.33
+10,experiment design,2,13.33
+11,gcp,2,13.33
+12,llm integration,2,13.33
+13,marketing mix modeling,2,13.33
+14,model evaluation,2,13.33
+15,predictive modeling,2,13.33

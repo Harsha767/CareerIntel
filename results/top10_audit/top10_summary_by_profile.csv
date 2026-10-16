@@ -1,0 +1,10 @@
+model,user_id,top_k,actual_top_k_rows,reviewed_relevant,reviewed_non_relevant,unreviewed,reviewed_candidates,precision_among_reviewed_only
+TF-IDF,DA001,10,10,10,0,0,10,1.0
+TF-IDF,DS001,10,10,10,0,0,10,1.0
+TF-IDF,ML001,10,10,10,0,0,10,1.0
+Semantic,DA001,10,10,10,0,0,10,1.0
+Semantic,DS001,10,10,10,0,0,10,1.0
+Semantic,ML001,10,10,10,0,0,10,1.0
+Hybrid,DA001,10,10,10,0,0,10,1.0
+Hybrid,DS001,10,10,10,0,0,10,1.0
+Hybrid,ML001,10,10,10,0,0,10,1.0

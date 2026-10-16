@@ -1,0 +1,15 @@
+[project]
+name = "careerintel"
+version = "0.1.0"
+description = "Hybrid NLP and knowledge-graph framework for skill-aware job recommendation"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

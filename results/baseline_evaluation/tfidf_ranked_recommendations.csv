@@ -1,0 +1,179 @@
+user_id,job_id,job_title,score,rank,assistant_provisional_relevant,assistant_label_source
+DA001,JOB_002077,Junior Data Analyst,0.28555060670630494,1,1.0,assistant_provisional_review
+DA001,JOB_002357,Sr. MassHealth Encounter Data Analyst,0.23304841748979463,2,1.0,assistant_provisional_review
+DA001,JOB_008576,Data Analyst Intern,0.21897422023849913,3,1.0,assistant_provisional_review
+DA001,JOB_002720,Data Analyst,0.2156065214813715,4,1.0,assistant_provisional_review
+DA001,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",0.21321055344921194,5,1.0,assistant_provisional_review
+DA001,JOB_003941,Business Analyst - Data,0.20052991127049496,6,1.0,assistant_provisional_review
+DA001,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",0.1943114889645783,7,1.0,assistant_provisional_review
+DA001,JOB_003127,BI Analyst,0.1880117081980588,8,1.0,assistant_provisional_review
+DA001,JOB_008527,"Senior Analyst, Business Intelligence",0.18601894818260944,9,1.0,assistant_provisional_review
+DA001,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,0.18337699345080746,10,0.0,assistant_provisional_review
+DA001,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,0.18265366802233543,11,1.0,assistant_provisional_review
+DA001,JOB_007612,Integrated Analytics and Insights Expert,0.17101796562443164,12,1.0,assistant_provisional_review
+DA001,JOB_009853,Financial Risk Analytics (FRA) Analyst,0.15062061710811392,13,1.0,assistant_provisional_review
+DA001,JOB_009648,"Associate, UK Power Analytics",0.1490470955900371,14,1.0,assistant_provisional_review
+DA001,JOB_005106,Analytics Engineer,0.13621252303833245,15,1.0,assistant_provisional_review
+DA001,JOB_006127,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.13225140701629576,16,0.0,assistant_provisional_review
+DA001,JOB_001022,Business Intelligence Analyst I,0.1313454920514504,17,1.0,assistant_provisional_review
+DA001,JOB_002296,Account Manager - Business Intelligence,0.12478893924986505,18,0.0,assistant_provisional_review
+DA001,JOB_006297,Sr. Business Intelligence Analyst,0.12137563916616612,19,1.0,assistant_provisional_review
+DA001,JOB_008929,Data Science and Business Intelligence Professional III,0.11554888932325315,20,1.0,assistant_provisional_review
+DA001,JOB_001769,Business Analyst - Middle Office Performance Measurement,0.10382090923613237,21,1.0,assistant_provisional_review
+DA001,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",0.09699686924837238,22,0.0,assistant_provisional_review
+DA001,JOB_001520,Senior Technical Business Analyst,0.09372963524047731,23,1.0,assistant_provisional_review
+DA001,JOB_004494,Analytics Engineer,0.09222943483413056,24,1.0,assistant_provisional_review
+DA001,JOB_006123,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.0886800655388739,25,0.0,assistant_provisional_review
+DA001,JOB_000851,Business Analyst III,0.06902213312591608,26,1.0,assistant_provisional_review
+DA001,JOB_006125,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.06001639176414211,27,0.0,assistant_provisional_review
+DA001,JOB_002208,Senior Advanced Analytics Application Developer,0.053944134278914015,28,1.0,assistant_provisional_review
+DA001,JOB_001765,"Business Analyst – Offers Platform, Assistant Vice President",0.0461953769138116,29,0.0,assistant_provisional_review
+DA001,JOB_000513,Data Services Specialist (Production Associate),0.045184359298294396,30,0.0,assistant_provisional_review
+DA001,JOB_006530,Business Analyst Capital Market,0.044552557377409624,31,1.0,assistant_provisional_review
+DA001,JOB_000521,Senior Customer Advocate (Project based),0.024905919325462694,32,0.0,assistant_provisional_review
+DA001,JOB_003377,Cashier Part Time AM/PM- Four Seasons Orlando,0.011318331337531792,33,0.0,assistant_provisional_review
+DA001,JOB_006597,Полевой эксперт специализированных культур по работе с ключевыми клиентами,0.011051632958374993,34,0.0,assistant_provisional_review
+DA001,JOB_004154,Tecnico Ambientale - Campania,0.008595662394594403,35,0.0,assistant_provisional_review
+DA001,JOB_006918,Utvecklare inom Dynamics 365 Business Central,0.00693564808567201,36,0.0,assistant_provisional_review
+DA001,JOB_006915,Assistant Nurse Manager / WOC Registered Nurse / RN,0.006726573967631557,37,0.0,assistant_provisional_review
+DA001,JOB_007852,Multimedia Journalist (MMJ),0.00518260236365212,38,0.0,assistant_provisional_review
+DA001,JOB_000034,Produce Clerk Part Time Day,0.0,39,0.0,assistant_provisional_review
+DA001,JOB_001156,Mental Health Professionals,0.0,40,0.0,assistant_provisional_review
+DA001,JOB_001869,Senior Parts Associate,0.0,41,0.0,assistant_provisional_review
+DA001,JOB_003445,Team Member - Chichester (N118926),0.0,42,0.0,assistant_provisional_review
+DA001,JOB_003830,Maintenance Technician - The Winchester,0.0,43,0.0,assistant_provisional_review
+DA001,JOB_003948,EAP Counsellor,0.0,44,0.0,assistant_provisional_review
+DA001,JOB_003961,VIP Specialist,0.0,45,0.0,assistant_provisional_review
+DA001,JOB_004098,Customer Service Representative,0.0,46,0.0,assistant_provisional_review
+DA001,JOB_004158,Wireless Retail Sales Associate - W2084,0.0,47,0.0,assistant_provisional_review
+DA001,JOB_004801,Security Shift Supervisor - University Campus,0.0,48,0.0,assistant_provisional_review
+DA001,JOB_005349,Catering Assistant - Caterlink,0.0,49,0.0,assistant_provisional_review
+DA001,JOB_006064,Model-Based Systems Engineering Lead,0.0,50,0.0,assistant_provisional_review
+DA001,JOB_006414,Security Officer - Mall Vehicle Patrol,0.0,51,0.0,assistant_provisional_review
+DA001,JOB_006492,Automotive Product Specialist,0.0,52,0.0,assistant_provisional_review
+DA001,JOB_006559,Юрисконсульт,0.0,53,0.0,assistant_provisional_review
+DA001,JOB_006723,Employé commercial (F/H),0.0,54,0.0,assistant_provisional_review
+DA001,JOB_006897,Environmental Service Worker,0.0,55,0.0,assistant_provisional_review
+DA001,JOB_007287,HR Manager,0.0,56,0.0,assistant_provisional_review
+DA001,JOB_007719,Rental Sales Agent (Firenze),0.0,57,0.0,assistant_provisional_review
+DA001,JOB_009056,Practice Manager 2,0.0,58,0.0,assistant_provisional_review
+DA001,JOB_009536,Coiffeur / Coiffeuse,0.0,59,0.0,assistant_provisional_review
+DA001,JOB_009873,Clinical Service Manager (m/w/d),0.0,60,0.0,assistant_provisional_review
+DS001,JOB_005108,Data Scientist,0.3280574282163667,1,1.0,assistant_provisional_review
+DS001,JOB_001820,Lead Marketing Data Scientist,0.24660592465922693,2,0.0,assistant_provisional_review
+DS001,JOB_008435,Sr Associate Data Scientist,0.19903306558641842,3,1.0,assistant_provisional_review
+DS001,JOB_001819,Lead Marketing Data Scientist,0.19860437000642056,4,0.0,assistant_provisional_review
+DS001,JOB_008611,Data Scientist,0.1980230413644322,5,1.0,assistant_provisional_review
+DS001,JOB_001818,Lead Marketing Data Scientist,0.18167610894310876,6,0.0,assistant_provisional_review
+DS001,JOB_002918,Technical Project Manager - Data Science,0.16571066604294873,7,0.0,assistant_provisional_review
+DS001,JOB_002357,Sr. MassHealth Encounter Data Analyst,0.16020320529136411,8,1.0,assistant_provisional_review
+DS001,JOB_006393,"Data Scientist, Modeler",0.15153245666023318,9,1.0,assistant_provisional_review
+DS001,JOB_006387,"Data Scientist, Modeler",0.1493509591541836,10,1.0,assistant_provisional_review
+DS001,JOB_002077,Junior Data Analyst,0.1493343804067604,11,1.0,assistant_provisional_review
+DS001,JOB_006389,"Data Scientist, Modeler",0.13975085182707073,12,1.0,assistant_provisional_review
+DS001,JOB_009648,"Associate, UK Power Analytics",0.1372486509168178,13,1.0,assistant_provisional_review
+DS001,JOB_005106,Analytics Engineer,0.13632234255539066,14,1.0,assistant_provisional_review
+DS001,JOB_008929,Data Science and Business Intelligence Professional III,0.13550842859183726,15,1.0,assistant_provisional_review
+DS001,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,0.1341488459874326,16,1.0,assistant_provisional_review
+DS001,JOB_009853,Financial Risk Analytics (FRA) Analyst,0.12843886760961512,17,1.0,assistant_provisional_review
+DS001,JOB_002720,Data Analyst,0.12793042625101808,18,1.0,assistant_provisional_review
+DS001,JOB_004324,"Sr Manager, Data Science",0.1276415450561694,19,0.0,assistant_provisional_review
+DS001,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",0.12696096886461913,20,1.0,assistant_provisional_review
+DS001,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",0.1264318563732701,21,1.0,assistant_provisional_review
+DS001,JOB_007612,Integrated Analytics and Insights Expert,0.11134842052293141,22,1.0,assistant_provisional_review
+DS001,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,0.10886029619642183,23,1.0,assistant_provisional_review
+DS001,JOB_006127,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.08051601478879854,24,0.0,assistant_provisional_review
+DS001,JOB_004494,Analytics Engineer,0.07544687433736098,25,1.0,assistant_provisional_review
+DS001,JOB_004990,Research Scientist,0.0725231313846192,26,1.0,assistant_provisional_review
+DS001,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",0.0700916145926616,27,0.0,assistant_provisional_review
+DS001,JOB_006123,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.06589527387316033,28,0.0,assistant_provisional_review
+DS001,JOB_002208,Senior Advanced Analytics Application Developer,0.050755601913195274,29,1.0,assistant_provisional_review
+DS001,JOB_006125,"Director, Business Intelligence & Analytics (BIA) - USA Remote",0.04784188484618223,30,0.0,assistant_provisional_review
+DS001,JOB_000312,Business Development Consultant: Weatherby,0.013568164244574582,31,0.0,assistant_provisional_review
+DS001,JOB_009871,Commercial Strategic Initiatives Manager (Hybrid),0.011269071478159708,32,0.0,assistant_provisional_review
+DS001,JOB_006760,Senior Executive Assistant,0.011057406332257262,33,0.0,assistant_provisional_review
+DS001,JOB_008518,Marketing Administrator (12-month contract),0.010220387655781094,34,0.0,assistant_provisional_review
+DS001,JOB_007997,Gestionnaire Paie Confirmé F/H,0.007648788245458011,35,0.0,assistant_provisional_review
+DS001,JOB_002362,"Medical Assistant, Primary Care",0.006702587725081133,36,0.0,assistant_provisional_review
+DS001,JOB_000097,Overnight Assistant Manager,0.0,37,0.0,assistant_provisional_review
+DS001,JOB_000107,Teammate - Golf,0.0,38,0.0,assistant_provisional_review
+DS001,JOB_000260,Part Time - Sales Associate - Flexible,0.0,39,0.0,assistant_provisional_review
+DS001,JOB_000440,Office Professional,0.0,40,0.0,assistant_provisional_review
+DS001,JOB_000936,"Customer Service Representative, Full or Part Time",0.0,41,0.0,assistant_provisional_review
+DS001,JOB_001025,Lab Phlebotomist (Float),0.0,42,0.0,assistant_provisional_review
+DS001,JOB_001499,SAP Operations Clerk Part Time Day,0.0,43,0.0,assistant_provisional_review
+DS001,JOB_001507,Student Part Time Day,0.0,44,0.0,assistant_provisional_review
+DS001,JOB_001541,Terapeuta,0.0,45,0.0,assistant_provisional_review
+DS001,JOB_002246,Equipment Sales Support,0.0,46,0.0,assistant_provisional_review
+DS001,JOB_003271,ESTOQUISTA - MIX SANTA MÔNICA,0.0,47,0.0,assistant_provisional_review
+DS001,JOB_003296,AÇOUGUEIRO - MIX MARITUBA,0.0,48,0.0,assistant_provisional_review
+DS001,JOB_003431,Short-term Temporary Team Member - Croydon Centrale (N118936),0.0,49,0.0,assistant_provisional_review
+DS001,JOB_003864,Customer Advisor – Argos (in Sainsbury’s),0.0,50,0.0,assistant_provisional_review
+DS001,JOB_004218,Wireless Retail Sales Associate - W3035,0.0,51,0.0,assistant_provisional_review
+DS001,JOB_004411,2nd shift PCBA soldering Team Lead,0.0,52,0.0,assistant_provisional_review
+DS001,JOB_004711,Certified Medical Assistant - Cardiology Clinic,0.0,53,0.0,assistant_provisional_review
+DS001,JOB_005269,Security Officer / EMT - Plant,0.0,54,0.0,assistant_provisional_review
+DS001,JOB_006547,Auto Painter Helper,0.0,55,0.0,assistant_provisional_review
+DS001,JOB_007582,Senior Counsel,0.0,56,0.0,assistant_provisional_review
+DS001,JOB_007770,Chargé de logistique portuaire/ fumigation H/F,0.0,57,0.0,assistant_provisional_review
+DS001,JOB_008266,Janitorial Cleaner,0.0,58,0.0,assistant_provisional_review
+DS001,JOB_008281,Mold Repair Technician II,0.0,59,0.0,assistant_provisional_review
+DS001,JOB_009115,Cashier,0.0,60,0.0,assistant_provisional_review
+ML001,JOB_006142,Senior Machine Learning Scientist,0.3301684549756094,1,0.0,assistant_provisional_review
+ML001,JOB_008435,Sr Associate Data Scientist,0.3031768726894306,2,1.0,assistant_provisional_review
+ML001,JOB_005960,Artificial Intelligence Engineer,0.2827065397316106,3,1.0,assistant_provisional_review
+ML001,JOB_003939,"Machine Learning Engineer / MLOps (Python, Cloud, Data) – Híbrido - CDMX",0.2530085121684874,4,1.0,assistant_provisional_review
+ML001,JOB_007376,"Staff Machine Learning Engineer, Agentic Product",0.24597864505441466,5,0.0,assistant_provisional_review
+ML001,JOB_007380,"Senior Staff Machine Learning Engineer, Agentic Product - Moveworks",0.22045342393447018,6,0.0,assistant_provisional_review
+ML001,JOB_008439,Data Scientist (Computer Vision),0.21084877405957744,7,1.0,assistant_provisional_review
+ML001,JOB_007361,"Senior Machine Learning Engineer, Agentic Product - Moveworks",0.19786554597522638,8,0.0,assistant_provisional_review
+ML001,JOB_004856,"Staff Machine Learning Engineer - Game Tech Group, ML Platform",0.15578318196261148,9,0.0,assistant_provisional_review
+ML001,JOB_007373,"Senior Machine Learning Engineer, Agentic App Platform - Moveworks",0.12627339294288836,10,0.0,assistant_provisional_review
+ML001,JOB_007365,"Machine Learning Engineer, Agentic Product - Moveworks",0.11165367271395196,11,1.0,assistant_provisional_review
+ML001,JOB_007378,"Staff Machine Learning Engineer, Agentic App Platform",0.08518035695525661,12,0.0,assistant_provisional_review
+ML001,JOB_004888,Senior AI Engineer,0.08277916829498118,13,0.0,assistant_provisional_review
+ML001,JOB_007908,Head of Artificial Intelligence – LATAM,0.06605430474004134,14,0.0,assistant_provisional_review
+ML001,JOB_000744,Junior AI Engineer,0.0495668974082304,15,1.0,assistant_provisional_review
+ML001,JOB_002741,AI Engineering Sr,0.03637952856761992,16,0.0,assistant_provisional_review
+ML001,JOB_006787,Senior Fullstack/AI Engineer,0.03469026463275143,17,0.0,assistant_provisional_review
+ML001,JOB_000743,AI Engineer,0.030569478122913597,18,1.0,assistant_provisional_review
+ML001,JOB_006781,Senior Fullstack/AI Engineer,0.026982927055479028,19,0.0,assistant_provisional_review
+ML001,JOB_006254,Senior AI Engineer,0.025873716333870436,20,0.0,assistant_provisional_review
+ML001,JOB_005553,AI Engineer,0.025435374740102757,21,1.0,assistant_provisional_review
+ML001,JOB_006778,Senior Fullstack/AI Engineer,0.022685088766531646,22,0.0,assistant_provisional_review
+ML001,JOB_007060,Mid Level AI Engineer,0.022425158982022228,23,1.0,assistant_provisional_review
+ML001,JOB_006785,Senior Fullstack/AI Engineer,0.02120841685750026,24,0.0,assistant_provisional_review
+ML001,JOB_006783,Senior Fullstack/AI Engineer,0.02100184465441593,25,0.0,assistant_provisional_review
+ML001,JOB_005946,AI Engineer,0.02011925847852729,26,1.0,assistant_provisional_review
+ML001,JOB_006251,Senior AI Engineer,0.019478046050956002,27,0.0,assistant_provisional_review
+ML001,JOB_000370,AI Engineer (Contract role),0.019459943295788155,28,1.0,assistant_provisional_review
+ML001,JOB_007789,Site Reliability Engineer (Hosted Infra) - Platform,0.016275444751304314,29,0.0,assistant_provisional_review
+ML001,JOB_005949,AI Engineer,0.014541326864953269,30,1.0,assistant_provisional_review
+ML001,JOB_009068,"Senior Epidemiologist, HIV Treatment, Retrospective Claims Study Expertise (FSP Sponsor Dedicated)",0.01071675684609095,31,0.0,assistant_provisional_review
+ML001,JOB_006711,Employé de rayon (F/H) Idéal étudiant,0.005500992948744674,32,0.0,assistant_provisional_review
+ML001,JOB_000036,Salad Bar Clerk Part Time Evening,0.004834373887095153,33,0.0,assistant_provisional_review
+ML001,JOB_006638,Employé commercial (F/H),0.003951440361232566,34,0.0,assistant_provisional_review
+ML001,JOB_008943,Front Desk Agent,0.0031962946821931792,35,0.0,assistant_provisional_review
+ML001,JOB_006336,Teller,0.002817919361908479,36,0.0,assistant_provisional_review
+ML001,JOB_003704,ANALISTA DE RUTA DE TRANSPORTE,0.002792665635876539,37,0.0,assistant_provisional_review
+ML001,JOB_004908,Mental Health Group Facilitator - KY,0.0023616950877816336,38,0.0,assistant_provisional_review
+ML001,JOB_001116,"Senior Team Lead, Technical Services",0.0022572517475463265,39,0.0,assistant_provisional_review
+ML001,JOB_008279,AE - Sales Leader (Full-Time),0.0021096814057119046,40,0.0,assistant_provisional_review
+ML001,JOB_000040,HMR Clerk Part Time Afternoon,0.0,41,0.0,assistant_provisional_review
+ML001,JOB_000956,Personal Banker Associate I,0.0,42,0.0,assistant_provisional_review
+ML001,JOB_001677,Diet Clerk,0.0,43,0.0,assistant_provisional_review
+ML001,JOB_002503,DIRECT SUPPT PROFESSIONAL,0.0,44,0.0,assistant_provisional_review
+ML001,JOB_003040,Full Time - Sales Associate - Outside Lawn & Garden - Closing,0.0,45,0.0,assistant_provisional_review
+ML001,JOB_004192,LPN/RN PDN (peds to young adults),0.0,46,0.0,assistant_provisional_review
+ML001,JOB_004374,Contract & Sales Support Analyst (Contract),0.0,47,0.0,assistant_provisional_review
+ML001,JOB_004868,Permit Technician,0.0,48,0.0,assistant_provisional_review
+ML001,JOB_004903,Mental Health Group Facilitator - NV,0.0,49,0.0,assistant_provisional_review
+ML001,JOB_005400,Security Officer Site Supervisor,0.0,50,0.0,assistant_provisional_review
+ML001,JOB_006106,"Senior Director, HRBP",0.0,51,0.0,assistant_provisional_review
+ML001,JOB_006256,"Contract & Claim Manager, Manufacturing Construction Projects, Guanajuato",0.0,52,0.0,assistant_provisional_review
+ML001,JOB_006561,Специалист по планированию поставок сырья,0.0,53,0.0,assistant_provisional_review
+ML001,JOB_007340,Authorization Specialist,0.0,54,0.0,assistant_provisional_review
+ML001,JOB_007608,Part Time ( 20 Hours) Intensive Home Based Therapeutic Care - Young Adult Peer Mentor,0.0,55,0.0,assistant_provisional_review
+ML001,JOB_008008,"Patient Services Representative II, Specialty Services Patient Contact Center",0.0,56,0.0,assistant_provisional_review
+ML001,JOB_008137,Carrier Payable/Invoicing Representative II,0.0,57,0.0,assistant_provisional_review
+ML001,JOB_008218,HR Generalist,0.0,58,0.0,assistant_provisional_review

@@ -1,0 +1,4 @@
+model,profiles_evaluated,precision_at_10,recall_at_10,ndcg_at_10,mrr,candidate_count,label_type
+Hybrid,3,1.0,0.3196480938416422,1.0,1.0,180,preliminary_ai_assisted_review
+Semantic,3,1.0,0.3196480938416422,1.0,1.0,180,preliminary_ai_assisted_review
+TF-IDF,3,1.0,0.3196480938416422,1.0,1.0,180,preliminary_ai_assisted_review

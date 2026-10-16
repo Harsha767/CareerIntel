@@ -1,0 +1,10 @@
+precision_at_10,recall_at_10,ndcg_at_10,mrr_at_10,candidate_count,evaluated_at_k,relevant_in_top_k,total_relevant_reviewed,user_id,model,label_type
+1.0,0.30303030303030304,1.0,1.0,10,10,10,33,DA001,TF-IDF,preliminary_ai_assisted_review
+1.0,0.3333333333333333,1.0,1.0,10,10,10,30,DS001,TF-IDF,preliminary_ai_assisted_review
+1.0,0.3225806451612903,1.0,1.0,10,10,10,31,ML001,TF-IDF,preliminary_ai_assisted_review
+1.0,0.30303030303030304,1.0,1.0,10,10,10,33,DA001,Semantic,preliminary_ai_assisted_review
+1.0,0.3333333333333333,1.0,1.0,10,10,10,30,DS001,Semantic,preliminary_ai_assisted_review
+1.0,0.3225806451612903,1.0,1.0,10,10,10,31,ML001,Semantic,preliminary_ai_assisted_review
+1.0,0.30303030303030304,1.0,1.0,10,10,10,33,DA001,Hybrid,preliminary_ai_assisted_review
+1.0,0.3333333333333333,1.0,1.0,10,10,10,30,DS001,Hybrid,preliminary_ai_assisted_review
+1.0,0.3225806451612903,1.0,1.0,10,10,10,31,ML001,Hybrid,preliminary_ai_assisted_review
