@@ -1,6 +1,6 @@
 {
-    "job_title": "Implementation Manager",
-    "company_name": "North American Bancard",
+    "job_title": "Data Scientist",
+    "company_name": "PHMG Careers",
     "candidate_skills": [
         "data analysis",
         "data visualization",
@@ -11,29 +11,30 @@
         "statistics"
     ],
     "required_skills": [
-        "compliance review",
-        "customer communication",
-        "erp integration",
-        "isv integration",
-        "merchant onboarding",
-        "payment processing",
-        "project management",
-        "remote collaboration"
+        "data visualization",
+        "pandas",
+        "predictive modeling",
+        "python",
+        "scikit‑learn",
+        "sql",
+        "stakeholder communication",
+        "statistical analysis"
     ],
-    "possessed_skills": [],
+    "possessed_skills": [
+        "data visualization",
+        "pandas",
+        "python",
+        "sql"
+    ],
     "missing_skills": [
-        "compliance review",
-        "customer communication",
-        "erp integration",
-        "isv integration",
-        "merchant onboarding",
-        "payment processing",
-        "project management",
-        "remote collaboration"
+        "predictive modeling",
+        "scikit‑learn",
+        "stakeholder communication",
+        "statistical analysis"
     ],
-    "matched_skill_count": 0,
+    "matched_skill_count": 4,
     "required_skill_count": 8,
-    "missing_skill_count": 8,
-    "skill_coverage": 0.0,
-    "skill_gap_percentage": 100.0
+    "missing_skill_count": 4,
+    "skill_coverage": 0.5,
+    "skill_gap_percentage": 50.0
 }

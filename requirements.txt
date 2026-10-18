@@ -13,3 +13,4 @@ networkx
 pyyaml
 pytest
 ruff
+streamlit

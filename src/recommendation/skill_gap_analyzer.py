@@ -287,6 +287,7 @@ if __name__ == "__main__":
     print("CAREERINTEL | SKILL GAP ANALYSIS")
     print("=" * 60)
 
+    # Example candidate profile.
     candidate_skills = [
         "Python",
         "SQL",
@@ -297,15 +298,20 @@ if __name__ == "__main__":
         "Data Visualization",
     ]
 
+    # Normalize the candidate's skills.
+    candidate_skill_set = {
+        skill
+        for item in candidate_skills
+        if (skill := normalize_skill(item))
+    }
+
     jobs = load_jobs()
 
-    # Select a job with structured skill information.
+    # Select jobs with structured skill information.
     eligible_jobs = jobs[
-        jobs["normalized_skills"]
-        .fillna("")
-        .astype(str)
-        .str.strip()
-        .ne("")
+        jobs["normalized_skills"].apply(
+            lambda value: bool(parse_skills(value))
+        )
     ].copy()
 
     if eligible_jobs.empty:
@@ -313,23 +319,59 @@ if __name__ == "__main__":
             "No jobs with normalized skills were found."
         )
 
+    # Parse the required skills for each eligible job.
+    eligible_jobs["_required_skills"] = (
+        eligible_jobs["normalized_skills"].apply(parse_skills)
+    )
+
+    # Count matching candidate skills for each job.
+    eligible_jobs["_match_count"] = eligible_jobs[
+        "_required_skills"
+    ].apply(
+        lambda required: len(
+            candidate_skill_set.intersection(required)
+        )
+    )
+
+    # Prefer jobs matching the candidate's existing skills.
+    eligible_jobs = eligible_jobs[
+        eligible_jobs["_match_count"] > 0
+    ].sort_values(
+        "_match_count",
+        ascending=False,
+    )
+
+    if eligible_jobs.empty:
+        raise ValueError(
+            "No jobs matched the candidate's skills."
+        )
+
+    # Select the job with the highest skill overlap.
     target_job = eligible_jobs.iloc[0]
 
+    target_company = target_job["company_name"]
+
+    if pd.isna(target_company) or not str(target_company).strip():
+        target_company = None
+    else:
+        target_company = str(target_company)
+
+    # Analyze the selected job.
     report = analyze_skill_gap(
         candidate_skills=candidate_skills,
         job_title=str(target_job["title"]),
-        company_name=(
-            str(target_job["company_name"])
-            if pd.notna(target_job["company_name"])
-            else None
-        ),
+        company_name=target_company,
     )
 
+    # Display the results.
     print("\nTarget job:")
     print(report["job_title"])
 
     print("\nCompany:")
     print(report["company_name"])
+
+    print("\nCandidate skills:")
+    print(report["candidate_skills"])
 
     print("\nRequired skills:")
     print(report["required_skills"])
@@ -340,12 +382,19 @@ if __name__ == "__main__":
     print("\nMissing skills:")
     print(report["missing_skills"])
 
+    print("\nMatched skill count:")
+    print(report["matched_skill_count"])
+
+    print("\nRequired skill count:")
+    print(report["required_skill_count"])
+
     print("\nSkill coverage:")
     print(f'{report["skill_coverage"] * 100:.2f}%')
 
     print("\nSkill gap:")
     print(f'{report["skill_gap_percentage"]:.2f}%')
 
+    # Save the report as JSON.
     output_file = save_skill_gap_report(report)
 
     print("\nReport saved to:")
