@@ -34,6 +34,14 @@ DATA_FILE = (
     / "jobs_with_normalized_skills.csv"
 )
 
+SEMANTIC_MATCHES_FILE = (
+    ROOT
+    / "data"
+    / "processed"
+    / "jobs"
+    / "jobs_semantic_matches.csv"
+)
+
 OUTPUT_DIR = ROOT / "results"
 
 CACHE_DIR = (
@@ -49,8 +57,23 @@ CACHE_DIR.mkdir(parents=True, exist_ok=True)
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 # Hybrid recommendation weights.
-SEMANTIC_WEIGHT = 0.80
-SKILL_WEIGHT = 0.20
+# Hybrid recommendation weights.
+SEMANTIC_WEIGHT = 0.68
+SKILL_WEIGHT = 0.17
+GRAPH_WEIGHT = 0.15
+
+# Knowledge graph files.
+GRAPH_DIR = ROOT / "data" / "processed" / "knowledge_graph"
+
+JOB_OCCUPATION_FILE = GRAPH_DIR / "job_occupation_edges.csv"
+OCCUPATION_SKILL_FILE = GRAPH_DIR / "occupation_skill_edges.csv"
+
+# Graph skill category weights.
+GRAPH_SKILL_WEIGHTS = {
+    "ESSENTIAL_SKILL": 1.0,
+    "TRANSFERABLE_SKILL": 0.7,
+    "SOFTWARE_SKILL": 0.8,
+}
 
 # Initialize the transformer model.
 MODEL = SentenceTransformer(MODEL_NAME)
@@ -468,9 +491,175 @@ def calculate_skill_matches(
         matching_skills_list,
     )
 
+# ============================================================
+# 8. KNOWLEDGE GRAPH SKILL MATCHING
+# ============================================================
+
+def load_knowledge_graph():
+    """
+    Load job-to-occupation and occupation-to-skill relationships.
+    """
+
+    if not JOB_OCCUPATION_FILE.exists():
+        print("Knowledge graph unavailable. Using standard ranking.")
+        return {}, {}
+
+    if not OCCUPATION_SKILL_FILE.exists():
+        print("Occupation skill edges unavailable. Using standard ranking.")
+        return {}, {}
+
+    job_edges = pd.read_csv(JOB_OCCUPATION_FILE)
+    skill_edges = pd.read_csv(OCCUPATION_SKILL_FILE)
+
+    # Build job-to-occupation mapping.
+    job_occupation = {}
+
+    for _, row in job_edges.iterrows():
+        job_id = str(row["job_id"]).strip()
+        occupation_id = str(row["occupation_id"]).strip()
+
+        job_occupation[job_id] = occupation_id
+
+    # Build occupation-to-weighted-skills mapping.
+    occupation_skills = {}
+
+    for _, row in skill_edges.iterrows():
+        occupation_id = str(row["occupation_id"]).strip()
+        skill_name = normalize_skill(row["skill_name"])
+        relationship = str(row["relationship"]).strip().upper()
+
+        if not skill_name:
+            continue
+
+        weight = GRAPH_SKILL_WEIGHTS.get(relationship, 0.0)
+
+        if weight <= 0:
+            continue
+
+        importance = pd.to_numeric(
+            row.get("importance"),
+            errors="coerce",
+        )
+
+        if pd.isna(importance):
+            importance = 1.0
+
+        importance_factor = max(
+            0.0,
+            min(float(importance) / 5.0, 1.0),
+        )
+
+        final_weight = weight * importance_factor
+
+        occupation_skills.setdefault(
+            occupation_id, {}
+        )[skill_name] = final_weight
+
+    return job_occupation, occupation_skills
+
+
+def calculate_graph_skill_matches(jobs, user_skills):
+    """
+    Calculate graph-based skill coverage for production jobs.
+
+    Only uniquely matched graph jobs are used.
+    """
+
+    graph_scores = np.zeros(len(jobs), dtype=float)
+    graph_matching_skills = [""] * len(jobs)
+
+    if not user_skills:
+        return graph_scores, graph_matching_skills
+
+    job_occupation, occupation_skills = load_knowledge_graph()
+
+    if not job_occupation or not occupation_skills:
+        return graph_scores, graph_matching_skills
+
+    semantic_jobs = pd.read_csv(SEMANTIC_MATCHES_FILE).fillna("")
+    production_jobs = jobs.fillna("")
+
+    def make_key(row):
+        return (
+            clean(row["normalized_title"]).casefold()
+            + "|"
+            + clean(row["company_name"]).casefold()
+        )
+
+    semantic_jobs["_key"] = semantic_jobs.apply(
+        make_key, axis=1
+    )
+
+    production_jobs["_key"] = production_jobs.apply(
+        make_key, axis=1
+    )
+
+    # Count production records per composite key.
+    key_counts = production_jobs["_key"].value_counts()
+
+    # Only use keys that map to exactly one production job.
+    unique_keys = set(
+        key_counts[key_counts == 1].index
+    )
+
+    graph_key_to_id = {}
+
+    for index, row in semantic_jobs.iterrows():
+        key = row["_key"]
+
+        if key not in unique_keys:
+            continue
+
+        graph_key_to_id[key] = f"job_{index + 1:06d}"
+
+    normalized_user_skills = normalize_skill_set(
+        user_skills
+    )
+
+    for index, row in production_jobs.iterrows():
+        key = row["_key"]
+
+        graph_job_id = graph_key_to_id.get(key)
+
+        if graph_job_id is None:
+            continue
+
+        occupation_id = job_occupation.get(graph_job_id)
+
+        if occupation_id is None:
+            continue
+
+        available_skills = occupation_skills.get(
+            occupation_id, {}
+        )
+
+        if not available_skills:
+            continue
+
+        matched = normalized_user_skills.intersection(
+            available_skills.keys()
+        )
+
+        total_weight = sum(available_skills.values())
+
+        matched_weight = sum(
+            available_skills[skill]
+            for skill in matched
+        )
+
+        if total_weight > 0:
+            graph_scores[index] = (
+                matched_weight / total_weight
+            )
+
+        graph_matching_skills[index] = ", ".join(
+            sorted(matched)
+        )
+
+    return graph_scores, graph_matching_skills
 
 # ============================================================
-# 8. HYBRID JOB RECOMMENDATION
+# 9. HYBRID JOB RECOMMENDATION
 # ============================================================
 
 def recommend_jobs(
@@ -565,18 +754,28 @@ def recommend_jobs(
     )
 
     # --------------------------------------------------------
+    # Calculate graph-based skill matches.
+    # --------------------------------------------------------
+
+    (
+        graph_skill_scores,
+        graph_matching_skills,
+    ) = calculate_graph_skill_matches(
+        jobs,
+        user_skills,
+    )
+
+    # --------------------------------------------------------
     # Calculate final hybrid scores.
     # --------------------------------------------------------
 
     if user_skills:
-
         recommendation_scores = (
             SEMANTIC_WEIGHT * semantic_scores
             + SKILL_WEIGHT * skill_scores
+            + GRAPH_WEIGHT * graph_skill_scores
         )
-
     else:
-
         recommendation_scores = semantic_scores
 
     # --------------------------------------------------------
@@ -588,6 +787,10 @@ def recommend_jobs(
     results["semantic_score"] = semantic_scores
 
     results["skill_coverage"] = skill_scores
+
+    results["graph_skill_coverage"] = graph_skill_scores
+
+    results["graph_matching_skills"] = graph_matching_skills
 
     results["matching_skills"] = matching_skills_list
 
@@ -652,18 +855,20 @@ def recommend_jobs(
     # --------------------------------------------------------
 
     output_columns = [
-        "title",
-        "company_name",
-        "industry",
-        "function",
-        "experience_level",
-        "work_model",
-        "employment_type",
-        "normalized_skills",
-        "matching_skills",
-        "semantic_score",
-        "skill_coverage",
-        "recommendation_score",
+      "title",
+       "company_name",
+      "industry",
+      "function",
+      "experience_level",
+      "work_model",
+      "employment_type",
+      "normalized_skills",
+      "matching_skills",
+      "graph_matching_skills",
+      "semantic_score",
+      "skill_coverage",
+      "graph_skill_coverage",
+      "recommendation_score",
     ]
 
     output_columns = [
@@ -676,7 +881,7 @@ def recommend_jobs(
 
 
 # ============================================================
-# 9. MAIN EXECUTION
+# 10. MAIN EXECUTION
 # ============================================================
 
 if __name__ == "__main__":
