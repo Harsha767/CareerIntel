@@ -27,9 +27,9 @@ OCCUPATION_MASTER_FILE = (
     ONET_DIR / "occupation_master.csv"
 )
 
-OCCUPATION_SKILL_FILE = (
-    GRAPH_DIR / "occupation_skill_edges.csv"
-)
+ESSENTIAL_SKILLS_FILE = ONET_DIR / "occupation_essential_skills.csv"
+TRANSFERABLE_SKILLS_FILE = ONET_DIR / "occupation_transferable_skills.csv"
+SOFTWARE_SKILLS_FILE = ONET_DIR / "occupation_software_skills.csv"
 
 RELATED_OCCUPATION_FILE = (
     ONET_DIR / "related_occupations_mapping.csv"
@@ -105,6 +105,22 @@ def first_existing_column(
             return column
 
     return None
+
+
+def ensure_job_ids(jobs: pd.DataFrame) -> pd.DataFrame:
+    """Return a copy with stable job IDs shared by nodes and edges."""
+    output = jobs.copy()
+    id_column = first_existing_column(
+        output,
+        ["job_id", "id", "job_idx", "job_index"],
+    )
+    if id_column is None:
+        output["job_id"] = [
+            f"job_{index:06d}" for index in range(1, len(output) + 1)
+        ]
+    else:
+        output["job_id"] = output[id_column].astype(str).str.strip()
+    return output
 
 
 def clean_text(value) -> str:
@@ -183,36 +199,15 @@ def build_job_nodes(
             f"Available columns: {list(jobs.columns)}"
         )
 
-    job_id_column = first_existing_column(
-        jobs,
-        [
-            "job_id",
-            "id",
-            "job_idx",
-            "job_index",
-        ],
-    )
+    jobs = ensure_job_ids(jobs)
 
     output = pd.DataFrame()
 
     # --------------------------------------------------------
-    # Stable job IDs
+    # Stable job IDs shared with edge construction
     # --------------------------------------------------------
 
-    if job_id_column is not None:
-
-        output["job_id"] = (
-            jobs[job_id_column]
-            .astype(str)
-            .str.strip()
-        )
-
-    else:
-
-        output["job_id"] = [
-            f"job_{index:06d}"
-            for index in range(1, len(jobs) + 1)
-        ]
+    output["job_id"] = jobs["job_id"].astype(str)
 
     # --------------------------------------------------------
     # Job title
@@ -467,49 +462,13 @@ def build_job_occupation_edges(
         )
 
     # --------------------------------------------------------
-    # Create row-based temporary ID so it matches job_nodes
-    # when original dataset has no explicit job ID.
+    # Reuse the exact IDs assigned to job nodes.
+    # Exclude rows removed from job_nodes (empty titles/duplicates).
     # --------------------------------------------------------
 
-    temp = jobs.copy()
-
-    temp["_row_number"] = range(
-        1,
-        len(temp) + 1,
-    )
-
-    if first_existing_column(
-        jobs,
-        [
-            "job_id",
-            "id",
-            "job_idx",
-            "job_index",
-        ],
-    ) is None:
-
-        temp["job_id"] = [
-            f"job_{index:06d}"
-            for index in range(1, len(temp) + 1)
-        ]
-
-    else:
-
-        id_column = first_existing_column(
-            jobs,
-            [
-                "job_id",
-                "id",
-                "job_idx",
-                "job_index",
-            ],
-        )
-
-        temp["job_id"] = (
-            temp[id_column]
-            .astype(str)
-            .str.strip()
-        )
+    temp = ensure_job_ids(jobs)
+    valid_job_ids = set(job_nodes["job_id"].astype(str))
+    temp = temp[temp["job_id"].isin(valid_job_ids)].copy()
 
     # --------------------------------------------------------
     # Match occupation title -> occupation ID
@@ -523,10 +482,16 @@ def build_job_occupation_edges(
             ]
         ]
         .copy()
+        .rename(
+            columns={
+                "occupation_title": "onet_title",
+            }
+        )
     )
 
     occupation_lookup["occupation_title_key"] = (
-        occupation_lookup["occupation_title"]
+        occupation_lookup["onet_title"]
+        .astype(str)
         .str.lower()
         .str.strip()
     )
@@ -543,7 +508,7 @@ def build_job_occupation_edges(
         occupation_lookup[
             [
                 "occupation_id",
-                "occupation_title",
+                "onet_title",
                 "occupation_title_key",
             ]
         ],
@@ -572,7 +537,7 @@ def build_job_occupation_edges(
     )
 
     edges["occupation_title"] = (
-        merged["occupation_title_onet"]
+        merged["onet_title"]
         .astype(str)
     )
 
@@ -616,93 +581,110 @@ def build_job_occupation_edges(
 
 
 # ============================================================
-# LOAD EXISTING OCCUPATION -> SKILL EDGES
+# LOAD O*NET ESSENTIAL, TRANSFERABLE AND SOFTWARE SKILLS
 # ============================================================
 
 def load_occupation_skill_edges() -> pd.DataFrame:
-
-    require_file(OCCUPATION_SKILL_FILE)
-
     print()
-    print("Loading OCCUPATION -> SKILL edges...")
+    print("Loading O*NET occupation skill datasets...")
 
-    df = pd.read_csv(
-        OCCUPATION_SKILL_FILE
+    def load_rating_skills(path: Path, skill_type: str) -> pd.DataFrame:
+        require_file(path)
+        df = pd.read_csv(path)
+        require_columns(
+            df,
+            ["onet_soc_code", "element_id", "skill_name", "scale_name", "data_value"],
+            path.name,
+        )
+
+        df["occupation_id"] = df["onet_soc_code"].apply(clean_code)
+        df["skill_source_id"] = df["element_id"].apply(clean_text)
+        df["skill_name"] = df["skill_name"].apply(clean_text)
+        df["scale_name"] = df["scale_name"].astype(str).str.strip().str.lower()
+        df["data_value"] = pd.to_numeric(df["data_value"], errors="coerce")
+
+        # O*NET provides Importance (IM) and Level (LV) as separate rows.
+        pivot = df.pivot_table(
+            index=["occupation_id", "skill_source_id", "skill_name"],
+            columns="scale_name",
+            values="data_value",
+            aggfunc="first",
+        ).reset_index()
+        pivot.columns.name = None
+
+        if "importance" not in pivot.columns:
+            pivot["importance"] = pd.NA
+        if "level" not in pivot.columns:
+            pivot["level"] = pd.NA
+
+        pivot["skill_type"] = skill_type
+        pivot["relationship"] = skill_type.upper()
+        pivot["skill_key"] = (
+            skill_type + "::" + pivot["skill_source_id"] + "::" + pivot["skill_name"]
+        )
+        pivot["hot_technology"] = ""
+        pivot["in_demand"] = ""
+        pivot["workplace_example"] = ""
+        return pivot[
+            [
+                "occupation_id", "skill_key", "skill_source_id", "skill_name",
+                "skill_type", "relationship", "importance", "level",
+                "hot_technology", "in_demand", "workplace_example",
+            ]
+        ]
+
+    essential = load_rating_skills(ESSENTIAL_SKILLS_FILE, "essential_skill")
+    transferable = load_rating_skills(
+        TRANSFERABLE_SKILLS_FILE, "transferable_skill"
     )
 
-    print(
-        f"Raw occupation-skill edges: "
-        f"{len(df):,}"
-    )
-
-    print(
-        f"Columns detected: {list(df.columns)}"
-    )
-
-    # --------------------------------------------------------
-    # IMPORTANT:
-    #
-    # Your actual file has:
-    #
-    # source
-    # target
-    # skill_name
-    #
-    # source = O*NET-SOC code
-    # target = O*NET Element ID
-    # skill_name = human-readable skill
-    # --------------------------------------------------------
-
+    require_file(SOFTWARE_SKILLS_FILE)
+    software = pd.read_csv(SOFTWARE_SKILLS_FILE)
     require_columns(
-        df,
+        software,
         [
-            "source",
-            "target",
-            "skill_name",
+            "onet_soc_code", "software_element_id", "software_name",
+            "workplace_example", "hot_technology", "in_demand",
         ],
-        "occupation_skill_edges.csv",
+        SOFTWARE_SKILLS_FILE.name,
     )
 
-    output = pd.DataFrame()
-
-    output["occupation_id"] = (
-        df["source"]
-        .apply(clean_code)
+    software_edges = pd.DataFrame()
+    software_edges["occupation_id"] = software["onet_soc_code"].apply(clean_code)
+    software_edges["skill_source_id"] = software["software_element_id"].apply(clean_text)
+    software_edges["skill_name"] = software["software_name"].apply(clean_text)
+    software_edges["skill_type"] = "software_skill"
+    software_edges["relationship"] = "SOFTWARE_SKILL"
+    software_edges["skill_key"] = (
+        "software_skill::" + software_edges["skill_source_id"]
+        + "::" + software_edges["skill_name"]
     )
+    software_edges["importance"] = pd.NA
+    software_edges["level"] = pd.NA
+    software_edges["hot_technology"] = software["hot_technology"].fillna("").astype(str)
+    software_edges["in_demand"] = software["in_demand"].fillna("").astype(str)
+    software_edges["workplace_example"] = software["workplace_example"].fillna("").astype(str)
 
-    output["skill_source_id"] = (
-        df["target"]
-        .apply(clean_text)
+    output = pd.concat(
+        [essential, transferable, software_edges],
+        ignore_index=True,
     )
-
-    output["skill_name"] = (
-        df["skill_name"]
-        .apply(clean_text)
-    )
-
-    output["relationship"] = (
-        "REQUIRES"
-    )
-
     output = output[
         (output["occupation_id"] != "")
         & (output["skill_source_id"] != "")
         & (output["skill_name"] != "")
     ].copy()
-
     output = output.drop_duplicates(
-        subset=[
-            "occupation_id",
-            "skill_source_id",
-        ],
+        subset=["occupation_id", "skill_key"],
         keep="first",
     )
 
-    print(
-        f"Valid occupation-skill edges: "
-        f"{len(output):,}"
-    )
-
+    print(f"Essential skill edges: {len(essential):,}")
+    print(f"Transferable skill edges: {len(transferable):,}")
+    print(f"Software skill edges: {len(software_edges):,}")
+    print(f"Combined valid occupation-skill edges: {len(output):,}")
+    print("Skill types:")
+    print(output.groupby("skill_type").size().to_string())
     return output
 
 
@@ -713,58 +695,26 @@ def load_occupation_skill_edges() -> pd.DataFrame:
 def build_skill_nodes(
     occupation_skill_edges: pd.DataFrame,
 ) -> pd.DataFrame:
-
     print()
     print("Building SKILL nodes...")
 
-    skills = (
-        occupation_skill_edges[
-            [
-                "skill_source_id",
-                "skill_name",
-            ]
-        ]
-        .drop_duplicates()
-        .copy()
-    )
-
-    skills = skills[
-        skills["skill_name"].str.len() > 0
-    ]
-
-    # --------------------------------------------------------
-    # Create our own clean integer skill ID
-    # --------------------------------------------------------
-
+    skills = occupation_skill_edges[
+        ["skill_key", "skill_source_id", "skill_name", "skill_type"]
+    ].drop_duplicates().copy()
+    skills = skills[skills["skill_name"].str.len() > 0]
+    skills = skills.sort_values(["skill_type", "skill_name", "skill_source_id"])
     skills = skills.reset_index(drop=True)
-
     skills["skill_id"] = [
-        f"skill_{index:04d}"
-        for index in range(1, len(skills) + 1)
+        f"skill_{index:05d}" for index in range(1, len(skills) + 1)
     ]
-
     skills = skills[
-        [
-            "skill_id",
-            "skill_source_id",
-            "skill_name",
-        ]
+        ["skill_id", "skill_key", "skill_source_id", "skill_name", "skill_type"]
     ]
-
-    skills.to_csv(
-        SKILL_NODES_FILE,
-        index=False,
-    )
-
-    print(
-        f"Skill nodes saved: "
-        f"{len(skills):,}"
-    )
-
-    print(
-        f"Saved: {SKILL_NODES_FILE}"
-    )
-
+    skills.to_csv(SKILL_NODES_FILE, index=False)
+    print(f"Skill nodes saved: {len(skills):,}")
+    print(f"Saved: {SKILL_NODES_FILE}")
+    print("Unique skill nodes by type:")
+    print(skills.groupby("skill_type").size().to_string())
     return skills
 
 
@@ -776,52 +726,29 @@ def save_occupation_skill_edges(
     occupation_skill_edges: pd.DataFrame,
     skill_nodes: pd.DataFrame,
 ) -> pd.DataFrame:
-
     print()
     print("Normalizing OCCUPATION -> SKILL edges...")
 
     edges = occupation_skill_edges.merge(
-        skill_nodes[
-            [
-                "skill_id",
-                "skill_source_id",
-            ]
-        ],
-        on="skill_source_id",
+        skill_nodes[["skill_id", "skill_key"]],
+        on="skill_key",
         how="inner",
+        validate="many_to_one",
     )
-
     edges = edges[
         [
-            "occupation_id",
-            "skill_id",
-            "skill_name",
-            "relationship",
+            "occupation_id", "skill_id", "skill_name", "skill_type",
+            "relationship", "importance", "level", "hot_technology",
+            "in_demand", "workplace_example",
         ]
     ]
-
     edges = edges.drop_duplicates(
-        subset=[
-            "occupation_id",
-            "skill_id",
-        ],
+        subset=["occupation_id", "skill_id"],
         keep="first",
     )
-
-    edges.to_csv(
-        OCCUPATION_SKILL_EDGES_FILE,
-        index=False,
-    )
-
-    print(
-        f"Occupation -> skill edges saved: "
-        f"{len(edges):,}"
-    )
-
-    print(
-        f"Saved: {OCCUPATION_SKILL_EDGES_FILE}"
-    )
-
+    edges.to_csv(OCCUPATION_SKILL_EDGES_FILE, index=False)
+    print(f"Occupation -> skill edges saved: {len(edges):,}")
+    print(f"Saved: {OCCUPATION_SKILL_EDGES_FILE}")
     return edges
 
 
@@ -1297,6 +1224,7 @@ def main() -> None:
     # --------------------------------------------------------
 
     jobs = load_semantic_matches()
+    jobs = ensure_job_ids(jobs)
 
     # --------------------------------------------------------
     # 2. Build job nodes

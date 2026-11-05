@@ -46,14 +46,8 @@ def parse_skills(value):
 
 def normalize_skill(skill):
     skill = str(skill).strip().lower()
-
-    # Normalize whitespace
     skill = re.sub(r"\s+", " ", skill)
-
-    # Remove surrounding punctuation
-    skill = skill.strip(".,;:!?()[]{}\"'")
-
-    return skill
+    return skill.strip("\"'")
 
 
 def main():
