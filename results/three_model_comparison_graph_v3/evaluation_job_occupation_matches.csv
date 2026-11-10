@@ -1,0 +1,119 @@
+evaluation_job_key,title,onet_soc_code,onet_occupation_title,semantic_score,semantic_match,occupation_id,occupation_in_graph
+salad bar clerk part time evening|loblaw,Salad Bar Clerk Part Time Evening,43-4151.00,Order Clerks,0.53813154,False,43-4151.00,True
+hmr clerk part time afternoon|loblaw,HMR Clerk Part Time Afternoon,43-3051.00,Payroll and Timekeeping Clerks,0.5490315,False,43-3051.00,True
+overnight assistant manager|wegmans,Overnight Assistant Manager,11-9081.00,Lodging Managers,0.5603726,False,11-9081.00,True
+teammate|dick's sporting goods careers,Teammate,51-2092.00,Team Assemblers,0.4706252,False,51-2092.00,True
+full time - sales associate - outside lawn & garden|lowe's,Full Time - Sales Associate - Outside Lawn & Garden,37-1012.00,"First-Line Supervisors of Landscaping, Lawn Service, and Groundskeeping Workers",0.58376426,False,37-1012.00,True
+business development consultant: weatherby|chg healthcare,Business Development Consultant: Weatherby,13-1199.00,"Business Operations Specialists, All Other",0.5446925,False,13-1199.00,False
+ai engineer|and digital,AI Engineer,17-2112.00,Industrial Engineers,0.712765,True,17-2112.00,True
+office professional|cbh homes,Office Professional,43-9061.00,"Office Clerks, General",0.596463,False,43-9061.00,True
+senior customer advocate|boldr 1,Senior Customer Advocate,43-4051.00,Customer Service Representatives,0.6646461,False,43-4051.00,True
+ai engineer|gek terna,AI Engineer,17-2112.00,Industrial Engineers,0.712765,True,17-2112.00,True
+junior ai engineer|gek terna,Junior AI Engineer,17-2112.00,Industrial Engineers,0.64955795,False,17-2112.00,True
+business analyst|premera blue cross,Business Analyst,13-1111.00,Management Analysts,0.79053277,True,13-1111.00,True
+business intelligence analyst|teleperformance,Business Intelligence Analyst,15-2051.01,Business Intelligence Analysts,0.94114774,True,15-2051.01,True
+lab phlebotomist|tennessee oncology,Lab Phlebotomist,31-9097.00,Phlebotomists,0.8223224,True,31-9097.00,True
+"senior team lead, technical services|ntt data","Senior Team Lead, Technical Services",11-3012.00,Administrative Services Managers,0.4918464,False,11-3012.00,True
+mental health professionals|friendship house,Mental Health Professionals,21-1014.00,Mental Health Counselors,0.78455836,True,21-1014.00,True
+"sr. business data analyst, finance insights and technology engagement|loblaw","Sr. Business Data Analyst, Finance Insights and Technology Engagement",15-2051.01,Business Intelligence Analysts,0.60021293,False,15-2051.01,True
+senior technical business analyst|dacodes mx,Senior Technical Business Analyst,13-1111.00,Management Analysts,0.70115966,True,13-1111.00,True
+terapeuta|marriott vacations worldwide corporation,Terapeuta,29-1024.00,Prosthodontists,0.26780793,False,29-1024.00,True
+diet clerk|multicare health system,Diet Clerk,29-2051.00,Dietetic Technicians,0.6278931,False,29-2051.00,True
+business analyst|morgan stanley,Business Analyst,13-1111.00,Management Analysts,0.79053277,True,13-1111.00,True
+business analyst|marathon petroleum,Business Analyst,13-1111.00,Management Analysts,0.79053277,True,13-1111.00,True
+senior parts associate|texas collision centers inc,Senior Parts Associate,41-2022.00,Parts Salespersons,0.63155955,False,41-2022.00,True
+junior data analyst|merkurcasinouk,Junior Data Analyst,15-2051.00,Data Scientists,0.72225153,True,15-2051.00,True
+senior advanced analytics application developer|medtronic,Senior Advanced Analytics Application Developer,15-2051.01,Business Intelligence Analysts,0.46075204,False,15-2051.01,True
+equipment sales support|medline industries,Equipment Sales Support,49-9062.00,Medical Equipment Repairers,0.61328644,False,49-9062.00,True
+account manager|dentsu,Account Manager,11-3031.00,Financial Managers,0.61467814,False,11-3031.00,True
+sr. masshealth encounter data analyst|mass general brigham,Sr. MassHealth Encounter Data Analyst,15-2051.02,Clinical Data Managers,0.5798971,False,15-2051.02,True
+"medical assistant, primary care|mass general brigham","Medical Assistant, Primary Care",31-9092.00,Medical Assistants,0.8303032,True,31-9092.00,True
+direct suppt professional|ucp of long island,DIRECT SUPPT PROFESSIONAL,13-1151.00,Training and Development Specialists,0.54290116,False,13-1151.00,True
+data analyst|a.p. moller - maersk,Data Analyst,15-2051.00,Data Scientists,0.7655739,True,15-2051.00,True
+ai engineering sr|siigo,AI Engineering Sr,17-2112.00,Industrial Engineers,0.56172323,False,17-2112.00,True
+technical project manager|exl,Technical Project Manager,13-1082.00,Project Management Specialists,0.85301614,True,13-1082.00,True
+bi analyst|fleetcor,BI Analyst,13-1111.00,Management Analysts,0.65414673,False,13-1111.00,True
+açougueiro|mateus supermercados s.a. mix henrique jorge,AÇOUGUEIRO,29-1291.00,Acupuncturists,0.33945492,False,29-1291.00,True
+estoquista - mix santa mônica|mateus supermercados s.a. mix henrique jorge,ESTOQUISTA - MIX SANTA MÔNICA,39-9032.00,Recreation Workers,0.2348436,False,39-9032.00,True
+cashier part time am/pm|selig parking,Cashier Part Time AM/PM,41-2011.00,Cashiers,0.6227928,False,41-2011.00,True
+team member - chichester|victoria's secret fashion show,Team Member - Chichester,51-2092.00,Team Assemblers,0.44211522,False,51-2092.00,True
+short-term temporary team member - croydon centrale|victoria's secret fashion show,Short-term Temporary Team Member - Croydon Centrale,11-9161.00,Emergency Management Directors,0.35872567,False,11-9161.00,True
+analista de ruta de transporte|coppel enterprise,ANALISTA DE RUTA DE TRANSPORTE,53-6051.00,Transportation Inspectors,0.38503572,False,53-6051.00,True
+maintenance technician|rangewater real estate,Maintenance Technician,19-5012.00,Occupational Health and Safety Technicians,0.6999339,False,19-5012.00,True
+"machine learning engineer / mlops (python, cloud, data) – híbrido|orion innovation","Machine Learning Engineer / MLOps (Python, Cloud, Data) – Híbrido",15-1243.01,Data Warehousing Specialists,0.4291608,False,15-1243.01,True
+business analyst|orion innovation,Business Analyst,13-1111.00,Management Analysts,0.79053277,True,13-1111.00,True
+vip specialist|west kendall toyota,VIP Specialist,13-1041.07,Regulatory Affairs Specialists,0.53258353,False,13-1041.07,True
+tecnico ambientale|hera,Tecnico Ambientale,27-1025.00,Interior Designers,0.3030219,False,27-1025.00,True
+wireless retail sales associate - w2084|osl retail services,Wireless Retail Sales Associate - W2084,41-2031.00,Retail Salespersons,0.4698288,False,41-2031.00,True
+lpn/rn pdn|phoenix home care and hospice,LPN/RN PDN,29-1171.00,Nurse Practitioners,0.3967738,False,29-1171.00,True
+wireless retail sales associate - w3035|osl retail services,Wireless Retail Sales Associate - W3035,17-2072.01,Radio Frequency Identification Device Specialists,0.431133,False,17-2072.01,True
+"sr manager, data science|lennar","Sr Manager, Data Science",15-2051.00,Data Scientists,0.60670406,False,15-2051.00,True
+contract & sales support analyst|tmx group,Contract & Sales Support Analyst,41-9031.00,Sales Engineers,0.5606225,False,41-9031.00,True
+2nd shift pcba soldering team lead|leidos,2nd shift PCBA soldering Team Lead,51-2092.00,Team Assemblers,0.37439784,False,51-2092.00,True
+analytics engineer|trolley,Analytics Engineer,15-2051.01,Business Intelligence Analysts,0.5940841,False,15-2051.01,True
+security officer|allied universal,Security Officer,13-1199.07,Security Management Specialists,0.81571543,True,13-1199.07,True
+certified medical assistant|lcmc health,Certified Medical Assistant,31-9092.00,Medical Assistants,0.8069581,True,31-9092.00,True
+security shift supervisor|allied universal,Security Shift Supervisor,33-1091.00,First-Line Supervisors of Security Workers,0.71518683,True,33-1091.00,True
+staff machine learning engineer|riot games,Staff Machine Learning Engineer,13-1151.00,Training and Development Specialists,0.56093025,False,13-1151.00,True
+permit technician|city of largo,Permit Technician,53-6041.00,Traffic Technicians,0.64306676,False,53-6041.00,True
+senior ai engineer|wizeline,Senior AI Engineer,17-2112.00,Industrial Engineers,0.63057613,False,17-2112.00,True
+mental health group facilitator|charlie health,Mental Health Group Facilitator,21-1014.00,Mental Health Counselors,0.61205816,False,21-1014.00,True
+research scientist|labcorp,Research Scientist,19-1029.00,"Biological Scientists, All Other",0.6917041,False,19-1029.00,False
+analytics engineer|ensco,Analytics Engineer,15-2051.01,Business Intelligence Analysts,0.5940841,False,15-2051.01,True
+data scientist|phmg careers,Data Scientist,15-2051.00,Data Scientists,0.9581462,True,15-2051.00,True
+security officer / emt|allied universal,Security Officer / EMT,13-1199.07,Security Management Specialists,0.6672059,False,13-1199.07,True
+catering assistant|baxterstorey,Catering Assistant,11-9051.00,Food Service Managers,0.67674524,False,11-9051.00,True
+security officer site supervisor|allied universal,Security Officer Site Supervisor,33-1091.00,First-Line Supervisors of Security Workers,0.71913904,True,33-1091.00,True
+ai engineer|version 1,AI Engineer,17-2112.00,Industrial Engineers,0.712765,True,17-2112.00,True
+artificial intelligence engineer|kla corporation,Artificial Intelligence Engineer,17-2199.08,Robotics Engineers,0.6755708,False,17-2199.08,True
+model|ukatomicenergyauthority,Model,41-9012.00,Models,0.9287083,True,41-9012.00,True
+"senior director, hrbp|druva","Senior Director, HRBP",11-3121.00,Human Resources Managers,0.6054838,False,11-3121.00,True
+senior machine learning scientist|turnitin,Senior Machine Learning Scientist,15-2051.00,Data Scientists,0.5781475,False,15-2051.00,True
+"contract & claim manager, manufacturing construction projects, guanajuato|turner & townsend","Contract & Claim Manager, Manufacturing Construction Projects, Guanajuato",11-9021.00,Construction Managers,0.56073684,False,11-9021.00,True
+sr. business intelligence analyst|treace medical concepts,Sr. Business Intelligence Analyst,15-2051.01,Business Intelligence Analysts,0.75007147,True,15-2051.01,True
+automotive product specialist|ken garff automotive,Automotive Product Specialist,17-2141.02,Automotive Engineers,0.7856956,True,17-2141.02,True
+business analyst capital market|talan,Business Analyst Capital Market,13-2051.00,Financial and Investment Analysts,0.66873986,False,13-2051.00,True
+auto painter helper|caliber,Auto Painter Helper,47-2141.00,"Painters, Construction and Maintenance",0.53811187,False,47-2141.00,True
+юрисконсульт|syngenta,Юрисконсульт,29-1081.00,Podiatrists,0.21000752,False,29-1081.00,True
+специалист по планированию поставок сырья|syngenta,Специалист по планированию поставок сырья,27-3031.00,Public Relations Specialists,0.21537165,False,27-3031.00,True
+transportation data analyst|hw lochner inc,Transportation Data Analyst,19-3099.01,Transportation Planners,0.69017255,False,19-3099.01,True
+senior executive assistant|74000070 flexstaff s - commercial,Senior Executive Assistant,43-6011.00,Executive Secretaries and Executive Administrative Assistants,0.73273593,True,43-6011.00,True
+assistant nurse manager / woc registered nurse / rn|emory healthcare,Assistant Nurse Manager / WOC Registered Nurse / RN,31-1131.00,Nursing Assistants,0.69592315,False,31-1131.00,True
+utvecklare inom dynamics 365 business central|sopra steria,Utvecklare inom Dynamics 365 Business Central,13-1199.04,Business Continuity Planners,0.44230846,False,13-1199.04,True
+mid level ai engineer|capco,Mid Level AI Engineer,17-2112.00,Industrial Engineers,0.6189468,False,17-2112.00,True
+hr manager|sika,HR Manager,11-3121.00,Human Resources Managers,0.83146805,True,11-3121.00,True
+authorization specialist|myriad genetics,Authorization Specialist,13-1199.07,Security Management Specialists,0.6357856,False,13-1199.07,True
+"senior machine learning engineer, agentic product|servicenow","Senior Machine Learning Engineer, Agentic Product",41-3011.00,Advertising Sales Agents,0.5324687,False,41-3011.00,True
+"machine learning engineer, agentic product|servicenow","Machine Learning Engineer, Agentic Product",41-3011.00,Advertising Sales Agents,0.55311435,False,41-3011.00,True
+"senior machine learning engineer, agentic app platform|servicenow","Senior Machine Learning Engineer, Agentic App Platform",41-3011.00,Advertising Sales Agents,0.4351535,False,41-3011.00,True
+"staff machine learning engineer, agentic product|servicenow","Staff Machine Learning Engineer, Agentic Product",41-3011.00,Advertising Sales Agents,0.5469952,False,41-3011.00,True
+"staff machine learning engineer, agentic app platform|servicenow","Staff Machine Learning Engineer, Agentic App Platform",41-3011.00,Advertising Sales Agents,0.45927757,False,41-3011.00,True
+"senior staff machine learning engineer, agentic product|servicenow","Senior Staff Machine Learning Engineer, Agentic Product",41-3011.00,Advertising Sales Agents,0.5276171,False,41-3011.00,True
+"staff analyst, marketing analytics & audience insights|servicenow","Staff Analyst, Marketing Analytics & Audience Insights",13-1161.00,Market Research Analysts and Marketing Specialists,0.61726207,False,13-1161.00,True
+senior counsel|michael baker international,Senior Counsel,21-1019.00,"Counselors, All Other",0.6143578,False,21-1019.00,False
+part time ( 20 hours) intensive home based therapeutic care|open sky community services,Part Time ( 20 Hours) Intensive Home Based Therapeutic Care,31-1121.00,Home Health Aides,0.47251424,False,31-1121.00,True
+integrated analytics and insights expert|delta dental,Integrated Analytics and Insights Expert,15-2051.01,Business Intelligence Analysts,0.63745964,False,15-2051.01,True
+rental sales agent|sixt,Rental Sales Agent,41-9022.00,Real Estate Sales Agents,0.7735326,True,41-9022.00,True
+senior data visualization and augmented analytics engineer|navy federal financial group,Senior Data Visualization and Augmented Analytics Engineer,15-1243.01,Data Warehousing Specialists,0.45553684,False,15-1243.01,True
+chargé de logistique portuaire/ fumigation h/f|sgs,Chargé de logistique portuaire/ fumigation H/F,45-4022.00,Logging Equipment Operators,0.24173744,False,45-4022.00,True
+site reliability engineer|referral board,Site Reliability Engineer,17-2051.00,Civil Engineers,0.5135743,False,17-2051.00,True
+senior data analyst – ai & snowflake cortex|johnson controls,Senior Data Analyst – AI & Snowflake Cortex,33-3021.06,Intelligence Analysts,0.5440051,False,33-3021.06,True
+head of artificial intelligence|sgs,Head of Artificial Intelligence,33-3021.06,Intelligence Analysts,0.56086886,False,33-3021.06,True
+"patient services representative ii, specialty services patient contact center|sutter health","Patient Services Representative II, Specialty Services Patient Contact Center",29-2099.08,Patient Representatives,0.64229876,False,29-2099.08,True
+carrier payable/invoicing representative|j.b. hunt transport services,Carrier Payable/Invoicing Representative,43-4051.00,Customer Service Representatives,0.5590936,False,43-4051.00,True
+hr generalist|tremco cpg,HR Generalist,13-1071.00,Human Resources Specialists,0.65411216,False,13-1071.00,True
+mold repair technician|jabil,Mold Repair Technician,49-9062.00,Medical Equipment Repairers,0.5872335,False,49-9062.00,True
+"sr associate data scientist|jmp statistical discovery,",Sr Associate Data Scientist,15-2051.00,Data Scientists,0.722238,True,15-2051.00,True
+"data scientist|jmp statistical discovery,",Data Scientist,15-2051.00,Data Scientists,0.9581462,True,15-2051.00,True
+marketing administrator|canaan valley institute,Marketing Administrator,11-2021.00,Marketing Managers,0.767264,True,11-2021.00,True
+"senior analyst, business intelligence|canaan valley institute","Senior Analyst, Business Intelligence",15-2051.01,Business Intelligence Analysts,0.86439496,True,15-2051.01,True
+data analyst intern|ivy tech community college,Data Analyst Intern,15-2051.00,Data Scientists,0.6440065,False,15-2051.00,True
+data scientist|mv transportation,Data Scientist,15-2051.00,Data Scientists,0.9581462,True,15-2051.00,True
+data science and business intelligence professional|iron mountain,Data Science and Business Intelligence Professional,15-2051.01,Business Intelligence Analysts,0.7585377,True,15-2051.01,True
+front desk agent|highgate hotels,Front Desk Agent,41-9022.00,Real Estate Sales Agents,0.5440806,False,41-9022.00,True
+practice manager 2|oregon health & science university,Practice Manager 2,11-9111.00,Medical and Health Services Managers,0.5334354,False,11-9111.00,True
+"senior epidemiologist, hiv treatment, retrospective claims study expertise|iqvia (formally quintiles ims)","Senior Epidemiologist, HIV Treatment, Retrospective Claims Study Expertise",19-1041.00,Epidemiologists,0.5630411,False,19-1041.00,True
+"associate, uk power analytics|orennia","Associate, UK Power Analytics",47-4011.01,Energy Auditors,0.47800252,False,47-4011.01,True
+financial risk analytics (fra) analyst|s&p global,Financial Risk Analytics (FRA) Analyst,13-2051.00,Financial and Investment Analysts,0.6245674,False,13-2051.00,True
+commercial strategic initiatives manager|insulet,Commercial Strategic Initiatives Manager,11-1021.00,General and Operations Managers,0.57516575,False,11-1021.00,True
+clinical service manager|insulet,Clinical Service Manager,11-9111.00,Medical and Health Services Managers,0.8011134,True,11-9111.00,True

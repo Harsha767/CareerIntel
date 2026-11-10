@@ -1,0 +1,10 @@
+model,user_id,candidate_count,relevant_candidates,precision_at_10,recall_at_10,ndcg_at_10,mrr,label_type
+semantic_only,DA001,48,23,0.9,0.391304347826087,0.9337457765456111,1.0,provisional_assistant
+traditional_hybrid,DA001,48,23,1.0,0.43478260869565216,1.0,1.0,provisional_assistant
+graph_hybrid,DA001,48,23,1.0,0.43478260869565216,1.0,1.0,provisional_assistant
+semantic_only,DS001,43,18,0.8,0.4444444444444444,0.8482378089219648,1.0,provisional_assistant
+traditional_hybrid,DS001,43,18,0.8,0.4444444444444444,0.8572048559638626,1.0,provisional_assistant
+graph_hybrid,DS001,43,18,0.8,0.4444444444444444,0.8521705090845474,1.0,provisional_assistant
+semantic_only,ML001,44,10,0.7,0.7,0.7534494445524139,1.0,provisional_assistant
+traditional_hybrid,ML001,44,10,0.7,0.7,0.7534494445524139,1.0,provisional_assistant
+graph_hybrid,ML001,44,10,0.7,0.7,0.7573821447149967,1.0,provisional_assistant

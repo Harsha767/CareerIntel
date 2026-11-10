@@ -123,7 +123,17 @@ SKILL_ALIASES = {
     "ml": "machine learning",
     "data visualisation": "data visualization",
     "ms excel": "excel",
-    "power bi": "power bi",
+    "python": "programming",
+    "sql": "data base user interface and query software",
+    "excel": "spreadsheet software",
+    "pandas": "data mining software",
+    "data analysis": "business intelligence and data analysis software",
+    "data visualization": "business intelligence and data analysis software",
+    "statistics": "mathematics",
+    "machine learning": "analytical or scientific software",
+    "deep learning": "analytical or scientific software",
+    "model evaluation": "systems evaluation",
+    "model deployment": "application server software",
 }
 
 
@@ -558,26 +568,30 @@ def load_knowledge_graph():
     return job_occupation, occupation_skills
 
 
-def calculate_graph_skill_matches(jobs, user_skills):
+def calculate_graph_skill_matches(
+    jobs,
+    user_skills,
+    evaluation_job_occupations=None,
+):
     """
-    Calculate graph-based skill coverage for production jobs.
+    Calculate graph-based skill coverage.
 
-    Only uniquely matched graph jobs are used.
+    Production mode uses the existing semantic job-match file.
+    Evaluation mode uses an evaluation-specific mapping of
+    composite job keys to O*NET occupation IDs.
     """
-
     graph_scores = np.zeros(len(jobs), dtype=float)
     graph_matching_skills = [""] * len(jobs)
 
-    if not user_skills:
+    if not user_skills or jobs.empty:
         return graph_scores, graph_matching_skills
 
-    job_occupation, occupation_skills = load_knowledge_graph()
+    _, occupation_skills = load_knowledge_graph()
 
-    if not job_occupation or not occupation_skills:
+    if not occupation_skills:
         return graph_scores, graph_matching_skills
 
-    semantic_jobs = pd.read_csv(SEMANTIC_MATCHES_FILE).fillna("")
-    production_jobs = jobs.fillna("")
+    production_jobs = jobs.fillna("").copy()
 
     def make_key(row):
         return (
@@ -586,31 +600,42 @@ def calculate_graph_skill_matches(jobs, user_skills):
             + clean(row["company_name"]).casefold()
         )
 
-    semantic_jobs["_key"] = semantic_jobs.apply(
-        make_key, axis=1
-    )
-
     production_jobs["_key"] = production_jobs.apply(
-        make_key, axis=1
+        make_key,
+        axis=1,
     )
 
-    # Count production records per composite key.
-    key_counts = production_jobs["_key"].value_counts()
+    if evaluation_job_occupations is not None:
+        # Evaluation mapping: composite job key -> O*NET occupation ID.
+        graph_key_to_id = {
+            key: key for key in production_jobs["_key"]
+        }
+        job_occupation = evaluation_job_occupations
+    else:
+        if not SEMANTIC_MATCHES_FILE.exists():
+            return graph_scores, graph_matching_skills
 
-    # Only use keys that map to exactly one production job.
-    unique_keys = set(
-        key_counts[key_counts == 1].index
-    )
+        semantic_jobs = pd.read_csv(
+            SEMANTIC_MATCHES_FILE
+        ).fillna("")
 
-    graph_key_to_id = {}
+        semantic_jobs["_key"] = semantic_jobs.apply(
+            make_key,
+            axis=1,
+        )
 
-    for index, row in semantic_jobs.iterrows():
-        key = row["_key"]
+        key_counts = production_jobs["_key"].value_counts()
+        unique_keys = set(
+            key_counts[key_counts == 1].index
+        )
 
-        if key not in unique_keys:
-            continue
+        graph_key_to_id = {}
+        for index, row in semantic_jobs.iterrows():
+            key = row["_key"]
+            if key in unique_keys:
+                graph_key_to_id[key] = f"job_{index + 1:06d}"
 
-        graph_key_to_id[key] = f"job_{index + 1:06d}"
+        job_occupation, _ = load_knowledge_graph()
 
     normalized_user_skills = normalize_skill_set(
         user_skills
@@ -618,21 +643,18 @@ def calculate_graph_skill_matches(jobs, user_skills):
 
     for index, row in production_jobs.iterrows():
         key = row["_key"]
-
         graph_job_id = graph_key_to_id.get(key)
 
         if graph_job_id is None:
             continue
 
         occupation_id = job_occupation.get(graph_job_id)
-
         if occupation_id is None:
             continue
 
         available_skills = occupation_skills.get(
             occupation_id, {}
         )
-
         if not available_skills:
             continue
 
@@ -641,22 +663,19 @@ def calculate_graph_skill_matches(jobs, user_skills):
         )
 
         total_weight = sum(available_skills.values())
-
         matched_weight = sum(
-            available_skills[skill]
-            for skill in matched
+            available_skills[skill] for skill in matched
         )
 
         if total_weight > 0:
-            graph_scores[index] = (
-                matched_weight / total_weight
-            )
+            graph_scores[index] = matched_weight / total_weight
 
         graph_matching_skills[index] = ", ".join(
             sorted(matched)
         )
 
     return graph_scores, graph_matching_skills
+
 
 # ============================================================
 # 9. HYBRID JOB RECOMMENDATION

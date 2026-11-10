@@ -1,14 +1,16 @@
-"""CareerIntel: Hybrid Job Recommendation Engine.
+"""
+CareerIntel - Hybrid Job Recommendation Engine
 
-Baseline:
-- TF-IDF cosine similarity for textual relevance.
-- Candidate skill coverage.
-- Job requirement coverage.
-- Hybrid recommendation ranking.
+Data Scientist recommendations:
+- Data Scientist
+- Data Analyst
+- Machine Learning Engineer
+- AI Engineer
+- Business Intelligence Analyst
+- Relevant Analytics and Research roles
 
-Note:
-The scoring weights are initial baseline choices.
-They must be evaluated experimentally before claiming improvement.
+Includes experience filtering, skill matching, TF-IDF similarity,
+role relevance, duplicate removal and hybrid ranking.
 """
 
 from __future__ import annotations
@@ -22,31 +24,36 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+
 # =========================================================
-# CONFIGURATION
+# 1. CONFIGURATION
 # =========================================================
 
 ROOT = Path(__file__).resolve().parents[2]
 
 DATA_FILE = (
-    ROOT
-    / "data"
-    / "processed"
-    / "jobs"
+    ROOT / "data" / "processed" / "jobs"
     / "jobs_with_normalized_skills.csv"
 )
 
 OUTPUT_DIR = ROOT / "results"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
+MINIMUM_ROLE_MATCH = 0.55
+REQUIRE_SKILL_MATCH = True
+
+CONTENT_WEIGHT = 0.20
+SKILL_WEIGHT = 0.30
+REQUIREMENT_WEIGHT = 0.15
+ROLE_WEIGHT = 0.30
+EXPERIENCE_WEIGHT = 0.05
+
 
 # =========================================================
-# 1. TEXT CLEANING
+# 2. TEXT AND SKILL UTILITIES
 # =========================================================
 
 def clean(value: Any) -> str:
-    """Convert a value into clean text without raising on missing values."""
-
     if value is None:
         return ""
 
@@ -56,43 +63,27 @@ def clean(value: Any) -> str:
     except (TypeError, ValueError):
         pass
 
-    text = str(value).strip()
+    return re.sub(r"\s+", " ", str(value)).strip()
 
-    return re.sub(r"\s+", " ", text).strip()
-
-
-# =========================================================
-# 2. SKILL NORMALIZATION
-# =========================================================
 
 def normalize_skill(skill: Any) -> str:
-    """Normalize skill names for consistent comparison."""
-
     value = clean(skill).casefold()
 
     aliases = {
         "scikit learn": "scikit-learn",
-        "scikit-learn": "scikit-learn",
+        "sklearn": "scikit-learn",
         "py": "python",
         "structured query language": "sql",
         "ml": "machine learning",
         "data visualisation": "data visualization",
+        "powerbi": "power bi",
+        "ms excel": "excel",
     }
 
     return aliases.get(value, value)
 
 
-# =========================================================
-# 3. SKILL PARSING
-# =========================================================
-
 def parse_skills(value: Any) -> set[str]:
-    """
-    Parse Python-style lists or explicitly delimited skill text.
-
-    Multiword skills such as 'machine learning' remain intact.
-    """
-
     if value is None:
         return set()
 
@@ -107,7 +98,6 @@ def parse_skills(value: Any) -> set[str]:
     if not text:
         return set()
 
-    # Try parsing Python-style lists first.
     try:
         parsed = ast.literal_eval(text)
     except (ValueError, SyntaxError):
@@ -115,53 +105,593 @@ def parse_skills(value: Any) -> set[str]:
 
     if isinstance(parsed, (list, tuple, set)):
         items = parsed
-
     elif isinstance(parsed, str):
         items = [parsed]
-
     else:
-        # Split only on explicit delimiters.
-        # Never split on spaces because skills can be multiword.
         items = re.split(r"[,;|]", text)
 
-    skills = set()
-
-    for item in items:
-        skill = normalize_skill(item)
-
-        if skill:
-            skills.add(skill)
-
-    return skills
+    return {
+        normalize_skill(item)
+        for item in items
+        if normalize_skill(item)
+    }
 
 
-def format_skills(value: Any) -> str:
-    """Convert a skill field into readable text."""
+def extract_skills_from_text(
+    value: Any,
+    vocabulary: set[str],
+) -> set[str]:
 
-    return " ".join(sorted(parse_skills(value)))
+    text = clean(value).casefold()
+    found = set()
+
+    for skill in sorted(vocabulary, key=len, reverse=True):
+        skill = normalize_skill(skill)
+
+        if skill and re.search(
+            r"(?<![a-z0-9])"
+            + re.escape(skill)
+            + r"(?![a-z0-9])",
+            text,
+        ):
+            found.add(skill)
+
+    return found
+
+
+def contains_any(text: str, phrases: list[str]) -> bool:
+    return any(phrase in text for phrase in phrases)
+
+
+def count_evidence(text: str, phrases: list[str]) -> int:
+    normalized = clean(text).casefold()
+
+    return sum(
+        phrase in normalized
+        for phrase in phrases
+    )
 
 
 # =========================================================
-# 4. LOAD AND PREPARE JOB DATA
+# 3. EXPERIENCE MATCHING
+# =========================================================
+
+def classify_experience(value: Any) -> str:
+    text = clean(value).casefold()
+
+    if not text:
+        return "unknown"
+
+    if any(
+        word in text
+        for word in (
+            "fresher", "entry", "intern", "junior",
+            "graduate", "trainee", "co-op", "coop",
+            "working student",
+        )
+    ):
+        return "entry"
+
+    if any(
+        word in text
+        for word in ("mid", "intermediate", "associate")
+    ):
+        return "mid"
+
+    if any(
+        word in text
+        for word in (
+            "senior", "lead", "manager", "director",
+            "executive", "principal", "head", "chief",
+            "vice president",
+        )
+    ):
+        return "senior"
+
+    return "unknown"
+
+
+def calculate_experience_match(
+    candidate_level: str,
+    job_level: Any,
+) -> float:
+
+    candidate = classify_experience(candidate_level)
+    job = classify_experience(job_level)
+
+    if "unknown" in (candidate, job):
+        return 0.5
+
+    if candidate == job:
+        return 1.0
+
+    compatibility = {
+        "entry": {"mid": 0.25, "senior": 0.0},
+        "mid": {"entry": 0.5, "senior": 0.5},
+        "senior": {"mid": 0.5, "entry": 0.0},
+    }
+
+    return compatibility.get(candidate, {}).get(job, 0.5)
+
+
+def filter_by_experience(
+    jobs: pd.DataFrame,
+    candidate_experience: str,
+) -> pd.DataFrame:
+
+    if classify_experience(candidate_experience) != "entry":
+        return jobs.copy()
+
+    levels = jobs["experience_level"].fillna("").map(
+        classify_experience
+    )
+
+    titles = jobs["title"].fillna("").astype(str)
+
+    entry_title = titles.str.contains(
+        r"\b(?:fresher|entry[\s-]?level|junior|jr\.?|"
+        r"intern|internship|graduate|trainee|co[ -]?op|"
+        r"working student)\b",
+        case=False,
+        regex=True,
+    )
+
+    senior_title = titles.str.contains(
+        r"\b(?:senior|sr\.?|lead|manager|director|"
+        r"executive|principal|head|chief|vp|"
+        r"vice president)\b",
+        case=False,
+        regex=True,
+    )
+
+    eligible = (
+        (levels == "entry")
+        | ((levels == "unknown") & entry_title)
+    ) & ~senior_title
+
+    return jobs.loc[eligible].copy()
+
+
+# =========================================================
+# 4. ROLE RELEVANCE
+# =========================================================
+
+ROLE_FAMILIES = {
+    "data_scientist": {
+        "direct": [
+            "data scientist",
+            "data science intern",
+            "data science trainee",
+            "junior data scientist",
+            "associate data scientist",
+            "applied data scientist",
+            "data science researcher",
+        ],
+        "machine_learning": [
+            "machine learning engineer",
+            "junior machine learning engineer",
+            "associate machine learning engineer",
+            "machine learning scientist",
+            "ml engineer",
+            "deep learning engineer",
+            "applied machine learning engineer",
+        ],
+        "artificial_intelligence": [
+            "ai engineer",
+            "junior ai engineer",
+            "associate ai engineer",
+            "artificial intelligence engineer",
+            "applied ai engineer",
+        ],
+        "data_analyst": [
+            "data analyst",
+            "junior data analyst",
+            "business data analyst",
+            "business intelligence analyst",
+            "bi analyst",
+            "analytics analyst",
+            "reporting analyst",
+            "insights analyst",
+        ],
+        "other_related": [
+            "analytics engineer",
+            "statistical analyst",
+            "research analyst",
+            "data engineer",
+            "applied scientist",
+            "decision scientist",
+            "quantitative analyst",
+            "quant analyst",
+            "research scientist",
+            "analytics consultant",
+            "product analyst",
+            "business analyst",
+            "market analyst",
+        ],
+    },
+
+    "data_analyst": {
+        "direct": [
+            "data analyst",
+            "junior data analyst",
+            "business data analyst",
+            "associate data analyst",
+        ],
+        "machine_learning": [
+            "machine learning engineer",
+            "ml engineer",
+        ],
+        "artificial_intelligence": [
+            "ai engineer",
+            "artificial intelligence engineer",
+        ],
+        "data_analyst": [
+            "business intelligence analyst",
+            "reporting analyst",
+            "analytics analyst",
+            "insights analyst",
+            "product analyst",
+            "business analyst",
+            "market analyst",
+        ],
+        "other_related": [
+            "data scientist",
+            "analytics engineer",
+            "quantitative analyst",
+            "research analyst",
+        ],
+    },
+}
+
+
+DS_STRONG_EVIDENCE = [
+    "machine learning",
+    "deep learning",
+    "artificial intelligence",
+    "ai models",
+    "ml models",
+    "predictive modeling",
+    "predictive modelling",
+    "predictive analytics",
+    "data science",
+    "computer vision",
+    "natural language processing",
+    "nlp",
+    "statistical modeling",
+    "statistical modelling",
+    "statistical analysis",
+    "optimization algorithm",
+    "feature engineering",
+    "model training",
+    "model deployment",
+    "data mining",
+    "experimental design",
+    "research analysis",
+]
+
+
+DS_TECHNICAL_EVIDENCE = [
+    "python",
+    "sql",
+    "r programming",
+    "statistics",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "tensorflow",
+    "pytorch",
+    "regression",
+    "classification",
+    "clustering",
+    "forecasting",
+    "data cleaning",
+    "data processing",
+    "data modeling",
+    "data modelling",
+    "data pipeline",
+    "data visualization",
+    "tableau",
+    "power bi",
+    "snowflake",
+    "spark",
+    "computer vision",
+    "nlp",
+    "llm",
+    "generative ai",
+]
+
+
+DS_EXCLUDED_TITLE_PHRASES = [
+    "talent management",
+    "human resources",
+    "hr operations",
+    "recruitment",
+    "talent acquisition",
+    "procurement",
+    "purchasing",
+    "sourcing",
+    "supply chain",
+    "vendor management",
+    "merchandising",
+    "category management",
+    "payroll",
+    "accounts payable",
+    "accounts receivable",
+    "revenue management",
+    "financial analyst",
+    "content creator",
+    "compliance analyst",
+    "reservoir engineering",
+    "field operations",
+    "process engineering",
+    "avionics",
+    "operations analyst",
+    "achats",
+    "procurement analyst",
+    "purchasing analyst",
+    "procurement analytics",
+    "purchasing analytics",
+    "process automation",
+    "workflow automation",
+]
+
+
+UNRELATED_ENGINEERING_TITLE = re.compile(
+    r"\b(?:software|electrical|mechanical|civil|"
+    r"computer|industrial)\s+"
+    r"(?:engineering|engineer|development|developer)\b",
+    re.IGNORECASE,
+)
+
+
+def get_role_family(target_role: str) -> str | None:
+    role = clean(target_role).casefold()
+
+    if "data scientist" in role or "data science" in role:
+        return "data_scientist"
+
+    if "data analyst" in role:
+        return "data_analyst"
+
+    return None
+
+
+def calculate_role_relevance(
+    target_role: str,
+    job_title: str,
+    normalized_title: str = "",
+    job_context: str = "",
+) -> float:
+    """
+    Score how closely a job fits the candidate's target role.
+
+    Title matches receive the strongest scores. Broader role titles are
+    accepted only when their descriptions contain meaningful data/technical
+    evidence, reducing false positives from generic job titles.
+    """
+
+    target = clean(target_role).casefold()
+
+    raw_title = (
+        f"{clean(job_title)} {clean(normalized_title)}"
+    ).casefold()
+
+    title = re.sub(
+        r"[^a-z0-9]+",
+        " ",
+        raw_title,
+    ).strip()
+
+    context = clean(job_context).casefold()
+
+    if not target:
+        return 0.0
+
+    family = get_role_family(target)
+
+    if family is None:
+        target_tokens = set(
+            re.findall(r"[a-z0-9]+", target)
+        )
+
+        title_tokens = set(
+            re.findall(r"[a-z0-9]+", title)
+        )
+
+        if not target_tokens:
+            return 0.0
+
+        return (
+            len(target_tokens & title_tokens)
+            / len(target_tokens)
+        )
+
+    categories = ROLE_FAMILIES[family]
+
+    # Hard exclusions are limited to clearly unrelated job functions.
+    if (
+        family == "data_scientist"
+        and contains_any(title, DS_EXCLUDED_TITLE_PHRASES)
+    ):
+        return 0.0
+
+    if UNRELATED_ENGINEERING_TITLE.search(title):
+        return 0.0
+
+    # Direct role matches
+    if contains_any(title, categories["direct"]):
+        return 1.0
+
+    # Machine Learning roles
+    if contains_any(title, categories["machine_learning"]):
+        return 0.88
+
+    # Artificial Intelligence roles
+    if contains_any(
+        title,
+        categories["artificial_intelligence"],
+    ):
+        return 0.84
+
+    # Data Analyst / BI roles
+    if contains_any(title, categories["data_analyst"]):
+        return (
+            0.80
+            if family == "data_scientist"
+            else 0.85
+        )
+
+    strong_hits = count_evidence(
+        context,
+        DS_STRONG_EVIDENCE,
+    )
+
+    technical_hits = count_evidence(
+        context,
+        DS_TECHNICAL_EVIDENCE,
+    )
+
+    # Related science, research, analytics and engineering titles
+    # must demonstrate relevant technical work.
+    if contains_any(title, categories["other_related"]):
+
+        if strong_hits >= 1 and technical_hits >= 2:
+            return 0.72
+
+        if technical_hits >= 4:
+            return 0.64
+
+        return 0.0
+
+    # AI/ML-adjacent titles need evidence.
+    ai_ml_title = re.search(
+        r"\b(ai|artificial intelligence|ml|machine learning|"
+        r"deep learning|applied scientist)\b",
+        title,
+    )
+
+    if ai_ml_title:
+
+        valid_ai_title = re.search(
+            r"\b(ai|artificial intelligence|machine learning|ml|"
+            r"deep learning)\b.*\b(engineer|scientist|researcher|"
+            r"intern|trainee|graduate)\b",
+            title,
+        )
+
+        if (
+            valid_ai_title
+            and strong_hits >= 1
+            and technical_hits >= 2
+        ):
+            return 0.82
+
+        return 0.0
+
+    # Generic early-career titles need explicit data-related evidence.
+    early_career = bool(
+        re.search(
+            r"\b(intern|internship|co[ -]?op|working student|"
+            r"trainee|research|graduate)\b",
+            title,
+        )
+    )
+
+    if early_career:
+
+        explicit_data_evidence = [
+            "data science",
+            "data scientist",
+            "data analytics",
+            "data analyst",
+            "business intelligence",
+            "machine learning",
+            "artificial intelligence",
+            "predictive modeling",
+            "predictive modelling",
+            "statistical analysis",
+            "data mining",
+            "deep learning",
+            "data modeling",
+            "data modelling",
+            "data analysis",
+            "analytics",
+        ]
+
+        explicit_hits = count_evidence(
+            context,
+            explicit_data_evidence,
+        )
+
+        if explicit_hits >= 2 and technical_hits >= 3:
+            return 0.68
+
+        if (
+            explicit_hits >= 1
+            and strong_hits >= 2
+            and technical_hits >= 4
+        ):
+            return 0.62
+
+    return 0.0
+
+
+def filter_by_target_role(
+    jobs: pd.DataFrame,
+    target_role: str,
+    minimum_role_match: float = MINIMUM_ROLE_MATCH,
+) -> pd.DataFrame:
+
+    if not target_role:
+        return jobs.copy()
+
+    context_columns = [
+        "job_description",
+        "description",
+        "responsibilities",
+        "minimum_qualifications",
+        "preferred_qualifications",
+        "normalized_skills",
+    ]
+
+    def build_context(row: pd.Series) -> str:
+        return " ".join(
+            clean(row.get(column, ""))
+            for column in context_columns
+        )
+
+    filtered = jobs.copy()
+
+    filtered["role_match"] = filtered.apply(
+        lambda row: calculate_role_relevance(
+            target_role,
+            row.get("title", ""),
+            row.get("normalized_title", ""),
+            build_context(row),
+        ),
+        axis=1,
+    )
+
+    return filtered.loc[
+        filtered["role_match"] >= minimum_role_match
+    ].reset_index(drop=True)
+
+
+# =========================================================
+# 5. LOAD AND PREPARE JOB DATA
 # =========================================================
 
 def load_jobs() -> pd.DataFrame:
-    """Load processed jobs and prepare searchable text and skill sets."""
 
     if not DATA_FILE.exists():
         raise FileNotFoundError(
-            f"Job dataset not found:\n{DATA_FILE}\n\n"
-            "Check that the processed job dataset exists."
+            f"Job dataset not found:\n{DATA_FILE}"
         )
 
     jobs = pd.read_csv(
         DATA_FILE,
         low_memory=False,
     ).copy()
-
-    # -----------------------------------------------------
-    # A. SUPPORT AVAILABLE TITLE COLUMNS
-    # -----------------------------------------------------
 
     if "title" not in jobs.columns:
 
@@ -170,26 +700,11 @@ def load_jobs() -> pd.DataFrame:
 
         else:
             raise ValueError(
-                "Dataset must contain 'title' or 'normalized_title'."
+                "Dataset must contain title or normalized_title."
             )
 
-    # -----------------------------------------------------
-    # B. SUPPORT AVAILABLE DESCRIPTION COLUMNS
-    # -----------------------------------------------------
-
-    if "job_text" not in jobs.columns:
-
-        if "job_description" in jobs.columns:
-            jobs["job_text"] = jobs["job_description"]
-
-        else:
-            jobs["job_text"] = ""
-
-    # -----------------------------------------------------
-    # C. CREATE OPTIONAL COLUMNS WHEN MISSING
-    # -----------------------------------------------------
-
     optional_columns = [
+        "normalized_title",
         "company_name",
         "industry",
         "function",
@@ -197,6 +712,14 @@ def load_jobs() -> pd.DataFrame:
         "employment_type",
         "work_model",
         "education_level",
+        "normalized_skills",
+        "parsed_skills",
+        "skills_required",
+        "job_description",
+        "description",
+        "responsibilities",
+        "minimum_qualifications",
+        "preferred_qualifications",
     ]
 
     for column in optional_columns:
@@ -204,9 +727,25 @@ def load_jobs() -> pd.DataFrame:
         if column not in jobs.columns:
             jobs[column] = ""
 
-    # -----------------------------------------------------
-    # D. PRESERVE ALL AVAILABLE SKILL SOURCES
-    # -----------------------------------------------------
+    text_columns = [
+        "title",
+        "normalized_title",
+        "company_name",
+        "industry",
+        "function",
+        "experience_level",
+        "employment_type",
+        "work_model",
+        "education_level",
+        "job_description",
+        "description",
+        "responsibilities",
+        "minimum_qualifications",
+        "preferred_qualifications",
+    ]
+
+    for column in text_columns:
+        jobs[column] = jobs[column].map(clean)
 
     skill_columns = [
         "normalized_skills",
@@ -214,82 +753,45 @@ def load_jobs() -> pd.DataFrame:
         "skills_required",
     ]
 
-    for column in skill_columns:
-
-        if column not in jobs.columns:
-            jobs[column] = ""
-
-    # Clean the main text fields.
-    jobs["title"] = jobs["title"].map(clean)
-    jobs["job_text"] = jobs["job_text"].map(clean)
-
-    # Combine skills from every available source.
-    combined_skill_sets = []
-
-    for _, row in jobs[skill_columns].iterrows():
-
-        job_skills = set()
-
-        for column in skill_columns:
-            job_skills.update(
+    jobs["skill_set"] = [
+        set().union(
+            *(
                 parse_skills(row[column])
+                for column in skill_columns
             )
+        )
+        for _, row in jobs[skill_columns].iterrows()
+    ]
 
-        combined_skill_sets.append(job_skills)
-
-    jobs["skill_set"] = combined_skill_sets
-
-    # Store a consistent, readable skill representation.
     jobs["normalized_skills"] = jobs["skill_set"].map(
         lambda values: ", ".join(sorted(values))
     )
 
-    # -----------------------------------------------------
-    # E. PREPARE SEARCHABLE TEXT
-    # -----------------------------------------------------
-
-    text_columns = [
-        "title",
-        "job_text",
-        "normalized_skills",
-        "industry",
-        "function",
-        "experience_level",
-        "employment_type",
-        "work_model",
-        "education_level",
-    ]
-
-    for column in text_columns:
-        jobs[column] = jobs[column].map(clean)
-
     jobs["search_text"] = (
         jobs["title"] + " "
-        + jobs["job_text"] + " "
-        + jobs["normalized_skills"] + " "
-        + jobs["industry"] + " "
-        + jobs["function"] + " "
-        + jobs["experience_level"] + " "
-        + jobs["employment_type"] + " "
-        + jobs["work_model"] + " "
-        + jobs["education_level"]
+        + jobs["normalized_title"] + " "
+        + jobs["job_description"] + " "
+        + jobs["description"] + " "
+        + jobs["responsibilities"] + " "
+        + jobs["minimum_qualifications"] + " "
+        + jobs["preferred_qualifications"] + " "
+        + jobs["normalized_skills"]
     ).str.strip()
 
-    # Remove records without searchable information.
-    jobs = jobs[
+    jobs = jobs.loc[
         jobs["search_text"].ne("")
     ].reset_index(drop=True)
 
     if jobs.empty:
         raise ValueError(
-            "No searchable job records remain after preprocessing."
+            "No searchable job records remain."
         )
 
     return jobs
 
 
 # =========================================================
-# 5. JOB RECOMMENDATION ENGINE
+# 6. MAIN RECOMMENDATION ENGINE
 # =========================================================
 
 def recommend_jobs(
@@ -297,31 +799,21 @@ def recommend_jobs(
     preferred_skills: list[str] | None = None,
     top_k: int = 10,
     min_similarity: float = 0.0,
+    target_role: str | None = None,
+    experience_level: str | None = None,
 ) -> pd.DataFrame:
     """
-    Recommend jobs using TF-IDF and skill matching.
+    Hybrid recommendation scoring:
 
-    Candidate skill coverage:
-        Matching candidate skills / all candidate skills
+    Content relevance:         20%
+    Candidate skill coverage:  30%
+    Job requirement coverage:  15%
+    Target-role relevance:     30%
+    Experience compatibility:  5%
 
-    Requirement coverage:
-        Matching candidate skills / identified job requirements
-
-    Hybrid score when requirements are available:
-        65% content similarity
-        15% candidate skill coverage
-        20% requirement coverage
-
-    When requirement information is unavailable:
-        81.25% content similarity
-        18.75% candidate skill coverage
-
-    These are baseline weights, not experimentally validated weights.
+    The function signature and output columns are preserved
+    for compatibility with the existing CareerIntel backend.
     """
-
-    # -----------------------------------------------------
-    # A. VALIDATE INPUTS
-    # -----------------------------------------------------
 
     if not isinstance(profile, str) or not profile.strip():
         raise ValueError(
@@ -342,19 +834,67 @@ def recommend_jobs(
         or not 0 <= min_similarity <= 1
     ):
         raise ValueError(
-            "min_similarity must be a number between 0 and 1."
+            "min_similarity must be between 0 and 1."
         )
 
-    # -----------------------------------------------------
-    # B. LOAD JOB DATA
-    # -----------------------------------------------------
+    target_role = clean(target_role)
+    experience_level = clean(experience_level)
 
+    # Load dataset
     jobs = load_jobs()
+    original_count = len(jobs)
 
-    # -----------------------------------------------------
-    # C. CALCULATE TF-IDF CONTENT SIMILARITY
-    # -----------------------------------------------------
+    print(f"Total searchable jobs: {original_count}")
 
+    # Experience filter
+    if experience_level:
+
+        jobs = filter_by_experience(
+            jobs,
+            experience_level,
+        )
+
+    print(
+        f"Jobs after experience filtering: "
+        f"{len(jobs)} / {original_count}"
+    )
+
+    if jobs.empty:
+        print("No jobs match the selected experience level.")
+        return pd.DataFrame()
+
+    # Target-role filter
+    if target_role:
+
+        before = len(jobs)
+
+        jobs = filter_by_target_role(
+            jobs,
+            target_role,
+            MINIMUM_ROLE_MATCH,
+        )
+
+        print(
+            f"Jobs after target-role filtering: "
+            f"{len(jobs)} / {before}"
+        )
+
+    if jobs.empty:
+        print("No jobs match the selected target role.")
+        return pd.DataFrame()
+
+    # Candidate skills
+    user_skills: set[str] = set()
+
+    for skill in preferred_skills or []:
+        user_skills.update(parse_skills(skill))
+
+    skill_vocabulary = set(user_skills)
+
+    for job_skill_set in jobs["skill_set"]:
+        skill_vocabulary.update(job_skill_set)
+
+    # TF-IDF content similarity
     vectorizer = TfidfVectorizer(
         stop_words="english",
         ngram_range=(1, 2),
@@ -376,8 +916,8 @@ def recommend_jobs(
     except ValueError as exc:
 
         raise ValueError(
-            "Unable to build the TF-IDF vocabulary. "
-            "Check that job descriptions contain searchable text."
+            "Unable to build TF-IDF vocabulary. "
+            "Check the job dataset."
         ) from exc
 
     content_scores = cosine_similarity(
@@ -385,21 +925,7 @@ def recommend_jobs(
         job_matrix,
     ).ravel()
 
-    # -----------------------------------------------------
-    # D. NORMALIZE CANDIDATE SKILLS
-    # -----------------------------------------------------
-
-    user_skills = set()
-
-    for skill in preferred_skills or []:
-        user_skills.update(
-            parse_skills(skill)
-        )
-
-    # -----------------------------------------------------
-    # E. CALCULATE SKILL COVERAGE
-    # -----------------------------------------------------
-
+    # Skill coverage and requirement coverage
     skill_scores = []
     requirement_scores = []
     matched_skill_details = []
@@ -408,64 +934,45 @@ def recommend_jobs(
 
         job_skills = row["skill_set"]
 
-        matching_skills = user_skills.intersection(
-            job_skills
-        )
+        matching = user_skills.intersection(job_skills)
 
         matched_skill_details.append(
-            ", ".join(sorted(matching_skills))
+            ", ".join(sorted(matching))
         )
 
-        # Proportion of the candidate's skills present in this job.
-        if user_skills:
+        skill_score = (
+            len(matching) / len(user_skills)
+            if user_skills else 0.0
+        )
 
-            candidate_coverage = (
-                len(matching_skills) / len(user_skills)
+        skill_scores.append(skill_score)
+
+        required = (
+            parse_skills(row["skills_required"])
+            | parse_skills(row["parsed_skills"])
+        )
+
+        required |= extract_skills_from_text(
+            row["minimum_qualifications"],
+            skill_vocabulary,
+        )
+
+        required |= extract_skills_from_text(
+            row["preferred_qualifications"],
+            skill_vocabulary,
+        )
+
+        if required and user_skills:
+
+            requirement_score = (
+                len(user_skills.intersection(required))
+                / len(required)
             )
 
         else:
-            candidate_coverage = 0.0
+            requirement_score = float("nan")
 
-        skill_scores.append(candidate_coverage)
-
-        # -------------------------------------------------
-        # F. CALCULATE JOB REQUIREMENT COVERAGE
-        # -------------------------------------------------
-
-        required_skills = parse_skills(
-            row["skills_required"]
-        )
-
-        # Use parsed_skills if explicit requirements are absent.
-        if not required_skills:
-
-            required_skills = parse_skills(
-                row["parsed_skills"]
-            )
-
-        if required_skills:
-
-            if user_skills:
-
-                requirement_coverage = (
-                    len(
-                        user_skills.intersection(
-                            required_skills
-                        )
-                    )
-                    / len(required_skills)
-                )
-
-            else:
-                requirement_coverage = 0.0
-
-        else:
-            # Unknown requirements should not be treated as zero.
-            requirement_coverage = float("nan")
-
-        requirement_scores.append(
-            requirement_coverage
-        )
+        requirement_scores.append(requirement_score)
 
     skill_scores = pd.Series(
         skill_scores,
@@ -477,66 +984,114 @@ def recommend_jobs(
         dtype=float,
     ).to_numpy()
 
-    # -----------------------------------------------------
-    # G. CALCULATE HYBRID RECOMMENDATION SCORE
-    # -----------------------------------------------------
+    # Role relevance
+    if target_role:
+        role_scores = jobs["role_match"].tolist()
+    else:
+        role_scores = [None] * len(jobs)
 
-    has_requirements = ~pd.isna(
-        requirement_scores
-    )
+    # Experience compatibility
+    if experience_level:
 
-    # Base formula for jobs with known requirement information.
-    final_scores = (
-        0.65 * content_scores
-        + 0.15 * skill_scores
-        + 0.20 * pd.Series(
-            requirement_scores
-        ).fillna(0).to_numpy()
-    )
+        experience_scores = [
+            calculate_experience_match(
+                experience_level,
+                level,
+            )
+            for level in jobs["experience_level"]
+        ]
 
-    # Redistribute the missing requirement weight when requirement
-    # information is unavailable. This avoids penalizing missing data.
-    final_scores[~has_requirements] = (
-        0.8125 * content_scores[~has_requirements]
-        + 0.1875 * skill_scores[~has_requirements]
-    )
+    else:
+        experience_scores = [None] * len(jobs)
 
-    # -----------------------------------------------------
-    # H. BUILD RESULTS
-    # -----------------------------------------------------
+    # Hybrid scoring
+    final_scores = []
 
+    for index in range(len(jobs)):
+
+        components = [
+            (content_scores[index], CONTENT_WEIGHT),
+            (skill_scores[index], SKILL_WEIGHT),
+        ]
+
+        if not pd.isna(requirement_scores[index]):
+
+            components.append(
+                (
+                    requirement_scores[index],
+                    REQUIREMENT_WEIGHT,
+                )
+            )
+
+        if role_scores[index] is not None:
+
+            components.append(
+                (role_scores[index], ROLE_WEIGHT)
+            )
+
+        if experience_scores[index] is not None:
+
+            components.append(
+                (
+                    experience_scores[index],
+                    EXPERIENCE_WEIGHT,
+                )
+            )
+
+        total_weight = sum(
+            weight
+            for _, weight in components
+        )
+
+        final_score = sum(
+            value * weight
+            for value, weight in components
+        ) / total_weight
+
+        final_scores.append(final_score)
+
+    # Build results
     results = jobs.copy()
 
     results["content_score"] = content_scores
-
-    # FIX: Explicitly create skill_coverage.
-    # This prevents KeyError during output and validation.
     results["skill_coverage"] = skill_scores
-
     results["requirement_coverage"] = requirement_scores
-
+    results["role_match"] = role_scores
+    results["experience_match"] = experience_scores
     results["recommendation_score"] = final_scores
-
     results["matching_skills"] = matched_skill_details
 
-    # Filter using the content-similarity threshold.
-    results = results[
+    # Quality filters
+    results = results.loc[
         results["content_score"] >= min_similarity
     ].copy()
 
-    # Sort by the hybrid score, then textual relevance.
+    if REQUIRE_SKILL_MATCH and user_skills:
+
+        results = results.loc[
+            results["skill_coverage"] > 0
+        ].copy()
+
+    if results.empty:
+
+        print(
+            "No jobs passed the recommendation quality filters."
+        )
+
+        return pd.DataFrame()
+
+    # Sort recommendations
     results = results.sort_values(
-        [
+        by=[
             "recommendation_score",
+            "role_match",
+            "skill_coverage",
             "content_score",
         ],
-        ascending=False,
+        ascending=[False, False, False, False],
     )
 
-    # -----------------------------------------------------
-    # I. REMOVE DUPLICATE JOBS
-    # -----------------------------------------------------
-
+    # Remove duplicate title/company combinations
     results["_title_key"] = (
         results["title"]
         .str.casefold()
@@ -550,19 +1105,13 @@ def recommend_jobs(
     )
 
     results = results.drop_duplicates(
-        subset=[
-            "_title_key",
-            "_company_key",
-        ],
+        subset=["_title_key", "_company_key"],
         keep="first",
     )
 
     results = results.head(top_k).copy()
 
-    # -----------------------------------------------------
-    # J. SELECT OUTPUT COLUMNS
-    # -----------------------------------------------------
-
+    # Preserve backend output columns
     output_columns = [
         "title",
         "company_name",
@@ -576,22 +1125,16 @@ def recommend_jobs(
         "content_score",
         "skill_coverage",
         "requirement_coverage",
+        "role_match",
+        "experience_match",
         "recommendation_score",
     ]
 
-    output_columns = [
-        column
-        for column in output_columns
-        if column in results.columns
-    ]
-
-    return results[
-        output_columns
-    ].reset_index(drop=True)
+    return results[output_columns].reset_index(drop=True)
 
 
 # =========================================================
-# 6. RUN THE RECOMMENDATION ENGINE
+# 7. COMMAND-LINE TEST
 # =========================================================
 
 if __name__ == "__main__":
@@ -600,7 +1143,6 @@ if __name__ == "__main__":
     print("CAREERINTEL | JOB RECOMMENDATION ENGINE")
     print("=" * 65)
 
-    # Example candidate profile.
     profile = (
         "Aspiring Data Scientist with Python, SQL, "
         "machine learning, statistics, data analysis, "
@@ -617,176 +1159,91 @@ if __name__ == "__main__":
         "Data Visualization",
     ]
 
-    # Normalize profile skills.
-    normalized_profile_skills = set()
-
-    for skill in skills:
-
-        normalized_profile_skills.update(
-            parse_skills(skill)
-        )
-
-    print("\nProfile skills:")
-    print(sorted(normalized_profile_skills))
-
-    # -----------------------------------------------------
-    # DATASET VALIDATION
-    # -----------------------------------------------------
+    print("\n=== DATASET VALIDATION ===")
 
     jobs = load_jobs()
 
-    print("\n=== DATASET VALIDATION ===")
+    print(f"Total searchable jobs: {len(jobs)}")
+
+    user_skill_set: set[str] = set()
+
+    for skill in skills:
+        user_skill_set.update(parse_skills(skill))
 
     print(
-        "Total searchable jobs:",
-        len(jobs),
-    )
-
-    print(
-        "Jobs containing at least one parsed skill:",
-        int(jobs["skill_set"].map(bool).sum()),
-    )
-
-    matching_job_count = sum(
-        bool(
-            normalized_profile_skills.intersection(
-                job_skills
-            )
-        )
-        for job_skills in jobs["skill_set"]
+        "Jobs containing at least one parsed skill: "
+        f"{sum(bool(x) for x in jobs['skill_set'])}"
     )
 
     print(
-        "Jobs matching at least one profile skill:",
-        matching_job_count,
+        "Jobs matching profile skills: "
+        f"{sum(bool(user_skill_set.intersection(x)) for x in jobs['skill_set'])}"
     )
 
-    # -----------------------------------------------------
-    # GENERATE RECOMMENDATIONS
-    # -----------------------------------------------------
+    print("\n=== RECOMMENDATION RESULTS ===")
 
     recommendations = recommend_jobs(
         profile=profile,
         preferred_skills=skills,
+        target_role="Data Scientist",
+        experience_level="Fresher",
         top_k=10,
+        min_similarity=0.0,
     )
 
-    # Save results.
-    output_file = (
-        OUTPUT_DIR / "sample_recommendations.csv"
+    print(
+        f"\nRecommendations generated: "
+        f"{len(recommendations)}"
     )
+
+    output_file = OUTPUT_DIR / "sample_recommendations.csv"
 
     recommendations.to_csv(
         output_file,
         index=False,
     )
 
-    print("\n=== RECOMMENDATION RESULTS ===")
+    print(f"Saved to: {output_file}")
 
-    print(
-        "Recommendations generated:",
-        len(recommendations),
-    )
-
-    print(
-        "Saved to:",
-        output_file.relative_to(ROOT),
-    )
-
-    # -----------------------------------------------------
-    # DISPLAY TOP RECOMMENDATIONS
-    # -----------------------------------------------------
+    print("\n=== TOP RECOMMENDATIONS ===")
 
     if not recommendations.empty:
 
-        display_columns = [
+        columns = [
             "title",
             "company_name",
+            "experience_level",
             "matching_skills",
             "content_score",
             "skill_coverage",
             "requirement_coverage",
+            "role_match",
+            "experience_match",
             "recommendation_score",
         ]
 
-        display_columns = [
-            column
-            for column in display_columns
-            if column in recommendations.columns
-        ]
-
-        print("\n=== TOP 10 RECOMMENDATIONS ===")
-
         print(
-            recommendations[
-                display_columns
-            ].to_string(index=False)
+            recommendations[columns].to_string(index=False)
         )
-
-        # -------------------------------------------------
-        # RECOMMENDATION VALIDATION
-        # -------------------------------------------------
 
         print("\n=== RECOMMENDATION VALIDATION ===")
 
         print(
-            "Recommendations with positive skill coverage:",
-            int(
-                (
-                    recommendations["skill_coverage"] > 0
-                ).sum()
-            ),
+            f"Mean skill coverage: "
+            f"{recommendations['skill_coverage'].mean():.4f}"
         )
 
         print(
-            "Mean skill coverage:",
-            round(
-                recommendations["skill_coverage"].mean(),
-                4,
-            ),
+            f"Mean content similarity: "
+            f"{recommendations['content_score'].mean():.4f}"
         )
 
         print(
-            "Recommendations with known requirements:",
-            int(
-                recommendations[
-                    "requirement_coverage"
-                ].notna().sum()
-            ),
+            f"Mean recommendation score: "
+            f"{recommendations['recommendation_score'].mean():.4f}"
         )
 
-        known_requirement_scores = (
-            recommendations[
-                "requirement_coverage"
-            ].dropna()
-        )
-
-        if not known_requirement_scores.empty:
-
-            print(
-                "Mean requirement coverage:",
-                round(
-                    known_requirement_scores.mean(),
-                    4,
-                ),
-            )
-
-        print(
-            "Mean content similarity:",
-            round(
-                recommendations["content_score"].mean(),
-                4,
-            ),
-        )
-
-        print(
-            "Mean recommendation score:",
-            round(
-                recommendations[
-                    "recommendation_score"
-                ].mean(),
-                4,
-            ),
-        )
+    else:
+        print("No recommendations found.")
 
     print("\nExecution completed.")

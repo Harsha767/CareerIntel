@@ -1,0 +1,406 @@
+model,user_id,job_id,job_title,rank,model_score,semantic_score,direct_skill_coverage,graph_skill_coverage,direct_matching_skills,graph_matching_skills,relevance
+semantic_only,DA001,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",1,0.7011200189590454,0.7011200189590454,0.0,0.0,,,1.0
+semantic_only,DA001,JOB_007612,Integrated Analytics and Insights Expert,2,0.6596667766571045,0.6596667766571045,0.0,0.0,,,1.0
+semantic_only,DA001,JOB_003941,Business Analyst - Data,3,0.6470072865486145,0.6470072865486145,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",4,0.6282334923744202,0.6282334923744202,0.0,0.0,,,1.0
+semantic_only,DA001,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,5,0.6278384923934937,0.6278384923934937,0.0,0.0,,,1.0
+semantic_only,DA001,JOB_009853,Financial Risk Analytics (FRA) Analyst,6,0.6118353605270386,0.6118353605270386,0.0,0.0,,,1.0
+semantic_only,DA001,JOB_001520,Senior Technical Business Analyst,7,0.6071764826774597,0.6071764826774597,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_008576,Data Analyst Intern,8,0.5995416045188904,0.5995416045188904,0.16666666666666666,0.0,reporting,,1.0
+semantic_only,DA001,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,9,0.5881892442703247,0.5881892442703247,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_009648,"Associate, UK Power Analytics",10,0.5803322196006775,0.5803322196006775,0.16666666666666666,0.0,programming,,1.0
+semantic_only,DA001,JOB_002077,Junior Data Analyst,11,0.5594702363014221,0.5594702363014221,0.16666666666666666,0.0535349015597034,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_002720,Data Analyst,12,0.5564569234848022,0.5564569234848022,0.16666666666666666,0.0535349015597034,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",13,0.5496513843536377,0.5496513843536377,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_005106,Analytics Engineer,14,0.5385708212852478,0.5385708212852478,0.0,0.0,,,1.0
+semantic_only,DA001,JOB_008929,Data Science and Business Intelligence Professional III,15,0.5346181392669678,0.5346181392669678,0.0,0.036379255934640066,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_002208,Senior Advanced Analytics Application Developer,16,0.5283626317977905,0.5283626317977905,0.0,0.0,,,1.0
+semantic_only,DA001,JOB_003127,BI Analyst,17,0.5245869159698486,0.5245869159698486,0.16666666666666666,0.0,reporting,,1.0
+semantic_only,DA001,JOB_008527,"Senior Analyst, Business Intelligence",18,0.5172620415687561,0.5172620415687561,0.0,0.036379255934640066,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_001022,Business Intelligence Analyst I,19,0.516679584980011,0.516679584980011,0.16666666666666666,0.036379255934640066,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_000851,Business Analyst III,20,0.5156593918800354,0.5156593918800354,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_006297,Sr. Business Intelligence Analyst,21,0.5114187002182007,0.5114187002182007,0.0,0.036379255934640066,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_004494,Analytics Engineer,22,0.506949782371521,0.506949782371521,0.16666666666666666,0.0,reporting,,1.0
+semantic_only,DA001,JOB_002296,Account Manager - Business Intelligence,23,0.5055912137031555,0.5055912137031555,0.16666666666666666,0.0,reporting,,0.0
+semantic_only,DA001,JOB_006530,Business Analyst Capital Market,24,0.48972707986831665,0.48972707986831665,0.0,0.0,,,1.0
+semantic_only,DA001,JOB_002357,Sr. MassHealth Encounter Data Analyst,25,0.482073575258255,0.482073575258255,0.16666666666666666,0.0,reporting,,1.0
+semantic_only,DA001,JOB_001765,"Business Analyst – Offers Platform, Assistant Vice President",26,0.47738030552864075,0.47738030552864075,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+semantic_only,DA001,JOB_001769,Business Analyst - Middle Office Performance Measurement,27,0.42031440138816833,0.42031440138816833,0.16666666666666666,0.029093300555090157,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+semantic_only,DA001,JOB_004801,Security Shift Supervisor - University Campus,28,0.2703346908092499,0.2703346908092499,0.0,0.03203693504728202,,"data base user interface and query software, programming, spreadsheet software",0.0
+semantic_only,DA001,JOB_006559,Юрисконсульт,29,0.2630937695503235,0.2630937695503235,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_000521,Senior Customer Advocate (Project based),30,0.2544578015804291,0.2544578015804291,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_006915,Assistant Nurse Manager / WOC Registered Nurse / RN,31,0.2370019108057022,0.2370019108057022,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_006918,Utvecklare inom Dynamics 365 Business Central,32,0.22583937644958496,0.22583937644958496,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_007287,HR Manager,33,0.2188682109117508,0.2188682109117508,0.0,0.03627130939426913,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+semantic_only,DA001,JOB_006492,Automotive Product Specialist,34,0.19832374155521393,0.19832374155521393,0.0,0.03460462376675011,,"data base user interface and query software, programming, spreadsheet software",0.0
+semantic_only,DA001,JOB_003830,Maintenance Technician - The Winchester,35,0.19396550953388214,0.19396550953388214,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_006064,Model-Based Systems Engineering Lead,36,0.1902626007795334,0.1902626007795334,0.0,0.028195488721804513,,"programming, spreadsheet software",0.0
+semantic_only,DA001,JOB_001869,Senior Parts Associate,37,0.1653549075126648,0.1653549075126648,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_007719,Rental Sales Agent (Firenze),38,0.15611465275287628,0.15611465275287628,0.0,0.02975469492221649,,"data base user interface and query software, programming, spreadsheet software",0.0
+semantic_only,DA001,JOB_006414,Security Officer - Mall Vehicle Patrol,39,0.14984066784381866,0.14984066784381866,0.0,0.03632957089978523,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+semantic_only,DA001,JOB_003961,VIP Specialist,40,0.13974566757678986,0.13974566757678986,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_009056,Practice Manager 2,41,0.13152334094047546,0.13152334094047546,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_003377,Cashier Part Time AM/PM- Four Seasons Orlando,42,0.11338847130537033,0.11338847130537033,0.16666666666666666,0.0,reporting,,0.0
+semantic_only,DA001,JOB_009873,Clinical Service Manager (m/w/d),43,0.08378207683563232,0.08378207683563232,0.0,0.031180766390416014,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+semantic_only,DA001,JOB_004158,Wireless Retail Sales Associate - W2084,44,0.08244828134775162,0.08244828134775162,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_001156,Mental Health Professionals,45,0.07759085297584534,0.07759085297584534,0.0,0.031187971983299496,,"data base user interface and query software, programming, spreadsheet software",0.0
+semantic_only,DA001,JOB_005349,Catering Assistant - Caterlink,46,0.06694992631673813,0.06694992631673813,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_003445,Team Member - Chichester (N118926),47,0.008823826909065247,0.008823826909065247,0.0,0.0,,,0.0
+semantic_only,DA001,JOB_004154,Tecnico Ambientale - Campania,48,-0.0018081925809383392,-0.0018081925809383392,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",1,0.5608960390090942,0.7011200189590454,0.0,0.0,,,1.0
+traditional_hybrid,DA001,JOB_007612,Integrated Analytics and Insights Expert,2,0.5277334451675415,0.6596667766571045,0.0,0.0,,,1.0
+traditional_hybrid,DA001,JOB_003941,Business Analyst - Data,3,0.5176058411598206,0.6470072865486145,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_008576,Data Analyst Intern,4,0.5129666348298391,0.5995416045188904,0.16666666666666666,0.0,reporting,,1.0
+traditional_hybrid,DA001,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",5,0.5025867819786072,0.6282334923744202,0.0,0.0,,,1.0
+traditional_hybrid,DA001,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,6,0.5022708177566528,0.6278384923934937,0.0,0.0,,,1.0
+traditional_hybrid,DA001,JOB_009648,"Associate, UK Power Analytics",7,0.49759912689526875,0.5803322196006775,0.16666666666666666,0.0,programming,,1.0
+traditional_hybrid,DA001,JOB_009853,Financial Risk Analytics (FRA) Analyst,8,0.4894683063030243,0.6118353605270386,0.0,0.0,,,1.0
+traditional_hybrid,DA001,JOB_001520,Senior Technical Business Analyst,9,0.48574119806289673,0.6071764826774597,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_002077,Junior Data Analyst,10,0.4809095283349355,0.5594702363014221,0.16666666666666666,0.0535349015597034,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_002720,Data Analyst,11,0.4784988780816396,0.5564569234848022,0.16666666666666666,0.0535349015597034,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,12,0.47055140137672424,0.5881892442703247,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_003127,BI Analyst,13,0.4530028720696767,0.5245869159698486,0.16666666666666666,0.0,reporting,,1.0
+traditional_hybrid,DA001,JOB_001022,Business Intelligence Analyst I,14,0.4466770013173421,0.516679584980011,0.16666666666666666,0.036379255934640066,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",15,0.43972110748291016,0.5496513843536377,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_004494,Analytics Engineer,16,0.4388931711514791,0.506949782371521,0.16666666666666666,0.0,reporting,,1.0
+traditional_hybrid,DA001,JOB_002296,Account Manager - Business Intelligence,17,0.4378063102563222,0.5055912137031555,0.16666666666666666,0.0,reporting,,0.0
+traditional_hybrid,DA001,JOB_005106,Analytics Engineer,18,0.4308566749095917,0.5385708212852478,0.0,0.0,,,1.0
+traditional_hybrid,DA001,JOB_008929,Data Science and Business Intelligence Professional III,19,0.42769452929496765,0.5346181392669678,0.0,0.036379255934640066,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_002208,Senior Advanced Analytics Application Developer,20,0.42269012331962585,0.5283626317977905,0.0,0.0,,,1.0
+traditional_hybrid,DA001,JOB_002357,Sr. MassHealth Encounter Data Analyst,21,0.41899219353993733,0.482073575258255,0.16666666666666666,0.0,reporting,,1.0
+traditional_hybrid,DA001,JOB_008527,"Senior Analyst, Business Intelligence",22,0.4138096272945404,0.5172620415687561,0.0,0.036379255934640066,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_000851,Business Analyst III,23,0.41252753138542175,0.5156593918800354,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_006297,Sr. Business Intelligence Analyst,24,0.40913495421409607,0.5114187002182007,0.0,0.036379255934640066,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_006530,Business Analyst Capital Market,25,0.39178165793418884,0.48972707986831665,0.0,0.0,,,1.0
+traditional_hybrid,DA001,JOB_001765,"Business Analyst – Offers Platform, Assistant Vice President",26,0.3819042444229126,0.47738030552864075,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+traditional_hybrid,DA001,JOB_001769,Business Analyst - Middle Office Performance Measurement,27,0.36958486040433247,0.42031440138816833,0.16666666666666666,0.029093300555090157,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+traditional_hybrid,DA001,JOB_004801,Security Shift Supervisor - University Campus,28,0.21626774966716766,0.2703346908092499,0.0,0.03203693504728202,,"data base user interface and query software, programming, spreadsheet software",0.0
+traditional_hybrid,DA001,JOB_006559,Юрисконсульт,29,0.21047501266002655,0.2630937695503235,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_000521,Senior Customer Advocate (Project based),30,0.20356623828411102,0.2544578015804291,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_006915,Assistant Nurse Manager / WOC Registered Nurse / RN,31,0.18960152566432953,0.2370019108057022,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_006918,Utvecklare inom Dynamics 365 Business Central,32,0.18067149817943573,0.22583937644958496,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_007287,HR Manager,33,0.1750945746898651,0.2188682109117508,0.0,0.03627130939426913,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+traditional_hybrid,DA001,JOB_006492,Automotive Product Specialist,34,0.15865899622440338,0.19832374155521393,0.0,0.03460462376675011,,"data base user interface and query software, programming, spreadsheet software",0.0
+traditional_hybrid,DA001,JOB_003830,Maintenance Technician - The Winchester,35,0.1551724076271057,0.19396550953388214,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_006064,Model-Based Systems Engineering Lead,36,0.1522100865840912,0.1902626007795334,0.0,0.028195488721804513,,"programming, spreadsheet software",0.0
+traditional_hybrid,DA001,JOB_001869,Senior Parts Associate,37,0.13228392601013184,0.1653549075126648,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_007719,Rental Sales Agent (Firenze),38,0.1248917207121849,0.15611465275287628,0.0,0.02975469492221649,,"data base user interface and query software, programming, spreadsheet software",0.0
+traditional_hybrid,DA001,JOB_003377,Cashier Part Time AM/PM- Four Seasons Orlando,39,0.12404411484797795,0.11338847130537033,0.16666666666666666,0.0,reporting,,0.0
+traditional_hybrid,DA001,JOB_006414,Security Officer - Mall Vehicle Patrol,40,0.11987253278493881,0.14984066784381866,0.0,0.03632957089978523,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+traditional_hybrid,DA001,JOB_003961,VIP Specialist,41,0.111796535551548,0.13974566757678986,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_009056,Practice Manager 2,42,0.10521867126226425,0.13152334094047546,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_009873,Clinical Service Manager (m/w/d),43,0.06702566146850586,0.08378207683563232,0.0,0.031180766390416014,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+traditional_hybrid,DA001,JOB_004158,Wireless Retail Sales Associate - W2084,44,0.06595862656831741,0.08244828134775162,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_001156,Mental Health Professionals,45,0.06207268312573433,0.07759085297584534,0.0,0.031187971983299496,,"data base user interface and query software, programming, spreadsheet software",0.0
+traditional_hybrid,DA001,JOB_005349,Catering Assistant - Caterlink,46,0.05355994030833244,0.06694992631673813,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_003445,Team Member - Chichester (N118926),47,0.00705906143411994,0.008823826909065247,0.0,0.0,,,0.0
+traditional_hybrid,DA001,JOB_004154,Tecnico Ambientale - Campania,48,-0.0014465540880337358,-0.0018081925809383392,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",1,0.4767616093158722,0.7011200189590454,0.0,0.0,,,1.0
+graph_hybrid,DA001,JOB_007612,Integrated Analytics and Insights Expert,2,0.44857341051101685,0.6596667766571045,0.0,0.0,,,1.0
+graph_hybrid,DA001,JOB_003941,Business Analyst - Data,3,0.4443289451679498,0.6470072865486145,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_008576,Data Analyst Intern,4,0.4360216232140859,0.5995416045188904,0.16666666666666666,0.0,reporting,,1.0
+graph_hybrid,DA001,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",5,0.42719876766204834,0.6282334923744202,0.0,0.0,,,1.0
+graph_hybrid,DA001,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,6,0.42693018913269043,0.6278384923934937,0.0,0.0,,,1.0
+graph_hybrid,DA001,JOB_009648,"Associate, UK Power Analytics",7,0.42295923550923664,0.5803322196006775,0.16666666666666666,0.0,programming,,1.0
+graph_hybrid,DA001,JOB_001520,Senior Technical Business Analyst,8,0.41724399853556454,0.6071764826774597,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_002077,Junior Data Analyst,9,0.4168033268680701,0.5594702363014221,0.16666666666666666,0.0535349015597034,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_009853,Financial Risk Analytics (FRA) Analyst,10,0.4160480499267578,0.6118353605270386,0.0,0.0,,,1.0
+graph_hybrid,DA001,JOB_002720,Data Analyst,11,0.4147542681923041,0.5564569234848022,0.16666666666666666,0.0535349015597034,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,12,0.399968683719635,0.5881892442703247,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_001022,Business Intelligence Analyst I,13,0.38513233354947235,0.516679584980011,0.16666666666666666,0.036379255934640066,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_003127,BI Analyst,14,0.3850524397691091,0.5245869159698486,0.16666666666666666,0.0,reporting,,1.0
+graph_hybrid,DA001,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",15,0.37376293540000916,0.5496513843536377,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_004494,Analytics Engineer,16,0.373059180577596,0.506949782371521,0.16666666666666666,0.0,reporting,,1.0
+graph_hybrid,DA001,JOB_002296,Account Manager - Business Intelligence,17,0.37213536818822224,0.5055912137031555,0.16666666666666666,0.0,reporting,,0.0
+graph_hybrid,DA001,JOB_008929,Data Science and Business Intelligence Professional III,18,0.36899723978103466,0.5346181392669678,0.0,0.036379255934640066,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_005106,Analytics Engineer,19,0.3662281632423401,0.5385708212852478,0.0,0.0,,,1.0
+graph_hybrid,DA001,JOB_002208,Senior Advanced Analytics Application Developer,20,0.3592866063117981,0.5283626317977905,0.0,0.0,,,1.0
+graph_hybrid,DA001,JOB_008527,"Senior Analyst, Business Intelligence",21,0.3571950730806715,0.5172620415687561,0.0,0.036379255934640066,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_002357,Sr. MassHealth Encounter Data Analyst,22,0.35614338239034016,0.482073575258255,0.16666666666666666,0.0,reporting,,1.0
+graph_hybrid,DA001,JOB_000851,Business Analyst III,23,0.3550123982509881,0.5156593918800354,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_006297,Sr. Business Intelligence Analyst,24,0.35322161884368725,0.5114187002182007,0.0,0.036379255934640066,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_006530,Business Analyst Capital Market,25,0.33301442861557007,0.48972707986831665,0.0,0.0,,,1.0
+graph_hybrid,DA001,JOB_001765,"Business Analyst – Offers Platform, Assistant Vice President",26,0.3289826028427392,0.47738030552864075,0.0,0.029093300555090157,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+graph_hybrid,DA001,JOB_001769,Business Analyst - Middle Office Performance Measurement,27,0.31851113685775895,0.42031440138816833,0.16666666666666666,0.029093300555090157,reporting,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",1.0
+graph_hybrid,DA001,JOB_004801,Security Shift Supervisor - University Campus,28,0.18863313417970734,0.2703346908092499,0.0,0.03203693504728202,,"data base user interface and query software, programming, spreadsheet software",0.0
+graph_hybrid,DA001,JOB_006559,Юрисконсульт,29,0.1789037585258484,0.2630937695503235,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_000521,Senior Customer Advocate (Project based),30,0.1730313003063202,0.2544578015804291,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_006915,Assistant Nurse Manager / WOC Registered Nurse / RN,31,0.16116130352020264,0.2370019108057022,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_007287,HR Manager,32,0.15427108042517737,0.2188682109117508,0.0,0.03627130939426913,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+graph_hybrid,DA001,JOB_006918,Utvecklare inom Dynamics 365 Business Central,33,0.1535707712173462,0.22583937644958496,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_006492,Automotive Product Specialist,34,0.14005083663046508,0.19832374155521393,0.0,0.03460462376675011,,"data base user interface and query software, programming, spreadsheet software",0.0
+graph_hybrid,DA001,JOB_006064,Model-Based Systems Engineering Lead,35,0.13360789541463206,0.1902626007795334,0.0,0.028195488721804513,,"programming, spreadsheet software",0.0
+graph_hybrid,DA001,JOB_003830,Maintenance Technician - The Winchester,36,0.13189654052257538,0.19396550953388214,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_001869,Senior Parts Associate,37,0.11244133859872818,0.1653549075126648,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_007719,Rental Sales Agent (Firenze),38,0.11062117019645092,0.15611465275287628,0.0,0.02975469492221649,,"data base user interface and query software, programming, spreadsheet software",0.0
+graph_hybrid,DA001,JOB_006414,Security Officer - Mall Vehicle Patrol,39,0.10734108738457869,0.14984066784381866,0.0,0.03632957089978523,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+graph_hybrid,DA001,JOB_003377,Cashier Part Time AM/PM- Four Seasons Orlando,40,0.10543749203284582,0.11338847130537033,0.16666666666666666,0.0,reporting,,0.0
+graph_hybrid,DA001,JOB_003961,VIP Specialist,41,0.09502705186605453,0.13974566757678986,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_009056,Practice Manager 2,42,0.089435875415802,0.13152334094047546,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_009873,Clinical Service Manager (m/w/d),43,0.06164892944196656,0.08378207683563232,0.0,0.031180766390416014,,"business intelligence and data analysis software, data base user interface and query software, programming, spreadsheet software",0.0
+graph_hybrid,DA001,JOB_001156,Mental Health Professionals,44,0.05743997775822071,0.07759085297584534,0.0,0.031187971983299496,,"data base user interface and query software, programming, spreadsheet software",0.0
+graph_hybrid,DA001,JOB_004158,Wireless Retail Sales Associate - W2084,45,0.05606483295559883,0.08244828134775162,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_005349,Catering Assistant - Caterlink,46,0.04552594944834709,0.06694992631673813,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_003445,Team Member - Chichester (N118926),47,0.006000202149152756,0.008823826909065247,0.0,0.0,,,0.0
+graph_hybrid,DA001,JOB_004154,Tecnico Ambientale - Campania,48,-0.001229570945724845,-0.0018081925809383392,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_005108,Data Scientist,1,0.5970278978347778,0.5970278978347778,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+semantic_only,DS001,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",2,0.5968180894851685,0.5968180894851685,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_007612,Integrated Analytics and Insights Expert,3,0.560048520565033,0.560048520565033,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_009853,Financial Risk Analytics (FRA) Analyst,4,0.5564649105072021,0.5564649105072021,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",5,0.5560352802276611,0.5560352802276611,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_004324,"Sr Manager, Data Science",6,0.5473313927650452,0.5473313927650452,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_002918,Technical Project Manager - Data Science,7,0.5400118827819824,0.5400118827819824,0.0,0.062164110945536706,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, mathematics, programming",0.0
+semantic_only,DS001,JOB_008929,Data Science and Business Intelligence Professional III,8,0.5238909721374512,0.5238909721374512,0.0,0.07407342473438759,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+semantic_only,DS001,JOB_008611,Data Scientist,9,0.5144765973091125,0.5144765973091125,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+semantic_only,DS001,JOB_009648,"Associate, UK Power Analytics",10,0.5101104974746704,0.5101104974746704,0.16666666666666666,0.0,programming,,1.0
+semantic_only,DS001,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,11,0.5093144178390503,0.5093144178390503,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,12,0.49055996537208557,0.49055996537208557,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_008435,Sr Associate Data Scientist,13,0.44967806339263916,0.44967806339263916,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+semantic_only,DS001,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",14,0.44079577922821045,0.44079577922821045,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_005106,Analytics Engineer,15,0.4353788197040558,0.4353788197040558,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_004494,Analytics Engineer,16,0.4232180714607239,0.4232180714607239,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_002208,Senior Advanced Analytics Application Developer,17,0.4108714461326599,0.4108714461326599,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_002077,Junior Data Analyst,18,0.38930797576904297,0.38930797576904297,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+semantic_only,DS001,JOB_002720,Data Analyst,19,0.35208937525749207,0.35208937525749207,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+semantic_only,DS001,JOB_002357,Sr. MassHealth Encounter Data Analyst,20,0.3384169936180115,0.3384169936180115,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_004411,2nd shift PCBA soldering Team Lead,21,0.30886682868003845,0.30886682868003845,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_000312,Business Development Consultant: Weatherby,22,0.2527622878551483,0.2527622878551483,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_002246,Equipment Sales Support,23,0.25040772557258606,0.25040772557258606,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_000440,Office Professional,24,0.21642477810382843,0.21642477810382843,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_007770,Chargé de logistique portuaire/ fumigation H/F,25,0.21220046281814575,0.21220046281814575,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_001025,Lab Phlebotomist (Float),26,0.2070126235485077,0.2070126235485077,0.0,0.03897512370365349,,"mathematics, programming",0.0
+semantic_only,DS001,JOB_004990,Research Scientist,27,0.19901570677757263,0.19901570677757263,0.0,0.0,,,1.0
+semantic_only,DS001,JOB_008518,Marketing Administrator (12-month contract),28,0.19776006042957306,0.19776006042957306,0.0,0.0632490864020853,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",0.0
+semantic_only,DS001,JOB_006547,Auto Painter Helper,29,0.1844678521156311,0.1844678521156311,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_007582,Senior Counsel,30,0.16621598601341248,0.16621598601341248,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_005269,Security Officer / EMT - Plant,31,0.16190551221370697,0.16190551221370697,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_009871,Commercial Strategic Initiatives Manager (Hybrid),32,0.1440572440624237,0.1440572440624237,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_004711,Certified Medical Assistant - Cardiology Clinic,33,0.13896627724170685,0.13896627724170685,0.0,0.052175740031749,,"data base user interface and query software, mathematics, programming",0.0
+semantic_only,DS001,JOB_008281,Mold Repair Technician II,34,0.12891091406345367,0.12891091406345367,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_006760,Senior Executive Assistant,35,0.12204228341579437,0.12204228341579437,0.0,0.058662138797146615,,"analytical or scientific software, data base user interface and query software, mathematics, programming",0.0
+semantic_only,DS001,JOB_002362,"Medical Assistant, Primary Care",36,0.10906495898962021,0.10906495898962021,0.0,0.052175740031749,,"data base user interface and query software, mathematics, programming",0.0
+semantic_only,DS001,JOB_000097,Overnight Assistant Manager,37,0.1052534431219101,0.1052534431219101,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_000107,Teammate - Golf,38,0.07353787124156952,0.07353787124156952,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_003271,ESTOQUISTA - MIX SANTA MÔNICA,39,0.07113301753997803,0.07113301753997803,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_003296,AÇOUGUEIRO - MIX MARITUBA,40,0.054469749331474304,0.054469749331474304,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_004218,Wireless Retail Sales Associate - W3035,41,0.03772967308759689,0.03772967308759689,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_003431,Short-term Temporary Team Member - Croydon Centrale (N118936),42,0.009979091584682465,0.009979091584682465,0.0,0.0,,,0.0
+semantic_only,DS001,JOB_001541,Terapeuta,43,-0.003155399113893509,-0.003155399113893509,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_005108,Data Scientist,1,0.4776223301887512,0.5970278978347778,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+traditional_hybrid,DS001,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",2,0.4774544835090637,0.5968180894851685,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_007612,Integrated Analytics and Insights Expert,3,0.44803881645202637,0.560048520565033,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_009853,Financial Risk Analytics (FRA) Analyst,4,0.44517192244529724,0.5564649105072021,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",5,0.44482824206352234,0.5560352802276611,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_009648,"Associate, UK Power Analytics",6,0.4414217491944631,0.5101104974746704,0.16666666666666666,0.0,programming,,1.0
+traditional_hybrid,DS001,JOB_004324,"Sr Manager, Data Science",7,0.43786510825157166,0.5473313927650452,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_002918,Technical Project Manager - Data Science,8,0.4320095181465149,0.5400118827819824,0.0,0.062164110945536706,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, mathematics, programming",0.0
+traditional_hybrid,DS001,JOB_008929,Data Science and Business Intelligence Professional III,9,0.41911277174949646,0.5238909721374512,0.0,0.07407342473438759,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+traditional_hybrid,DS001,JOB_008611,Data Scientist,10,0.41158127784729004,0.5144765973091125,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+traditional_hybrid,DS001,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,11,0.4074515402317047,0.5093144178390503,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,12,0.39244797825813293,0.49055996537208557,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_008435,Sr Associate Data Scientist,13,0.3597424626350403,0.44967806339263916,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+traditional_hybrid,DS001,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",14,0.3526366353034973,0.44079577922821045,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_005106,Analytics Engineer,15,0.34830304980278015,0.4353788197040558,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_004494,Analytics Engineer,16,0.33857446908950806,0.4232180714607239,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_002208,Senior Advanced Analytics Application Developer,17,0.32869717478752136,0.4108714461326599,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_002077,Junior Data Analyst,18,0.3114463984966278,0.38930797576904297,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+traditional_hybrid,DS001,JOB_002720,Data Analyst,19,0.2816714942455292,0.35208937525749207,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+traditional_hybrid,DS001,JOB_002357,Sr. MassHealth Encounter Data Analyst,20,0.2707335948944092,0.3384169936180115,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_004411,2nd shift PCBA soldering Team Lead,21,0.24709346890449524,0.30886682868003845,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_000312,Business Development Consultant: Weatherby,22,0.20220983028411865,0.2527622878551483,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_002246,Equipment Sales Support,23,0.20032618939876556,0.25040772557258606,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_000440,Office Professional,24,0.17313982546329498,0.21642477810382843,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_007770,Chargé de logistique portuaire/ fumigation H/F,25,0.16976037621498108,0.21220046281814575,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_001025,Lab Phlebotomist (Float),26,0.16561010479927063,0.2070126235485077,0.0,0.03897512370365349,,"mathematics, programming",0.0
+traditional_hybrid,DS001,JOB_004990,Research Scientist,27,0.15921257436275482,0.19901570677757263,0.0,0.0,,,1.0
+traditional_hybrid,DS001,JOB_008518,Marketing Administrator (12-month contract),28,0.15820805728435516,0.19776006042957306,0.0,0.0632490864020853,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",0.0
+traditional_hybrid,DS001,JOB_006547,Auto Painter Helper,29,0.1475742906332016,0.1844678521156311,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_007582,Senior Counsel,30,0.13297279179096222,0.16621598601341248,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_005269,Security Officer / EMT - Plant,31,0.12952440977096558,0.16190551221370697,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_009871,Commercial Strategic Initiatives Manager (Hybrid),32,0.11524579674005508,0.1440572440624237,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_004711,Certified Medical Assistant - Cardiology Clinic,33,0.11117302626371384,0.13896627724170685,0.0,0.052175740031749,,"data base user interface and query software, mathematics, programming",0.0
+traditional_hybrid,DS001,JOB_008281,Mold Repair Technician II,34,0.10312873125076294,0.12891091406345367,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_006760,Senior Executive Assistant,35,0.09763383120298386,0.12204228341579437,0.0,0.058662138797146615,,"analytical or scientific software, data base user interface and query software, mathematics, programming",0.0
+traditional_hybrid,DS001,JOB_002362,"Medical Assistant, Primary Care",36,0.08725196868181229,0.10906495898962021,0.0,0.052175740031749,,"data base user interface and query software, mathematics, programming",0.0
+traditional_hybrid,DS001,JOB_000097,Overnight Assistant Manager,37,0.08420275896787643,0.1052534431219101,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_000107,Teammate - Golf,38,0.058830298483371735,0.07353787124156952,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_003271,ESTOQUISTA - MIX SANTA MÔNICA,39,0.05690641328692436,0.07113301753997803,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_003296,AÇOUGUEIRO - MIX MARITUBA,40,0.04357580095529556,0.054469749331474304,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_004218,Wireless Retail Sales Associate - W3035,41,0.030183738097548485,0.03772967308759689,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_003431,Short-term Temporary Team Member - Croydon Centrale (N118936),42,0.007983273826539516,0.009979091584682465,0.0,0.0,,,0.0
+traditional_hybrid,DS001,JOB_001541,Terapeuta,43,-0.002524319337680936,-0.003155399113893509,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_005108,Data Scientist,1,0.42228714694637864,0.5970278978347778,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+graph_hybrid,DS001,JOB_001398,"Sr. Business Data Analyst, Finance Insights and Technology Engagement",2,0.4058363139629364,0.5968180894851685,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_007612,Integrated Analytics and Insights Expert,3,0.3808329999446869,0.560048520565033,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_009853,Financial Risk Analytics (FRA) Analyst,4,0.3783961534500122,0.5564649105072021,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_006571,"Transportation Data Analyst - Monterey Park, CA",5,0.37810400128364563,0.5560352802276611,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_002918,Technical Project Manager - Data Science,6,0.3765327100466004,0.5400118827819824,0.0,0.062164110945536706,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, mathematics, programming",0.0
+graph_hybrid,DS001,JOB_009648,"Associate, UK Power Analytics",7,0.3752084644635518,0.5101104974746704,0.16666666666666666,0.0,programming,,1.0
+graph_hybrid,DS001,JOB_004324,"Sr Manager, Data Science",8,0.3721853494644165,0.5473313927650452,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_008929,Data Science and Business Intelligence Professional III,9,0.3673568890687397,0.5238909721374512,0.0,0.07407342473438759,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+graph_hybrid,DS001,JOB_008611,Data Scientist,10,0.36615226735729783,0.5144765973091125,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+graph_hybrid,DS001,JOB_007851,Senior Data Analyst – AI & Snowflake Cortex,11,0.3463338017463684,0.5093144178390503,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_007752,Senior Data Visualization and Augmented Analytics Engineer,12,0.33358079195022583,0.49055996537208557,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_008435,Sr Associate Data Scientist,13,0.3220892654861888,0.44967806339263916,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+graph_hybrid,DS001,JOB_007403,"Staff Analyst, Marketing Analytics & Audience Insights",14,0.29974111914634705,0.44079577922821045,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_005106,Analytics Engineer,15,0.2960576117038727,0.4353788197040558,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_004494,Analytics Engineer,16,0.2877883017063141,0.4232180714607239,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_002077,Junior Data Analyst,17,0.2810376094784221,0.38930797576904297,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+graph_hybrid,DS001,JOB_002208,Senior Advanced Analytics Application Developer,18,0.2793926000595093,0.4108714461326599,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_002720,Data Analyst,19,0.25572894086498826,0.35208937525749207,0.0,0.1087211284411489,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",1.0
+graph_hybrid,DS001,JOB_002357,Sr. MassHealth Encounter Data Analyst,20,0.23012356460094452,0.3384169936180115,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_004411,2nd shift PCBA soldering Team Lead,21,0.2100294530391693,0.30886682868003845,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_000312,Business Development Consultant: Weatherby,22,0.17187835276126862,0.2527622878551483,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_002246,Equipment Sales Support,23,0.17027725279331207,0.25040772557258606,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_000440,Office Professional,24,0.1471688449382782,0.21642477810382843,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_001025,Lab Phlebotomist (Float),25,0.14661485614481193,0.2070126235485077,0.0,0.03897512370365349,,"mathematics, programming",0.0
+graph_hybrid,DS001,JOB_007770,Chargé de logistique portuaire/ fumigation H/F,26,0.1442963182926178,0.21220046281814575,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_008518,Marketing Administrator (12-month contract),27,0.14396420345637603,0.19776006042957306,0.0,0.0632490864020853,,"analytical or scientific software, business intelligence and data analysis software, data base user interface and query software, data mining software, mathematics, programming",0.0
+graph_hybrid,DS001,JOB_004990,Research Scientist,28,0.1353306770324707,0.19901570677757263,0.0,0.0,,,1.0
+graph_hybrid,DS001,JOB_006547,Auto Painter Helper,29,0.1254381388425827,0.1844678521156311,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_007582,Senior Counsel,30,0.11302687227725983,0.16621598601341248,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_005269,Security Officer / EMT - Plant,31,0.11009574681520462,0.16190551221370697,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_004711,Certified Medical Assistant - Cardiology Clinic,32,0.1023234307212159,0.13896627724170685,0.0,0.052175740031749,,"data base user interface and query software, mathematics, programming",0.0
+graph_hybrid,DS001,JOB_009871,Commercial Strategic Initiatives Manager (Hybrid),33,0.09795892983675003,0.1440572440624237,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_006760,Senior Executive Assistant,34,0.09178807473440506,0.12204228341579437,0.0,0.058662138797146615,,"analytical or scientific software, data base user interface and query software, mathematics, programming",0.0
+graph_hybrid,DS001,JOB_008281,Mold Repair Technician II,35,0.08765942603349686,0.12891091406345367,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_002362,"Medical Assistant, Primary Care",36,0.08199053550188988,0.10906495898962021,0.0,0.052175740031749,,"data base user interface and query software, mathematics, programming",0.0
+graph_hybrid,DS001,JOB_000097,Overnight Assistant Manager,37,0.07157234102487564,0.1052534431219101,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_000107,Teammate - Golf,38,0.050005752593278885,0.07353787124156952,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_003271,ESTOQUISTA - MIX SANTA MÔNICA,39,0.04837045073509216,0.07113301753997803,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_003296,AÇOUGUEIRO - MIX MARITUBA,40,0.03703942894935608,0.054469749331474304,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_004218,Wireless Retail Sales Associate - W3035,41,0.02565617859363556,0.03772967308759689,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_003431,Short-term Temporary Team Member - Croydon Centrale (N118936),42,0.006785782519727945,0.009979091584682465,0.0,0.0,,,0.0
+graph_hybrid,DS001,JOB_001541,Terapeuta,43,-0.0021456715185195208,-0.003155399113893509,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_008439,Data Scientist (Computer Vision),1,0.6766805648803711,0.6766805648803711,0.0,0.06552032728202506,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+semantic_only,ML001,JOB_005960,Artificial Intelligence Engineer,2,0.6688094735145569,0.6688094735145569,0.0,0.0,,,1.0
+semantic_only,ML001,JOB_003939,"Machine Learning Engineer / MLOps (Python, Cloud, Data) – Híbrido - CDMX",3,0.6162251234054565,0.6162251234054565,0.0,0.0,,,1.0
+semantic_only,ML001,JOB_004856,"Staff Machine Learning Engineer - Game Tech Group, ML Platform",4,0.6098100543022156,0.6098100543022156,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_000743,AI Engineer,5,0.5889467597007751,0.5889467597007751,0.0,0.054112373605754195,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+semantic_only,ML001,JOB_006142,Senior Machine Learning Scientist,6,0.5876473188400269,0.5876473188400269,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_007378,"Staff Machine Learning Engineer, Agentic App Platform",7,0.5749709606170654,0.5749709606170654,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_008435,Sr Associate Data Scientist,8,0.5728894472122192,0.5728894472122192,0.0,0.06552032728202506,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+semantic_only,ML001,JOB_007060,Mid Level AI Engineer,9,0.5530461668968201,0.5530461668968201,0.0,0.0,,,1.0
+semantic_only,ML001,JOB_000744,Junior AI Engineer,10,0.5461043119430542,0.5461043119430542,0.0,0.0,,,1.0
+semantic_only,ML001,JOB_007361,"Senior Machine Learning Engineer, Agentic Product - Moveworks",11,0.5409061908721924,0.5409061908721924,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_007376,"Staff Machine Learning Engineer, Agentic Product",12,0.5388528108596802,0.5388528108596802,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_007365,"Machine Learning Engineer, Agentic Product - Moveworks",13,0.5379787087440491,0.5379787087440491,0.0,0.0,,,1.0
+semantic_only,ML001,JOB_004888,Senior AI Engineer,14,0.5234270095825195,0.5234270095825195,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_005553,AI Engineer,15,0.5208696722984314,0.5208696722984314,0.0,0.054112373605754195,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+semantic_only,ML001,JOB_002741,AI Engineering Sr,16,0.5206806659698486,0.5206806659698486,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_007908,Head of Artificial Intelligence – LATAM,17,0.48175835609436035,0.48175835609436035,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_007380,"Senior Staff Machine Learning Engineer, Agentic Product - Moveworks",18,0.4805270731449127,0.4805270731449127,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_007373,"Senior Machine Learning Engineer, Agentic App Platform - Moveworks",19,0.4723528027534485,0.4723528027534485,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_000370,AI Engineer (Contract role),20,0.4482816755771637,0.4482816755771637,0.0,0.054112373605754195,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+semantic_only,ML001,JOB_007789,Site Reliability Engineer (Hosted Infra) - Platform,21,0.3684079647064209,0.3684079647064209,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_001116,"Senior Team Lead, Technical Services",22,0.34758418798446655,0.34758418798446655,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_006256,"Contract & Claim Manager, Manufacturing Construction Projects, Guanajuato",23,0.2869380712509155,0.2869380712509155,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_008218,HR Generalist,24,0.26019901037216187,0.26019901037216187,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_006561,Специалист по планированию поставок сырья,25,0.2568480670452118,0.2568480670452118,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_004374,Contract & Sales Support Analyst (Contract),26,0.2503032982349396,0.2503032982349396,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_007340,Authorization Specialist,27,0.2470700442790985,0.2470700442790985,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_005400,Security Officer Site Supervisor,28,0.24410447478294373,0.24410447478294373,0.0,0.03584527589964729,,"programming, systems evaluation",0.0
+semantic_only,ML001,JOB_003704,ANALISTA DE RUTA DE TRANSPORTE,29,0.2422512173652649,0.2422512173652649,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_008137,Carrier Payable/Invoicing Representative II,30,0.23998866975307465,0.23998866975307465,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_003040,Full Time - Sales Associate - Outside Lawn & Garden - Closing,31,0.19854041934013367,0.19854041934013367,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_009068,"Senior Epidemiologist, HIV Treatment, Retrospective Claims Study Expertise (FSP Sponsor Dedicated)",32,0.18308113515377045,0.18308113515377045,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_004868,Permit Technician,33,0.16029514372348785,0.16029514372348785,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_004903,Mental Health Group Facilitator - NV,34,0.15955710411071777,0.15955710411071777,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_004908,Mental Health Group Facilitator - KY,35,0.15955710411071777,0.15955710411071777,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_006106,"Senior Director, HRBP",36,0.15623262524604797,0.15623262524604797,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_004192,LPN/RN PDN (peds to young adults),37,0.15554001927375793,0.15554001927375793,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_007608,Part Time ( 20 Hours) Intensive Home Based Therapeutic Care - Young Adult Peer Mentor,38,0.14326496422290802,0.14326496422290802,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_008943,Front Desk Agent,39,0.12940822541713715,0.12940822541713715,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_002503,DIRECT SUPPT PROFESSIONAL,40,0.12778662145137787,0.12778662145137787,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_000036,Salad Bar Clerk Part Time Evening,41,0.10080273449420929,0.10080273449420929,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_008008,"Patient Services Representative II, Specialty Services Patient Contact Center",42,0.07663237303495407,0.07663237303495407,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_001677,Diet Clerk,43,0.07519300282001495,0.07519300282001495,0.0,0.0,,,0.0
+semantic_only,ML001,JOB_000040,HMR Clerk Part Time Afternoon,44,0.05129658430814743,0.05129658430814743,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_008439,Data Scientist (Computer Vision),1,0.5413444638252258,0.6766805648803711,0.0,0.06552032728202506,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+traditional_hybrid,ML001,JOB_005960,Artificial Intelligence Engineer,2,0.5350475907325745,0.6688094735145569,0.0,0.0,,,1.0
+traditional_hybrid,ML001,JOB_003939,"Machine Learning Engineer / MLOps (Python, Cloud, Data) – Híbrido - CDMX",3,0.49298009276390076,0.6162251234054565,0.0,0.0,,,1.0
+traditional_hybrid,ML001,JOB_004856,"Staff Machine Learning Engineer - Game Tech Group, ML Platform",4,0.48784804344177246,0.6098100543022156,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_000743,AI Engineer,5,0.47115740180015564,0.5889467597007751,0.0,0.054112373605754195,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+traditional_hybrid,ML001,JOB_006142,Senior Machine Learning Scientist,6,0.47011786699295044,0.5876473188400269,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_007378,"Staff Machine Learning Engineer, Agentic App Platform",7,0.45997676253318787,0.5749709606170654,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_008435,Sr Associate Data Scientist,8,0.4583115577697754,0.5728894472122192,0.0,0.06552032728202506,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+traditional_hybrid,ML001,JOB_007060,Mid Level AI Engineer,9,0.44243693351745605,0.5530461668968201,0.0,0.0,,,1.0
+traditional_hybrid,ML001,JOB_000744,Junior AI Engineer,10,0.43688344955444336,0.5461043119430542,0.0,0.0,,,1.0
+traditional_hybrid,ML001,JOB_007361,"Senior Machine Learning Engineer, Agentic Product - Moveworks",11,0.4327249526977539,0.5409061908721924,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_007376,"Staff Machine Learning Engineer, Agentic Product",12,0.43108224868774414,0.5388528108596802,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_007365,"Machine Learning Engineer, Agentic Product - Moveworks",13,0.43038296699523926,0.5379787087440491,0.0,0.0,,,1.0
+traditional_hybrid,ML001,JOB_004888,Senior AI Engineer,14,0.4187416136264801,0.5234270095825195,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_005553,AI Engineer,15,0.4166957437992096,0.5208696722984314,0.0,0.054112373605754195,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+traditional_hybrid,ML001,JOB_002741,AI Engineering Sr,16,0.41654452681541443,0.5206806659698486,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_007908,Head of Artificial Intelligence – LATAM,17,0.3854067027568817,0.48175835609436035,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_007380,"Senior Staff Machine Learning Engineer, Agentic Product - Moveworks",18,0.3844216763973236,0.4805270731449127,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_007373,"Senior Machine Learning Engineer, Agentic App Platform - Moveworks",19,0.3778822422027588,0.4723528027534485,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_000370,AI Engineer (Contract role),20,0.3586253523826599,0.4482816755771637,0.0,0.054112373605754195,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+traditional_hybrid,ML001,JOB_007789,Site Reliability Engineer (Hosted Infra) - Platform,21,0.2947263717651367,0.3684079647064209,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_001116,"Senior Team Lead, Technical Services",22,0.27806735038757324,0.34758418798446655,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_006256,"Contract & Claim Manager, Manufacturing Construction Projects, Guanajuato",23,0.22955046594142914,0.2869380712509155,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_008218,HR Generalist,24,0.2081592082977295,0.26019901037216187,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_006561,Специалист по планированию поставок сырья,25,0.2054784595966339,0.2568480670452118,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_004374,Contract & Sales Support Analyst (Contract),26,0.20024263858795166,0.2503032982349396,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_007340,Authorization Specialist,27,0.1976560354232788,0.2470700442790985,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_005400,Security Officer Site Supervisor,28,0.19528357684612274,0.24410447478294373,0.0,0.03584527589964729,,"programming, systems evaluation",0.0
+traditional_hybrid,ML001,JOB_003704,ANALISTA DE RUTA DE TRANSPORTE,29,0.19380097091197968,0.2422512173652649,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_008137,Carrier Payable/Invoicing Representative II,30,0.1919909417629242,0.23998866975307465,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_003040,Full Time - Sales Associate - Outside Lawn & Garden - Closing,31,0.1588323414325714,0.19854041934013367,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_009068,"Senior Epidemiologist, HIV Treatment, Retrospective Claims Study Expertise (FSP Sponsor Dedicated)",32,0.14646491408348083,0.18308113515377045,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_004868,Permit Technician,33,0.12823611497879028,0.16029514372348785,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_004903,Mental Health Group Facilitator - NV,34,0.12764568626880646,0.15955710411071777,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_004908,Mental Health Group Facilitator - KY,35,0.12764568626880646,0.15955710411071777,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_006106,"Senior Director, HRBP",36,0.12498610466718674,0.15623262524604797,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_004192,LPN/RN PDN (peds to young adults),37,0.1244320198893547,0.15554001927375793,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_007608,Part Time ( 20 Hours) Intensive Home Based Therapeutic Care - Young Adult Peer Mentor,38,0.11461197584867477,0.14326496422290802,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_008943,Front Desk Agent,39,0.10352658480405807,0.12940822541713715,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_002503,DIRECT SUPPT PROFESSIONAL,40,0.1022292971611023,0.12778662145137787,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_000036,Salad Bar Clerk Part Time Evening,41,0.08064218610525131,0.10080273449420929,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_008008,"Patient Services Representative II, Specialty Services Patient Contact Center",42,0.061305899173021317,0.07663237303495407,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_001677,Diet Clerk,43,0.06015440449118614,0.07519300282001495,0.0,0.0,,,0.0
+traditional_hybrid,ML001,JOB_000040,HMR Clerk Part Time Afternoon,44,0.041037268936634064,0.05129658430814743,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_008439,Data Scientist (Computer Vision),1,0.4699708403635135,0.6766805648803711,0.0,0.06552032728202506,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+graph_hybrid,ML001,JOB_005960,Artificial Intelligence Engineer,2,0.4547904431819916,0.6688094735145569,0.0,0.0,,,1.0
+graph_hybrid,ML001,JOB_003939,"Machine Learning Engineer / MLOps (Python, Cloud, Data) – Híbrido - CDMX",3,0.41903308033943176,0.6162251234054565,0.0,0.0,,,1.0
+graph_hybrid,ML001,JOB_004856,"Staff Machine Learning Engineer - Game Tech Group, ML Platform",4,0.4146708548069,0.6098100543022156,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_000743,AI Engineer,5,0.4086006431006471,0.5889467597007751,0.0,0.054112373605754195,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+graph_hybrid,ML001,JOB_006142,Senior Machine Learning Scientist,6,0.39960017800331116,0.5876473188400269,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_008435,Sr Associate Data Scientist,7,0.3993928910780063,0.5728894472122192,0.0,0.06552032728202506,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+graph_hybrid,ML001,JOB_007378,"Staff Machine Learning Engineer, Agentic App Platform",8,0.39098024368286133,0.5749709606170654,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_007060,Mid Level AI Engineer,9,0.37607139348983765,0.5530461668968201,0.0,0.0,,,1.0
+graph_hybrid,ML001,JOB_000744,Junior AI Engineer,10,0.3713509440422058,0.5461043119430542,0.0,0.0,,,1.0
+graph_hybrid,ML001,JOB_007361,"Senior Machine Learning Engineer, Agentic Product - Moveworks",11,0.3678162097930908,0.5409061908721924,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_007376,"Staff Machine Learning Engineer, Agentic Product",12,0.3664199113845825,0.5388528108596802,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_007365,"Machine Learning Engineer, Agentic Product - Moveworks",13,0.3658255338668823,0.5379787087440491,0.0,0.0,,,1.0
+graph_hybrid,ML001,JOB_005553,AI Engineer,14,0.36230824870100414,0.5208696722984314,0.0,0.054112373605754195,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+graph_hybrid,ML001,JOB_004888,Senior AI Engineer,15,0.355930358171463,0.5234270095825195,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_002741,AI Engineering Sr,16,0.35406285524368286,0.5206806659698486,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_007908,Head of Artificial Intelligence – LATAM,17,0.32759568095207214,0.48175835609436035,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_007380,"Senior Staff Machine Learning Engineer, Agentic Product - Moveworks",18,0.32675841450691223,0.4805270731449127,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_007373,"Senior Machine Learning Engineer, Agentic App Platform - Moveworks",19,0.3211999237537384,0.4723528027534485,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_000370,AI Engineer (Contract role),20,0.3129483906649629,0.4482816755771637,0.0,0.054112373605754195,,"analytical or scientific software, application server software, programming, systems evaluation",1.0
+graph_hybrid,ML001,JOB_007789,Site Reliability Engineer (Hosted Infra) - Platform,21,0.25051742792129517,0.3684079647064209,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_001116,"Senior Team Lead, Technical Services",22,0.23635725677013397,0.34758418798446655,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_006256,"Contract & Claim Manager, Manufacturing Construction Projects, Guanajuato",23,0.19511789083480835,0.2869380712509155,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_008218,HR Generalist,24,0.1769353300333023,0.26019901037216187,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_006561,Специалист по планированию поставок сырья,25,0.1746566891670227,0.2568480670452118,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_005400,Security Officer Site Supervisor,26,0.17136782946897725,0.24410447478294373,0.0,0.03584527589964729,,"programming, systems evaluation",0.0
+graph_hybrid,ML001,JOB_004374,Contract & Sales Support Analyst (Contract),27,0.1702062487602234,0.2503032982349396,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_007340,Authorization Specialist,28,0.16800762712955475,0.2470700442790985,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_003704,ANALISTA DE RUTA DE TRANSPORTE,29,0.16473083198070526,0.2422512173652649,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_008137,Carrier Payable/Invoicing Representative II,30,0.16319230198860168,0.23998866975307465,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_003040,Full Time - Sales Associate - Outside Lawn & Garden - Closing,31,0.13500748574733734,0.19854041934013367,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_009068,"Senior Epidemiologist, HIV Treatment, Retrospective Claims Study Expertise (FSP Sponsor Dedicated)",32,0.12449517101049423,0.18308113515377045,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_004868,Permit Technician,33,0.10900069773197174,0.16029514372348785,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_004903,Mental Health Group Facilitator - NV,34,0.10849883407354355,0.15955710411071777,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_004908,Mental Health Group Facilitator - KY,35,0.10849883407354355,0.15955710411071777,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_006106,"Senior Director, HRBP",36,0.10623818635940552,0.15623262524604797,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_004192,LPN/RN PDN (peds to young adults),37,0.10576721280813217,0.15554001927375793,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_007608,Part Time ( 20 Hours) Intensive Home Based Therapeutic Care - Young Adult Peer Mentor,38,0.09742017835378647,0.14326496422290802,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_008943,Front Desk Agent,39,0.08799759298563004,0.12940822541713715,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_002503,DIRECT SUPPT PROFESSIONAL,40,0.08689490705728531,0.12778662145137787,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_000036,Salad Bar Clerk Part Time Evening,41,0.068545863032341,0.10080273449420929,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_008008,"Patient Services Representative II, Specialty Services Patient Contact Center",42,0.052110012620687485,0.07663237303495407,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_001677,Diet Clerk,43,0.0511312410235405,0.07519300282001495,0.0,0.0,,,0.0
+graph_hybrid,ML001,JOB_000040,HMR Clerk Part Time Afternoon,44,0.034881677478551865,0.05129658430814743,0.0,0.0,,,0.0
